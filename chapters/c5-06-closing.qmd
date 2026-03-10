@@ -1,0 +1,82 @@
+---
+title: "5.6 Closing: The System That Holds the Comparison Valid"
+---
+
+
+## What this chapter asked
+
+Chapter 5 asked one question: how do we protect against bias?
+
+It asked that question in five sections, each addressing a different mechanism by which the trial's primary comparison can be distorted.
+
+Section 5.1 established what randomization actually guarantees—probabilistic independence of assignment from patient characteristics at the moment of assignment—and what it does not protect against: post-randomization imbalance arising from differential dropout, compliance, or additional treatment. The boundaries of randomization's protection define the terrain that the other mechanisms must cover.
+
+Section 5.2 examined stratification as a tool for balance and efficiency, and distinguished between the two purposes it serves. Balance is served by having the factors in the randomization; efficiency is captured only when those factors are reflected in the primary analysis. Stratification that is not reflected in the analysis has paid the operational cost without receiving the statistical benefit.
+
+Section 5.3 isolated allocation concealment as the mechanism that prevents the randomization sequence from being known before the enrollment decision. Without this protection, randomization can be subverted by investigators who prefer specific assignments for specific patients—producing a selection bias that is invisible in the data and uncorrectable in the analysis.
+
+Section 5.4 examined outcome assessment—the protections that must exist between the treatment assignment and the measurement of the primary outcome. Blinding, independent adjudication, and pre-specified assessment criteria are the tools; the target is preventing the assessor's knowledge of the assignment from influencing what they measure.
+
+Section 5.5 addressed open-label designs—situations where blinding is not feasible and the design must compensate through endpoint choice, centralized adjudication, and honest acknowledgment of the bias that remains. An open-label trial with well-designed compensating protections is not a compromised trial. It is a trial that has confronted its limitations explicitly.
+
+---
+
+## What this chapter decided
+
+By the end of this chapter, four things must be documented and their consistency with each other confirmed.
+
+The randomization scheme is specified—mechanism, block structure, stratification factors—and its implications for the primary analysis are documented. If covariate-adaptive randomization is used, the primary analysis conditions on the covariates. If cluster randomization is used, the primary analysis accounts for the clustering. If stratified randomization is used, the stratification factors are included in the primary analysis model. The randomization scheme and the analysis plan are consistent.
+
+The allocation concealment mechanism is specified with sufficient detail to be audited. Who holds the randomization sequence, how assignments are revealed, what prevents prediction from prior assignments. If central IVR/IWR randomization is used, the system is validated. If envelopes are used, they are opaque, sequentially numbered, and held by a party independent of the trial team.
+
+The outcome assessment plan is specified—who assesses the primary outcome, under what blinding conditions, according to what pre-specified criteria. The adjudication charter is finalized before the first event. The blinding assessment plan specifies when and how blinding will be formally evaluated, and what will be done if substantial unblinding is detected.
+
+For open-label designs: the specific bias risks introduced by the absence of blinding are identified, the compensating design elements are specified, and the residual bias is acknowledged. The estimand reflects the open-label context. The endpoint choice is documented as a deliberate decision to minimize the knowledge-related component of the outcome, or to include it, with the rationale stated.
+
+These four things—randomization, concealment, assessment, and open-label management—form the bias protection system. They are documented together, reviewed for consistency with each other and with the estimand, and owned by the design team as a system, not as independent checklist items.
+
+---
+
+## The characteristic mistakes of this chapter
+
+Three failures recur in the territory Chapter 5 covers.
+
+**The allocation concealment that was specified but not implemented.** The protocol specified central randomization through an IVR system. The IVR system was not validated before enrollment; site coordinators were given the access credentials before the validation was complete; the system had a configuration error that allowed coordinators to query the assignment without committing the enrollment. The error was discovered after several patients were enrolled—and after the site coordinator at the highest-enrolling site had been querying the system before enrollment. The randomization sequence was compromised at that site. The trial continued, the data from that site were included in the primary analysis, and the regulatory reviewer noted the IVR system validation timeline in the audit trail. The explanation required was possible; the explanation required was also evidence of the gap between specification and implementation.
+
+**The adjudication charter that was finalized after the events.** The trial enrolled and began accumulating endpoint events before the adjudication charter was finalized. The adjudication committee reviewed interim events while the charter was still in draft. When the charter was finalized, several of the events already adjudicated were reclassified under the final case definitions—some from endpoints to non-endpoints, some from one endpoint type to another. The reclassification was disclosed in the clinical study report. It was also evidence that the adjudication process was influenced by exposure to the cases rather than preceded by the pre-specified standards. The regulatory reviewer's question—were the case definitions shaped by knowledge of the accumulated events?—could not be answered with complete certainty.
+
+**The open-label design whose bias was not acknowledged.** The trial was open-label because the treatment—a structured exercise program—could not be concealed from patients. The primary endpoint was a patient-reported functional assessment. The design documentation noted that the open-label nature was unavoidable and did not specify any compensating protections. The result showed a large treatment effect on the functional assessment. The regulatory reviewer asked what proportion of the effect was attributable to the patient's knowledge of receiving the exercise intervention rather than to the physiological effects of the exercise itself. There was no design-stage answer to that question, because it was not asked at design. The trial was informative but its result was uninterpretable in the dimension that the regulatory question required.
+
+---
+
+## What cannot be recovered
+
+Selection bias from failed allocation concealment cannot be corrected by analysis. The enrolled population in the compromised trial is not a random sample from the eligible population; it is a selectively enrolled population that reflects the investigators' preferences. No covariate adjustment, no sensitivity analysis, and no post-hoc reweighting can restore the validity of the comparison, because the selection was made on characteristics that may not have been measured and cannot be identified after the fact.
+
+Adjudication charter defects similarly cannot be corrected after the events are adjudicated. An adjudication that occurred under a draft charter, or that reclassified events after the charter was revised, is an adjudication whose case definitions were not fully pre-specified. The ambiguity about what the events were classified as—before the charter was revised, or after—means the primary endpoint count is uncertain, and the uncertainty is not reducible by further analysis.
+
+Assessment bias from failed blinding leaves a residual uncertainty that the primary result must be interpreted in light of. If blinding assessments reveal that patients correctly guessed their assignment at a rate substantially above chance, the primary result is larger than the true biological effect by an unknown amount. The amount is not recoverable from the trial's own data. It requires a separate experiment—a trial of the same treatment with a different assessment method—which may not be feasible or funded.
+
+Open-label bias from an unacknowledged and unaddressed patient-reported outcome in an unblinded trial is, in the most honest sense, the trial's own design decision made visible. The decision not to use compensating protections was a design decision. Its consequence—that the primary result cannot be attributed solely to the biological effect of the treatment—is the consequence of that decision. The result is real; it is the result of assigning patients to the treatment in the context where they know they are receiving it. Whether that context-inclusive result is the clinically relevant question is what the estimand should have specified.
+
+---
+
+## The connection to Chapter 6
+
+Chapter 6 asks what the trial is allowed to claim. The bias protection system of Chapter 5 determines the validity of the primary comparison that any claim must rest on.
+
+A claim requires evidence. Evidence in a randomized trial is the comparison between arms that randomization, allocation concealment, and blinding together have made valid. When the comparison is valid—when bias has been adequately controlled—the evidence supports a claim in direct proportion to its statistical strength. When the comparison is compromised—when selection bias, assessment bias, or inadequate concealment have distorted the comparison—the evidence supports a weaker claim, regardless of the statistical significance.
+
+Chapter 6 will introduce the concept of claim discipline: the principle that what can be asserted from a trial is bounded by what was pre-specified and what the evidence supports. The bias protection system of Chapter 5 defines the floor of that evidence: the minimum validity that the primary comparison must have to support any claim. A trial whose primary comparison is compromised by known bias has a lower floor, and its claims must be calibrated accordingly—claimed with narrower scope, with explicit acknowledgment of the bias risk, and with less confidence than an uncompromised trial would support.
+
+This connection runs in both directions. Chapter 5 protects the comparison that Chapter 6 claims from. Chapter 6's discipline in claiming is what prevents a compromised comparison from being asserted with more confidence than the bias risk justifies. Together, they protect the integrity of the trial's result: the comparison is as valid as the design made it, and the claim is as confident as the validity supports.
+
+---
+
+## Chapter 5 risk summary
+
+**The decision this chapter owns:** what mechanisms protect the trial's primary comparison from systematic distortion, and are they specified, implemented, and documented with sufficient rigor to make the comparison valid?
+
+**The most common mistake:** treating the components of bias protection—randomization, concealment, blinding, adjudication—as independent checklist items rather than as a system. A trial that has excellent randomization but inadequate allocation concealment has failed; a trial with adequate concealment and excellent randomization but no blinding assessment has an unknown bias risk at the primary endpoint. The components protect against different mechanisms of bias, and the absence of any one component leaves a gap that the others cannot close.
+
+**The professional-level risk:** a primary result that is statistically significant but scientifically uninterpretable because the bias protection system was inadequate. Not fraudulent—the trial was conducted according to its protocol—but inadequate. The result cannot be attributed to the treatment because the comparison cannot be attributed to the randomization. The trial has produced a number. It has not produced evidence. The difference between those two things is the bias protection system, and the professional risk of Chapter 5 is discovering, after the database is locked, that the system was not in place.

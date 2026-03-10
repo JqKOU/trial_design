@@ -1,0 +1,93 @@
+---
+title: "Clinical Trial Design Decision Framework"
+subtitle: "From Scientific Question to Defensible Design"
+---
+
+# What This Book Is—and Is Not
+
+This is not a statistics textbook.
+
+There are excellent textbooks on survival analysis, multiplicity correction, adaptive design methodology, and sample size derivation. This is not one of them. If you want formula derivations, this book will disappoint you. If you want to know why a margin exists, who is responsible for it, and what happens when it is wrong, keep reading.
+
+This book exists because of a pattern that repeats itself in almost every trial design meeting: someone asks *"what's the sample size?"* before anyone has agreed on what the trial is actually trying to show. The statistician produces a number. The sponsor accepts it. The protocol gets written. And then, two years into the trial, someone asks a question that should have been asked first—and there is no good answer.
+
+That pattern is not a failure of statistical competence. It is a failure of decision discipline.
+
+---
+
+## The Problem This Book Addresses
+
+Clinical trial design involves a sequence of commitments, each one constraining what comes after, each one allocating risk to someone.
+
+When you define an estimand, you are committing to a version of the treatment effect that the trial can actually estimate. When you choose a non-inferiority margin, you are asserting that a certain magnitude of inferiority is acceptable, and you are accepting responsibility for that assertion. When you plan an interim analysis, you are deciding who gets to see what, and when, and what they are allowed to do with it.
+
+These are not statistical decisions. They are design decisions with statistical consequences. The distinction matters because statistical decisions can often be revised; design decisions, once made, tend to stick, through the protocol, through the regulatory submission, through the label negotiation, and sometimes all the way into the courtroom.
+
+The question this book asks, at every turn, is not *"how do we do this?"* but *"what are we committing to, and can we defend it?"*
+
+---
+
+## Who This Book Is For
+
+This book is written for people who sit in trial design meetings and need to speak clearly, not just technically correctly, about what the design is doing.
+
+That includes statisticians who want to explain their choices to clinical teams without retreating into jargon. It includes clinical scientists who want to ask better questions of their statistical colleagues. It includes regulatory strategists who need to anticipate how design choices will be received by reviewers. And it includes anyone who has ever left a design review meeting unsure whether the right decision was made, or whether any decision was made at all.
+
+You do not need to follow every mathematical detail to benefit from this book. You do need to be willing to sit with uncomfortable questions about who bears the risk when a design assumption turns out to be wrong.
+
+---
+
+## How This Book Is Organized
+
+The book follows the sequence of decisions that every trial design forces you to make, roughly in the order you have to make them.
+
+**Chapter 1** begins where every design must begin: with the question. Not the hypothesis, not the endpoint, but the question. What are we actually trying to show? For whom? Under what conditions? The estimand framework is introduced not as a regulatory compliance exercise, but as the structure that forces you to answer this question precisely.
+
+**Chapter 2** turns to measurement. Once you know what you are trying to show, you must decide how to measure it. Different effect measures carry different interpretive commitments. The choice of a ratio versus a difference is not cosmetic, it reflects a claim about how treatment effects scale across populations.
+
+**Chapter 3** is about commitment. Sample size calculation is usually presented as a technical exercise. This chapter presents it as a risk-allocation exercise. Every assumption you build into the calculation is an assumption someone is taking responsibility for.
+
+**Chapter 4** addresses interim analyses. The desire to stop trials early, for efficacy, for futility, for safety, is understandable. This chapter asks what early stopping actually protects, and what it costs.
+
+**Chapter 5** examines bias. Randomization and blinding are the trial's structural defenses against systematic error. This chapter explains not just how they work, but what fails when they are compromised, and why compromise is more common than the literature suggests.
+
+**Chapter 6** is about claims. What, exactly, are you allowed to assert when the trial is over? The answer depends entirely on what was pre-specified, in what order, and with what protections for multiplicity. A p-value is not a claim. A defensible claim requires discipline applied before the data are seen.
+
+**Chapter 7** examines adaptive designs, not as innovations, but as risk amplifiers. Every adaptation changes the estimand, whether or not the protocol acknowledges it. This chapter traces those shifts.
+
+**Chapter 8** closes with what must be locked. Flexibility in design is valuable; flexibility in interpretation is dangerous. The line between them is pre-specification, and this chapter is about where that line is drawn and how to defend it.
+
+---
+
+## Four Questions That Will Not Go Away
+
+Across all eight chapters, four questions recur. They are not answered once and then set aside. They return in every context, slightly reframed, with different stakes.
+
+*What evidence are we defining?* The trial can only generate evidence about what it was designed to measure. The definition of that evidence happens before enrollment, not after.
+
+*What risk are we committing to carry?* Every design assumption is a risk. The question is not whether to accept risk, you must, but whether you have accepted it consciously and assigned it clearly.
+
+*How do we prevent the design from failing on its own terms?* Bias, drift, protocol deviations, and unplanned adaptations all erode the design's integrity. Control is not automatic.
+
+*What are we finally allowed to say?* The trial ends with a dataset and a set of pre-specified questions. The intersection of those two things determines what you can assert. Everything outside that intersection is speculation.
+
+These four questions are the skeleton of this book. The chapters are the muscle.
+
+---
+
+## A Note on Tone
+
+This book tries to be sharp rather than comprehensive. It makes arguments rather than surveys. Where there are genuine disagreements, about the appropriate use of non-inferiority trials, about the value of response-adaptive randomization, about how aggressively to pursue subgroup analyses, the book takes positions. Not because those positions are certainly correct, but because clarity is more useful than false balance.
+
+Where the book takes a position, it tries to show the cost of the alternative. The goal is not to be right. The goal is to make the cost of different choices visible, so that whoever is responsible for the decision can make it with open eyes.
+
+Design decisions made under ambiguity tend to be made by the loudest voice in the room. This book is an attempt to give quieter voices something to say.
+
+---
+
+
+::: {.callout-warning icon=false}
+## Disclaimer
+
+These are my personal learning notes. I wrote them to organize my own understanding — not as professional advice of any kind. If you find them useful, great, but please validate anything here against your own study requirements and consult a qualified statistician before applying these methods in any regulated or clinical setting. I take no responsibility for how this material is used.
+:::

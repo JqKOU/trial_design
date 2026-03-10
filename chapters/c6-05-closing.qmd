@@ -1,0 +1,80 @@
+---
+title: "6.5 Closing: The Boundary of What Can Be Said"
+---
+
+
+## What this chapter asked
+
+Chapter 6 asked one question: what are we allowed to claim?
+
+It asked that question in four registers, each addressing a different mechanism by which claims can exceed the evidence.
+
+Section 6.1 established that a p-value is not a claim. It is a rejection of a null hypothesis under a specific test. The translation from a statistical result to a scientific claim requires pre-specification, appropriate error control, adequate power, and honest framing. Without all four, the claim asserts more certainty than the evidence supports.
+
+Section 6.2 examined co-primary endpoints—and found that two primary endpoints without a pre-specified decision rule are not a design with two primaries. They are a design that allows post-hoc selection of the endpoint that happened to cross the threshold. The decision rule—conjunctive or disjunctive—must be specified before enrollment, with the type I error controlled for the joint test and the power calculated for the joint criterion.
+
+Section 6.3 examined hierarchical testing as the framework by which the trial manages multiple claims without inflating the family-wise type I error. The hierarchy is a pre-specified sequence of claims, ordered by clinical importance, testable in order, with the stopping rule applied faithfully. A hierarchy that was designed post-hoc—ordered to protect the hypotheses that happened to succeed, or that omits hypotheses that failed—is not a hierarchy. It is a retrospective rationalization.
+
+Section 6.4 examined subgroup analyses—the most common source of overclaiming in clinical trial reporting. A confirmatory subgroup claim requires pre-specification, biological rationale, adequate power for the subgroup, and error control. An exploratory subgroup analysis, regardless of its p-value, generates hypotheses. The distinction between confirmatory and exploratory is not about the magnitude of the finding; it is about the conditions under which the finding was made.
+
+---
+
+## What this chapter decided
+
+By the end of this chapter, four things must be documented and their consistency with each other confirmed.
+
+The primary claim is fully specified—not as a statistical test but as a scientific assertion. The statement of what the trial will claim if the primary hypothesis is confirmed, expressed in terms of the effect measure for the population defined by the estimand, at the time horizon of the trial, at the confidence level established by the alpha and power of the design. This statement exists before enrollment begins and does not change based on what the data show.
+
+The co-primary decision rule—if two primary endpoints are proposed—is specified as conjunctive or disjunctive, with the type I error controlled for the joint test and the power calculated for the joint criterion. The interpretation of mixed results is pre-specified: what the trial will claim if one endpoint succeeds and the other fails.
+
+The hierarchical testing plan is complete and clinically ordered. Every hypothesis in the hierarchy is named, ordered by clinical importance, connected to the alpha allocation, and documented in the SAP before unblinding. The handling of the interim-stops scenario—if the primary crosses the efficacy boundary at an interim and the secondary endpoints are tested at the interim data cut—is pre-specified.
+
+The subgroup analysis plan distinguishes confirmatory from exploratory, assigns alpha to confirmatory subgroup hypotheses, powers confirmatory subgroup analyses separately, and labels exploratory subgroup analyses as hypothesis-generating in the protocol and the SAP.
+
+These four things together constitute the trial's claim structure—the complete specification of what the trial is designed to assert, and what it is not. The claim structure is as important as the estimand: the estimand defines what is being measured; the claim structure defines what the measurement is being used to say.
+
+---
+
+## The characteristic mistakes of this chapter
+
+Three failures recur with enough consistency to constitute the characteristic errors of claim discipline.
+
+**The hierarchy that was ordered after unblinding.** The protocol specified a primary endpoint and four secondary endpoints, without ordering the secondary endpoints. The SAP was finalized after the database lock and before the primary analysis was conducted—technically before unblinding, but after the data quality review had given the analysis team a view of the overall data distribution that allowed the direction of each secondary to be inferred. The secondary endpoints were ordered in the SAP in the order they subsequently tested significant. The regulatory reviewer asked for the timestamps of the SAP finalization and the data quality review. The timestamps did not support the claim that the SAP was finalized without knowledge of the secondary endpoint directions. The hierarchy was declared post-hoc and the secondary claims were reclassified as exploratory.
+
+**The subgroup that was confirmed without power.** The trial pre-specified a biomarker subgroup analysis in the protocol. The biomarker-positive subgroup comprised 40% of the enrolled population. The trial was powered for the overall population. The subgroup analysis was included in the hierarchical testing plan. The biomarker-positive subgroup showed a significant result at the 5% level. The regulatory reviewer asked for the power of the subgroup analysis. The power for the biomarker-positive subgroup, at the observed subgroup-specific effect size, was 38%. The claim that the treatment works in biomarker-positive patients—based on a 38% powered analysis—was not supported as a confirmatory claim. The biomarker subgroup finding was reclassified as hypothesis-generating, and the sponsor was required to conduct a confirmatory trial in the biomarker-positive population.
+
+**The secondary that was elevated after the primary failed.** The primary endpoint—all-cause mortality—was not significant. The first secondary endpoint—cardiovascular death—was significant at the pre-specified alpha level under the hierarchical plan. The sponsor proposed to submit the cardiovascular death result as the basis for approval, arguing that the hierarchical plan allowed testing of the secondary after the primary failed. The regulatory reviewer noted that the hierarchical plan requires the primary to succeed for the secondary to be tested within the controlled family-wise error rate. Cardiovascular death had been tested in the context of a failed primary, outside the protective structure of the hierarchy. The cardiovascular death p-value was not controlled at the stated alpha level. Approval was denied.
+
+These three mistakes are not statistical errors. They are governance failures: the claim structure was specified ambiguously, implemented partially, or applied post-hoc. In each case, the design team had done the statistical work but not the claim discipline work—had designed the tests without fully designing the claims.
+
+---
+
+## What cannot be recovered
+
+A post-hoc hierarchy cannot be retroactively made confirmatory. The regulatory agencies have extensive experience with the sequence of events that indicates a post-hoc ordering: SAP finalization timestamps that follow data quality reviews that provided inferential information about the direction of secondary results; hierarchies that happen to be ordered in the order the endpoints subsequently test significant; SAP amendments that rearrange the hierarchy after an interim data look that revealed trends. When these patterns are present, the claim that the hierarchy was pre-specified cannot be established, and the secondary claims are treated as exploratory.
+
+A subgroup analysis that was not adequately powered cannot be retroactively powered by post-hoc sample size calculations. The power of the subgroup analysis is determined by the number of patients in the subgroup at the time of the analysis. A claim that the subgroup analysis was intended to be confirmatory but was inadvertently underpowered is a claim that the design was flawed. The remedy is a new trial designed for the subgroup population, not a reinterpretation of the subgroup finding from the underpowered analysis.
+
+And a primary endpoint failure cannot be converted into a secondary endpoint success within the same trial's confirmatory claim structure. When the primary hypothesis fails, the hierarchical structure closes. The secondary endpoint that was next in the hierarchy can be analyzed and reported, but it cannot be claimed at the pre-specified alpha level within the trial's family-wise error control. The secondary finding, however significant, is an exploratory observation from a trial that did not achieve its pre-specified primary objective.
+
+These irrecoverabilities are the practical consequences of the pre-specification requirement. The pre-specification requirement is not bureaucratic; it is the mechanism by which the error rate of the claims is established. Claims made outside the pre-specified structure have unknown error rates. A claim with an unknown error rate is not evidence in the sense that regulatory approval and clinical practice change require.
+
+---
+
+## The connection to what follows
+
+Chapter 7 asks what happens when the design itself adapts. Adaptive designs—where the sample size, the patient population, or the analysis strategy changes based on accumulating data—introduce additional sources of multiplicity and claim complexity that require the same discipline as fixed designs, applied to more complex structures.
+
+The claim discipline of Chapter 6 is the foundation for managing multiplicity in adaptive designs. When a trial adapts its sample size based on interim data, the adaptation itself may be informative about the treatment's likely effect—and the information introduced by the adaptation must be accounted for in the final analysis. When a trial adapts its patient population—enriching for biomarker-positive patients after an interim—the claim about the biomarker-positive population is subject to the same pre-specification and power requirements as any other subgroup claim, plus the additional complexity of having been introduced adaptively.
+
+Chapter 7 cannot be designed coherently without the foundations of Chapter 6. The claims an adaptive trial is allowed to make—at each stage of the adaptation and at the final analysis—are the adaptive extension of the claim discipline established for fixed designs. The adaptation does not relax the pre-specification requirement; it extends it to the adaptive rules themselves. The design team must specify, before the trial begins, not just what the final claims will be but what the claims will be at each possible adaptation point, under each possible interim result.
+
+---
+
+## Chapter 6 risk summary
+
+**The decision this chapter owns:** what is the trial allowed to assert if it succeeds on the primary, and what is the structure—hierarchical, co-primary, subgroup—within which secondary and tertiary claims are bounded?
+
+**The most common mistake:** treating the statistical analysis plan as the claim document, when the claim document is the pre-specified hierarchy of hypotheses, ordered by clinical importance, each associated with an alpha allocation, each connected to a power calculation. The SAP specifies the analyses. The claim structure—which claims are confirmatory and in what order—must be in the protocol.
+
+**The professional-level risk:** the secondary claim that was elevated after the primary failed, the subgroup claim that was made without adequate power, or the hierarchy that was ordered after the data provided inferential information about the direction of effects. Each of these is a claim that was made with an uncontrolled error rate—that was, technically, a false claim about the evidence even if the underlying treatment effect is real. The professional risk is not that the treatment does not work. It is that the evidence was not strong enough to support the claim at the stated confidence level, because the claim structure was not in place before the data were seen.

@@ -1,0 +1,70 @@
+---
+title: "Chapter 1: What Are We Trying to Show?"
+---
+
+
+Most trial designs fail before they begin.
+
+Not in the statistical sense—the power calculation may be perfectly correct, the randomization scheme impeccable, the blinding procedures airtight. They fail in a prior sense: the team has not agreed on what the trial is actually trying to show. They have agreed on an endpoint. They have agreed on a hypothesis. But the question underneath those agreements—*what treatment effect, in what population, under what conditions of use, are we claiming to have demonstrated?*—has been left unresolved.
+
+That unresolved question does not stay quiet. It surfaces during the interim analysis, when someone asks whether discontinuations should be counted as failures. It surfaces during the regulatory review, when an agency asks whether the primary analysis reflects the treatment policy or the biological mechanism. It surfaces at the label negotiation, when the sponsor and the agency discover they have been answering different questions with the same dataset.
+
+The estimand framework—formally introduced in ICH E9(R1) but carrying a logic that predates the guidance—exists to force this question into the open before the trial starts. That is its purpose. Not to add regulatory paperwork, not to create new statistical objects, but to require that the question be answered clearly and publicly, by the people who are responsible for it, at the moment when the answer can still shape the design.
+
+---
+
+## The Decision This Chapter Is About
+
+Before any trial can be designed, someone must answer a question that sounds deceptively simple: *what are we trying to show?*
+
+The deception is in the simplicity. Every word of that question is doing work.
+
+*What* requires specifying an estimand—the precise quantity the trial is designed to estimate. Not a general direction ("we expect improvement") but a defined treatment effect, in a defined population, on a defined outcome, under a defined set of conditions.
+
+*We* requires assigning ownership. Someone must stand behind the estimand. Someone must be able to say, in a regulatory meeting or a dispute with a payer, *this is what we intended to measure, this is why, and these are the conditions under which the estimate is valid.* That person cannot be the statistician alone. The estimand is a scientific and clinical commitment, not a statistical artifact.
+
+*Trying to show* requires acknowledging that trials are designed to generate evidence for a specific claim, not to explore data until something appears. The claim must exist before the data. Its contours must be drawn before enrollment begins. Everything that happens after—endpoint selection, intercurrent event handling, analysis strategy—is in service of that prior claim.
+
+When these three elements are not resolved before design begins, the trial does not become undefined. It becomes defined by default: by the path of least resistance, by the assumptions embedded in the statistical software, by the endpoint that was easiest to measure, by the handling of discontinuations that someone decided informally during data cleaning. Default designs answer default questions. Those default questions are rarely the ones the sponsor, the clinician, or the regulator actually wanted answered.
+
+---
+
+## What This Chapter Covers
+
+This chapter has three sections and a closing.
+
+**Section 1.1 — Purpose and Estimand** takes the estimand framework seriously as a decision tool, not a documentation requirement. The four estimand attributes—population, variable, intercurrent event strategy, population-level summary—are presented as four distinct decision points, each requiring an owner. The section asks what it means to specify each one, and what is lost when specification is deferred.
+
+**Section 1.2 — Endpoint Choice** examines how endpoints are selected in practice—and why the selection is more consequential than it appears. A primary endpoint is not simply a measurement. It is a bet on what will move, on what regulators will accept, on what clinicians will find meaningful, and on what the trial's sample size can actually detect. These four considerations frequently point in different directions. The section traces those conflicts and asks how they should be resolved—and by whom.
+
+**Section 1.3 — Intercurrent Events** is where the estimand becomes hardest. Intercurrent events—discontinuations, rescue medication use, treatment switches, deaths—are the points at which real clinical experience diverges from the clean experimental logic of the protocol. Every decision about how to handle them is a decision about what question the trial is answering. The section identifies the five ICH-recognized strategies and examines not what they are, but what they commit you to.
+
+**Section 1.4 — Closing** returns to the chapter's core tension: the pressure to finalize the design before the question is fully resolved, and the consequences of yielding to that pressure.
+
+---
+
+## The Risk of Starting Downstream
+
+There is a standard sequence for trial design: endpoint, then sample size, then randomization scheme, then interim analysis plan. This sequence is not wrong, but it is incomplete. It presupposes that the question has already been answered, that what precedes "endpoint" has been resolved.
+
+In practice, it often has not. The endpoint gets chosen because it was used in the previous trial, or because it is accepted by the relevant agency, or because it is the most sensitive measure available. These are reasonable starting points. They are not substitutes for asking what the trial is for.
+
+Starting downstream—from the endpoint rather than from the question—creates a characteristic failure mode. The design is internally consistent but externally ambiguous. The protocol specifies the primary endpoint, the analysis population, and the handling of missing data. What it does not specify, because the question was never asked, is what the primary analysis is supposed to represent. Is it an estimate of what happens when patients are randomized and followed to the end of the protocol, regardless of what they do in the meantime? Or is it an estimate of what would happen if patients took the treatment as intended, without rescue or discontinuation? Or something else?
+
+These are different questions. They have different answers. They require different trial designs. And they cannot all be answered by the same dataset with the same analysis, regardless of how many sensitivity analyses are appended.
+
+The estimand framework, at its core, is a requirement to ask the question before it is too late to design around the answer.
+
+---
+
+## What Follows from Getting This Right
+
+A precisely specified estimand does not guarantee a successful trial. The treatment may not work. The outcome may not move. The population may be wrong. Getting the question right does not make the answer good.
+
+What it does is protect the integrity of whatever answer the trial generates. A trial that answers a clearly specified question—even if the answer is disappointing—has produced real evidence. A trial that produces a technically valid p-value for a question no one has agreed on has produced noise with a confidence interval.
+
+More concretely: getting the estimand right at the design stage determines what analyses are primary and what analyses are secondary, what intercurrent event handling is pre-specified and what is post-hoc, what subgroup hypotheses are confirmatory and what are exploratory. These distinctions have regulatory and commercial consequences that no statistical correction applied after the fact can fully repair.
+
+The chapters that follow—on effect measures, sample size, interim analyses, bias control, multiplicity, and adaptive design—all assume that this chapter's work has been done. They are decisions about how to pursue a defined question. They cannot substitute for the decision about what the question is.
+
+That decision is made here, at the beginning, or it is made by default later. The cost of making it by default is the subject of this chapter.

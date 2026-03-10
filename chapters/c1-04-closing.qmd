@@ -1,0 +1,135 @@
+---
+title: "1.4 Closing: What Has Been Decided, and What It Costs"
+---
+
+## What this chapter asked
+
+Chapter 1 asked one question: what are we trying to show?
+
+It asked that question three times, in three registers.
+
+In Section 1.1, it asked what the estimand framework requires—the four attributes that must be specified before a trial has a question rather than an aspiration, and the three ownership structures that must be in place before those specifications are defensible.
+
+In Section 1.2, it asked what endpoint choice commits a trial to—not just a measurement, but a claim about what constitutes benefit, for which patients, over what time horizon, and at what interpretive cost.
+
+In Section 1.3, it asked what the intercurrent event strategy decides—which of five fundamentally different scientific questions the trial is claiming to answer, and what data collection and analytical obligations follow from that answer.
+
+Together, these three sections constitute a single decision: the definition of the treatment effect the trial is designed to estimate. That definition is the estimand. Everything else in trial design—sample size, randomization, interim analysis, multiplicity control—is in service of it. If the estimand is not settled, nothing downstream is stable.
+
+---
+
+## The decision this chapter made
+
+By the end of this chapter, the following must be true.
+
+The estimand is specified. All four attributes—population, variable, intercurrent event strategy, population-level summary—are stated clearly enough that two independent statisticians, reading the protocol, would construct the same primary analysis. If that condition is not met, the estimand has not been specified. A sentence in the protocol that names a primary endpoint and references an intention-to-treat analysis is not an estimand. It is a placeholder.
+
+The endpoint is connected to the question. The primary endpoint is not present in the design because it was used before, or because the agency accepted it in a related indication, or because the software handles it conveniently. It is present because someone has articulated why this measurement, in this population, at this time point, captures the treatment effect the estimand defines. That articulation is documented and owned.
+
+The intercurrent event strategy is explicit. The strategy is named—treatment policy, hypothetical, composite, while on treatment, or principal stratum—and the name is accompanied by the reasoning: why this strategy, for this trial, for these patients? The data collection implications of the strategy have been identified and reflected in the protocol. The sensitivity estimands are pre-specified, and their relationship to the primary estimand is stated.
+
+Ownership is assigned. The clinical team can defend the question. The statistical team can specify the analysis that estimates it. The regulatory team can articulate what the result will be able to claim. These three responsibilities are not interchangeable, and they are not all held by the same person.
+
+If any of these conditions is not met, the chapter's work is unfinished. Proceeding to Chapter 2—to the question of how the treatment effect will be measured and summarized—without settling Chapter 1 is proceeding without a destination. The measurement can be made. The summary can be calculated. The result will not be interpretable, because no one has agreed on what it was supposed to show.
+
+---
+
+## The most common failure mode
+
+The most common way Chapter 1's work goes unfinished is not through negligence. It is through deferral.
+
+The protocol is written on a timeline. The estimand discussion is scheduled for the next design meeting. The intercurrent event strategy will be finalized in the SAP. The endpoint was chosen because it is what this team always uses, and the question of whether it is the right endpoint for this trial is deferred to the regulatory feedback after submission.
+
+Deferral feels like flexibility. It is not. It is the accumulation of unresolved decisions that will have to be resolved later, under worse conditions, with less time, and without the ability to change the protocol that has already been running for two years.
+
+The specific cost of each deferral is predictable.
+
+Deferring the estimand specification to the SAP means the protocol may have been written with a data collection plan that cannot support the estimand eventually chosen. The SAP is not the place to discover that post-discontinuation outcome data were not planned for because the treatment policy strategy was not considered at design.
+
+Deferring the endpoint justification to the regulatory submission means the agency's questions about why this endpoint arrive after the trial is complete, when the answer "we would have chosen differently" has no practical consequence. The agency's question during a pre-submission meeting is an opportunity. The same question during a complete response letter is a problem.
+
+Deferring the intercurrent event strategy to the analysis means the strategy will be chosen to fit the data rather than to answer the question. This is the definition of post-hoc analysis, and it is what the estimand framework was specifically designed to prevent.
+
+Each deferral is a transfer of risk—from the design stage, where it can be managed, to the analysis stage, where it can only be disclosed.
+
+---
+
+## The characteristic mistakes of this chapter
+
+Three mistakes recur in the work this chapter covers. They are not rare. They are the normal product of design processes that move faster than the underlying questions.
+
+**The estimand that cannot be estimated.** The four attributes are specified, the language looks precise, and the primary analysis is named. But the analysis cannot produce an unbiased estimate of the specified estimand given the data that will be collected. Post-discontinuation outcomes are needed but not planned for. The counterfactual model requires time-varying covariates that are not in the CRF. The composite requires adjudication of the intercurrent event as rigorously as the primary outcome, but no adjudication committee has been constituted for it. The estimand is formally complete and analytically empty.
+
+**The endpoint that answers the wrong question.** The endpoint is clinically accepted, statistically feasible, and regulatory precedent supports its use. It also does not capture what the treatment does. The treatment's mechanism produces a biological change that the chosen endpoint is not sensitive to in the enrolled population at the planned follow-up duration. The trial will complete, the endpoint will be measured, and the result will be uninterpretable—not because the analysis failed but because the endpoint was chosen without examining what it would detect.
+
+**The strategy selected by default.** No one discussed the intercurrent event strategy. The SAP analyst used the approach from the previous trial. The ITT label was applied to a completers-only analysis because that is what the software produced. The intercurrent event strategy is whatever fell out of the process—and the process did not include the question of what question the strategy is answering. When the agency asks, the answer is "that is what we did," which is not a defense.
+
+These three mistakes have a common origin: the estimand conversation did not happen, or it happened without the people who needed to be in it, or it happened and produced language that was not precise enough to constrain the analysis. The framework is only as useful as the discipline with which it is applied.
+
+---
+
+## What cannot be fixed downstream
+
+Some design errors are recoverable. A sample size that turns out to be insufficient can sometimes be addressed through a pre-specified sample size re-estimation. A randomization imbalance can be controlled for in the analysis. A stratification factor that turns out to be prognostic but was not used in the randomization can be included as a covariate.
+
+The errors of Chapter 1 are not recoverable in this sense.
+
+If the estimand was never specified, no sensitivity analysis can specify it retroactively. A sensitivity analysis explores the robustness of a pre-specified primary result. If there is no pre-specified primary result—only an analysis that was run and a question about what it means—the sensitivity analysis has no anchor.
+
+If the endpoint was wrong—not insensitive, but wrong, measuring something other than what the treatment does—no analytical adjustment can make the result answer the question the trial was supposed to answer. The data contain what they contain. If the endpoint does not capture the treatment effect, the data do not contain it.
+
+If the intercurrent event strategy was never chosen, the primary result reflects whatever the software default produced. Regulatory reviewers are experienced at identifying this. The absence of documented reasoning for the strategy is itself a finding—it signals that the strategy was chosen for analytical convenience rather than scientific necessity, which is precisely the problem the estimand framework was designed to prevent.
+
+The design errors of this chapter are recoverable only if they are caught before enrollment. After enrollment, they are findings. After unblinding, they are liabilities.
+
+---
+
+## The professional risk
+
+There is a version of this chapter's failure mode that is not just scientific but professional.
+
+A statistician who signs off on a primary analysis strategy without a documented estimand has not made a statistical error. The analysis may be technically correct. But they have produced a result without a clear statement of what that result estimates—and when the question is asked, as it will be, there is no answer that does not involve admitting that the question was never resolved.
+
+A clinical scientist who accepts an endpoint because it was used in the previous trial, without asking whether it answers the current trial's question, has not made a clinical error. The endpoint may be perfectly reasonable. But they have committed the trial to a measurement without committing it to a purpose—and the difference between those two things is the difference between evidence and data.
+
+A regulatory strategist who plans a submission around a result without knowing what estimand that result estimates cannot defend the label claim when the agency asks. The answer to "what does this estimate represent?" is the beginning of every label negotiation. If the answer is "the primary analysis result," the negotiation will not go well.
+
+The professional risk of Chapter 1's failure is not that the trial will fail. It is that the trial will succeed—produce a statistically significant result, reach regulatory submission, enter label negotiation—and at each of those stages, the same question will be asked that was not answered at design. And at each stage, the answer will be harder to give, the options will be fewer, and the cost of the original deferral will compound.
+
+---
+
+## What Chapter 2 requires from Chapter 1
+
+Chapter 2 asks: how will we measure the difference? It addresses effect measures—risk differences, ratios, hazard ratios, win ratios—and their interpretive and efficiency implications. It addresses the non-inferiority margin and what it takes to defend one.
+
+None of this can proceed without a settled estimand.
+
+The effect measure must be appropriate for the estimand. A hazard ratio summarizes a time-to-event estimand in a specific way, under specific assumptions about the proportionality of hazards. A risk difference at a fixed time point summarizes a different quantity. The choice between them is not primarily statistical—it is a choice about what kind of summary is scientifically appropriate for the estimand that has been specified. If the estimand has not been specified, the effect measure cannot be chosen on any basis other than convention.
+
+The non-inferiority margin must be connected to the estimand. The margin asserts that a treatment effect smaller than a specified threshold is clinically acceptable—that the treatment's other attributes justify tolerating some inferiority on the primary endpoint. That assertion requires knowing what the primary endpoint is estimating. A margin defined without a clear estimand is a number without a referent.
+
+Chapter 2's work is technical in ways that Chapter 1's work is not. But the technical work of Chapter 2 is only as rigorous as the conceptual work of Chapter 1. If Chapter 1's question is unsettled, Chapter 2's answers are built on sand.
+
+---
+
+## The decision this chapter demands
+
+The chapter ends with a demand, not a summary.
+
+Before the trial moves forward, someone must be able to answer, without consulting the SAP, without deferring to the statistician, and without referencing a previous trial's protocol: *what effect, in what patients, under what conditions, measured how, summarized as what, is this trial designed to estimate?*
+
+If that question can be answered—clearly, completely, and by the right people—the chapter's work is done. If it cannot, the chapter's work must continue, regardless of what the timeline says.
+
+The pressure to move on is real. It is also the most common source of the errors this chapter describes. Every week spent resolving the estimand before enrollment is a week not spent discovering the same problem after unblinding, when the cost of resolution is not a delayed start but a compromised result.
+
+That trade is not close. The estimand is the question. The question must come first.
+
+---
+
+## Chapter 1 risk summary
+
+**The decision this chapter owns:** what treatment effect, in what population, under what conditions, is this trial designed to estimate?
+
+**The most common mistake:** treating endpoint selection as estimand specification—naming a primary endpoint and an analysis method without resolving what the analysis is designed to estimate or why.
+
+**The professional-level risk:** proceeding to sample size, effect measure, and interim analysis planning without a settled estimand. These downstream decisions will be internally consistent. They will not be anchored to a defensible scientific claim. The inconsistency will surface at regulatory review, at label negotiation, or at the point when a payer asks what the result actually shows—and none of those moments allow for the answer "we should have decided this earlier."

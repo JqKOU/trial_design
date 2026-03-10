@@ -1,0 +1,74 @@
+---
+title: "Chapter 7: What If the Design Itself Adapts?"
+---
+
+
+## The question Chapter 6 leaves open
+
+Chapter 6 built the claim structure for a fixed design—a trial whose sample size, patient population, analysis plan, and hypothesis hierarchy are fully specified before enrollment and do not change in response to accumulating data. The claim structure was demanding: pre-specification, adequate power, error control, honest framing. Each requirement was defensible as a consequence of the pre-specification principle.
+
+What happens when the design itself is not fixed?
+
+Adaptive designs—trials in which one or more design features change during the trial based on accumulating data—are increasingly common in clinical development. They are used to address the uncertainty that exists at the time of design: uncertainty about the right dose, the right patient population, the right effect size assumption, the right endpoint. If those uncertainties can be resolved by data accumulated during the trial, the argument goes, the design can be improved mid-course rather than committed irreversibly to a design that may have been wrong.
+
+This argument has genuine force. A trial designed with an effect size assumption that turns out to be optimistic will be underpowered; a pre-specified sample size re-estimation rule can detect the optimism early and correct the sample size before it is too late. A trial designed for an unselected population when a biomarker-defined subgroup shows substantially stronger benefit can enrich toward the responding subgroup rather than continue enrolling patients who are unlikely to benefit. These are real improvements that adaptive design can provide—at a cost that this chapter examines.
+
+---
+
+## Why adaptation is a risk amplifier
+
+The design of this chapter follows the writing discipline of this book: adaptive design is not a distinct technical specialty to be introduced on its own terms. It is a context in which the risks established in prior chapters are amplified.
+
+Every prior chapter identified a decision with consequences. Chapter 1 defined the estimand and noted that intercurrent events distort it. Chapter 3 identified the effect size assumption and noted that optimism produces underpowered trials. Chapter 6 specified the hierarchy and noted that post-hoc ordering inflates the type I error. In each case, the risk was present in fixed designs and managed through pre-specification.
+
+When the design adapts, the same risks are present—and they interact with each other and with the adaptation in ways that fixed designs do not experience. A sample size re-estimation changes the information fraction at which interim analyses are conducted, shifting the operating characteristics of the stopping boundaries established in Chapter 4. An adaptive enrichment toward a biomarker-positive subgroup changes the estimand—the population attribute shifts mid-trial—creating a connection to Chapter 1's requirement that the estimand be settled before the design is finalized. A seamless phase II/III design that adapts the dose based on phase II data introduces a multiplicity structure that Chapter 6's claim discipline must address across both phases.
+
+These interactions are not complications to be managed after the adaptation is designed. They are the reason that adaptive design requires the foundations of all prior chapters to be in place before the adaptation is layered on top. An adaptive design is not an escape from the commitments of the fixed design; it is an additional commitment—the commitment to pre-specified rules for how and when the design will change—built on top of the commitments that were already required.
+
+---
+
+## What this chapter covers
+
+**Section 7.1 — Sample Size Re-estimation** examines the most common and most straightforward form of adaptation: adjusting the planned sample size based on observed nuisance parameters from interim data. When the variance is higher than assumed, or the control arm event rate is lower than assumed, or the dropout rate is higher than assumed, a pre-specified re-estimation rule can correct the sample size to restore the planned power. The section examines what pre-specification of the re-estimation rule requires, what information the re-estimation can and cannot use without inflating the type I error, and what the operating characteristics of the adapted design look like relative to the fixed design.
+
+**Section 7.2 — Adaptive Enrichment** examines the adaptation of the enrolled population—narrowing toward a subgroup that shows greater benefit, or widening to include patients initially excluded. Adaptive enrichment changes the estimand, because the population attribute of the estimand is determined by who is enrolled. The section examines what conditions must be met for adaptive enrichment to be scientifically defensible, what the estimand is in the adapted trial, and what the claim structure looks like across the pre- and post-adaptation populations.
+
+**Section 7.3 — Estimand Shift** examines the ways in which adaptations that do not explicitly change the endpoint can nonetheless change what the trial is estimating. A sample size re-estimation based on the observed effect size—rather than on nuisance parameters alone—changes the implicit estimand by conditioning the sample size on an interim result. An adaptive enrichment changes the population attribute. A seamless phase II/III design with an adaptive dose selection changes the treatment attribute. Each of these estimand shifts must be identified, acknowledged, and addressed in the primary analysis and the claim structure.
+
+**Section 7.4 — Non-Inferiority Failure Modes** examines the specific ways in which adaptive design interacts with non-inferiority trials—already the most conceptually complex design type—to amplify the risks that Chapter 2 identified. The NI margin depends on the constancy assumption; adaptations that change the enrolled population, the background therapy, or the trial duration affect whether the constancy assumption remains credible. The section examines how these interactions can produce NI conclusions that are formally valid but scientifically misleading.
+
+---
+
+## The regulatory context
+
+Regulatory agencies have developed substantial guidance on adaptive designs, and their positions reflect hard-won experience with the ways in which adaptation can be used to improve designs and the ways in which it can be used to obscure pre-specification failures.
+
+The FDA's 2019 guidance on adaptive designs distinguishes between well-understood adaptations—sample size re-estimation based on nuisance parameters, pre-specified enrichment—and less well-understood adaptations that require more extensive simulation and justification. The key regulatory principle is that the adaptation rule must be pre-specified in the protocol before enrollment begins, that the rule must be implemented independently of the treatment arm comparison by an independent statistician, and that the operating characteristics of the adapted design must be established by simulation before the trial begins.
+
+The EMA's reflection paper on adaptive designs reflects similar principles, with additional emphasis on the estimand framework: adaptations that change any of the four estimand attributes require an explicit account of how the primary analysis will handle the population that was enrolled before and after the adaptation.
+
+Both agencies are clear that adaptive designs do not relax the pre-specification requirement—they extend it. The fixed design pre-specifies the analysis. The adaptive design pre-specifies the analysis and the rules by which the design will change. The latter is more demanding, not less.
+
+---
+
+## What this chapter is not about
+
+This chapter does not address platform trials, master protocols, or basket and umbrella designs—multi-arm, multi-population designs that share infrastructure across multiple treatments or indications. These are important and growing parts of the clinical trial landscape, but they require separate treatment that goes beyond the scope of a chapter on adaptive modifications to a single trial's design.
+
+It also does not address Bayesian adaptive designs in detail, beyond the principles that Bayesian and frequentist adaptive designs share in common. Bayesian designs use prior distributions and posterior probabilities rather than frequentist error rates, but the fundamental governance requirements—pre-specification of the adaptation rules, independent implementation of the adaptation decisions, simulation-based characterization of the operating characteristics—apply equally.
+
+---
+
+## The question this chapter must answer
+
+By the end of this chapter, a trial team considering an adaptive design must be able to answer four questions.
+
+What, exactly, is adapting? The specific design feature that changes must be identified—sample size, population, dose, endpoint—and distinguished from features that are fixed. Adaptations that are not precisely identified cannot be precisely pre-specified, and an adaptation that is not precisely pre-specified is a post-hoc modification.
+
+What information triggers the adaptation? The adaptation rule must specify what data are used to make the adaptation decision—nuisance parameters only, or the primary endpoint trend, or a secondary endpoint result—and who has access to those data. The information used and the people who access it determine whether the adaptation inflates the type I error and whether it is consistent with the governance requirements of Chapter 4.
+
+What does the adaptation do to the estimand? Every adaptation changes at least one attribute of the estimand. The question is whether the change is small enough to be handled within the pre-adaptation estimand or large enough to require a new estimand specification for the post-adaptation phase.
+
+What are the operating characteristics of the adapted design? The probability of success under the null and under a range of alternative hypotheses—for the adapted design, simulated across the adaptation rule's input space—must be established before enrollment begins. An adapted design whose operating characteristics have not been established is not a design. It is a plan to make a decision whose consequences have not been examined.
+
+If these four questions cannot be answered before enrollment begins, the adaptive design is not ready to run. The adaptation is being added to the design before the design implications of the adaptation are understood—which is the specific failure mode that regulators, DSMBs, and post-trial critics will identify, and that the pre-specification requirement exists to prevent.

@@ -1,0 +1,82 @@
+---
+title: 4.3 Operating Characteristics
+---
+
+
+## What the plan is actually committing to
+
+A stopping boundary is a line on a graph. A spending function is a mathematical rule. Neither of these, on its own, tells the design team what the interim analysis plan will actually do—how often the trial will stop early, under what true treatment effects, at what information fractions, with what expected sample sizes, and with what probability of reaching an incorrect conclusion at each interim.
+
+Operating characteristics are the answers to these questions. They are the behavioral profile of the interim analysis plan under the full range of scenarios the trial might encounter: the null hypothesis, the alternative hypothesis, and the intermediate hypotheses that span the gap between them. Just as the power curve in Chapter 3 showed the trial's probability of success as a function of the true effect size, the operating characteristics of the interim analysis plan show the trial's probability of each possible outcome—early stop for efficacy, early stop for futility, reaching the final analysis—as a function of the true effect size and the information fraction at which the trial happens to stop.
+
+Computing and examining these operating characteristics before finalizing the interim analysis plan is not optional. It is the only way to know what the plan is committing the trial to.
+
+---
+
+## Under the null hypothesis
+
+The most important operating characteristic under the null hypothesis is the probability of stopping early for a false positive. This is the interim contribution to the family-wise type I error rate, and the alpha-spending framework guarantees it will be controlled at the nominal level if the plan is correctly specified and correctly implemented.
+
+But the probability of stopping early for a false positive is not the only relevant null-hypothesis characteristic. The probability of stopping early for futility under the null—correctly concluding that the treatment is not working when it is not—is also important, because early futility stopping under the null means the trial was conducted efficiently: it stopped before consuming resources on a futile program. A futility boundary that correctly triggers early stopping under the null most of the time is a valuable feature of the design.
+
+The expected sample size under the null hypothesis—the average number of patients enrolled across all possible null-hypothesis scenarios, weighted by the probability of stopping at each information fraction—is the primary measure of the interim analysis plan's efficiency. An interim analysis plan that stops early for futility with high probability under the null, and rarely continues to the final analysis when the treatment is not working, is an efficient plan: it saves the resources that would be consumed by a futile trial. This efficiency does not come for free—it requires a futility boundary that is powered to detect futility, which requires its own design investment.
+
+---
+
+## Under the alternative hypothesis
+
+Under the alternative hypothesis—when the treatment effect is as assumed—the critical operating characteristic is the probability of stopping early for efficacy. If this probability is high, the interim analysis plan is efficient in the beneficial direction: the trial will frequently stop early and deliver the evidence sooner than if it had run to the planned completion. If this probability is low, the interim analysis plan is providing minimal benefit over a design without interim analyses—it is adding governance complexity without adding efficiency.
+
+The expected sample size under the alternative hypothesis quantifies this trade-off. A plan with high probability of early stopping under the alternative has a low expected sample size under the alternative—on average, the trial stops before reaching the planned maximum. A plan with low probability of early stopping has an expected sample size close to the maximum. The difference in expected sample size between a plan with and without interim analyses, under the alternative, is the efficiency gain from the interim analysis plan.
+
+This efficiency gain comes at a cost that is less often quantified: the expected overestimation of the treatment effect at stopping. If the trial stops early for efficacy, the observed effect is expected to be larger than the true effect, as discussed in Section 4.1. The magnitude of this overestimation depends on the information fraction at stopping and the strength of the efficacy signal. If the trial stops at 50% information fraction with an effect twice as large as assumed, the overestimation bias is substantial. If it stops at 90% information fraction with an effect only modestly above the boundary, the bias is small.
+
+The operating characteristics report should include, for each information fraction at which early stopping is possible, the expected overestimation of the treatment effect conditional on stopping at that fraction. This gives the design team and the regulatory agency a quantitative basis for evaluating whether the interim stopping rule produces a level of bias that is acceptable given the efficiency gain.
+
+---
+
+## Under intermediate hypotheses
+
+The operating characteristics under the null and alternative are the extremes. The intermediate hypotheses—true effects smaller or larger than the assumed effect—are where the interim analysis plan's behavior is most clinically informative and most often neglected.
+
+The most important intermediate scenario is the pessimistic alternative: the true treatment effect is real but smaller than assumed. This is the scenario where the design team got the effect size prediction wrong in the optimistic direction—the most common failure mode of Chapter 3. Under this scenario, the trial will often not stop early for efficacy (because the interim effect is below the efficacy boundary) and may not stop early for futility either (because the interim effect, though below the assumed alternative, may still be above the futility boundary, if there is one). The trial continues to the final analysis—which, given the smaller-than-assumed effect, may or may not reach significance.
+
+The probability of this scenario—continuing to the final analysis under the pessimistic alternative—and the probability of a significant result at the final analysis under the pessimistic alternative together characterize the trial's behavior in the most likely bad-case scenario. These probabilities should be reported in the operating characteristics, and the design team should examine them before finalizing the plan. If the probability of a significant final result under the pessimistic alternative is below an acceptable threshold, the interim analysis plan does not protect against the most common form of power loss.
+
+---
+
+## Expected sample size and trial duration
+
+The expected sample size under a given true treatment effect is the weighted average of the sample sizes at which the trial stops—early stopping at each information fraction, or reaching the maximum—with the weights being the probabilities of each outcome. This quantity summarizes the efficiency of the interim analysis plan under a given true effect in a single number.
+
+For time-to-event trials, the expected number of events at stopping is the more relevant quantity—because the trial's power is determined by the number of events, not the number of patients. But the expected trial duration is also important: a trial that stops early at 50% information with a high probability under the alternative will have a shorter expected duration than a trial that rarely stops early. This duration reduction translates into earlier access to the evidence for patients and for the regulatory system.
+
+Computing expected sample size and expected duration requires simulation, because the analytical approximations are accurate only under specific assumptions about the distribution of the test statistic. The simulation should be conducted across a grid of true treatment effects—at the null, at the assumed alternative, and at several intermediate values—to produce a complete picture of the plan's behavior. The result is a table or a plot that shows, for each true effect size, the probability of each stopping outcome and the expected sample size or duration.
+
+This simulation is the design team's most informative tool for evaluating the interim analysis plan. It is also the tool most often skipped in favor of reporting only the power at the primary alternative and the type I error rate under the null. The intermediate scenarios, which are the most likely scenarios in practice, are the scenarios whose characteristics should be known before the plan is locked.
+
+---
+
+## The consistency requirement
+
+The operating characteristics of the interim analysis plan must be consistent with the commitments of Chapter 3. Specifically:
+
+The power at the final analysis—after alpha spending for interim analyses—must equal the power that the Chapter 3 sample size was designed to achieve. If the sample size was designed for 90% power at the unadjusted alpha, the power at the adjusted final analysis alpha (after interim spending) will be below 90%. Either the power calculation should have used the adjusted alpha, or the sample size should be inflated to restore the post-spending power to the target level.
+
+This consistency check is performed more often in principle than in practice. The sample size calculation and the interim analysis plan are frequently produced by different members of the statistical team, at different points in the design process, without explicit reconciliation. The result is a trial whose actual power—accounting for alpha spending—is below the power that was presented to the clinical team and the regulatory agency. This is a silent error: the power is not wrong in the sense that the calculation was incorrect, but it is misleading in the sense that the reported power does not correspond to what the trial will actually achieve.
+
+The consistency requirement is simple to state and straightforward to implement: the power for the sample size calculation should be computed at the final analysis alpha after spending, not at the nominal alpha. If this reduces the calculated power to below the target, the sample size should be increased, the power target should be revised, or the spending plan should be modified to leave more alpha for the final analysis.
+
+---
+
+## Reporting the operating characteristics
+
+The operating characteristics should be reported as part of the design documentation—in the protocol or in a separate statistical design document—before the first interim analysis is conducted. The report should include the probability of stopping at each interim analysis under the null hypothesis, under the assumed alternative, and under at least two intermediate scenarios. The expected sample size or event count under each scenario. The expected overestimation of the treatment effect conditional on early stopping. The power at the final analysis at the adjusted alpha level.
+
+This report is the operating manual for the DSMB. When the DSMB convenes at the first interim analysis and observes that the interim test statistic is at a specific value, the operating characteristics report tells them what that statistic means in terms of the probability of each future outcome: the probability that the trial will reach significance at the final analysis if it continues, the probability that it will not, and the expected sample size under each stopping decision. Without this information, the DSMB is making a high-stakes decision without the context that would make it well-informed.
+
+The operating characteristics are not updated at the interim analysis unless the total information target has changed and the spending plan has been recalibrated. They are computed at design and applied throughout the trial as the reference document for all interim decisions. When they are not computed at design—when the DSMB convenes without a pre-computed operating characteristics report—the interim decision is being made in the dark. That is not a governed decision. It is an improvised one.
+
+---
+
+*References: Jennison and Turnbull, Group Sequential Methods with Applications to Clinical Trials (2000); Proschan, Lan, and Wittes, Statistical Monitoring of Clinical Trials: A Unified Approach (2006); Emerson and Fleming, "Symmetric Group Sequential Test Designs," Biometrics 1989; DeMets and Lan, "Interim Analysis: The Alpha Spending Function Approach," Stat Med 1994.*

@@ -1,0 +1,82 @@
+---
+title: 5.3 Allocation Concealment
+---
+
+
+## The gap between randomization and assignment
+
+Randomization produces a sequence. Allocation concealment protects that sequence from being known to the people who enroll patients until the moment of assignment—and not before.
+
+This distinction—between the randomization sequence and the allocation—is where the bias protection system is most commonly breached. The randomization sequence may be perfectly generated: truly random, appropriately blocked, correctly stratified. But if the sequence can be determined—by the enroller, the investigator, or the site coordinator—before the patient is committed to trial participation, the randomization fails its purpose. The person making the enrollment decision can use knowledge of the upcoming assignment to determine whether to enroll the next eligible patient.
+
+This is not a hypothetical mechanism. It is the most reliably documented source of selection bias in published clinical trials. Studies of trials with inadequate allocation concealment—where the sequence was accessible before enrollment or where the blocking made the next assignment predictable—consistently find inflated treatment effects compared to trials with adequate concealment. The effect estimate in a trial with inadequate allocation concealment is biased in the direction of the treatment, because investigators who believe in the treatment will preferentially enroll favorable patients when they know those patients will be assigned to the active arm.
+
+The bias introduced by inadequate allocation concealment is not correctable after enrollment. It is embedded in the baseline characteristics of the enrolled population, invisible in the data, and impossible to distinguish from a true treatment effect using any analysis method. The only protection is preventing the breach from occurring.
+
+---
+
+## What concealment requires in practice
+
+Adequate allocation concealment requires that three conditions be met.
+
+First, the assignment sequence must not be accessible to the enrolling person before the patient is committed to participation. "Committed to participation" means the patient has consented, the eligibility criteria have been verified, and the decision to enroll has been made—independently of which arm the patient will be assigned to. Only after these steps should the assignment be revealed. This sequence—eligibility verification and consent before assignment revelation—is the operational core of allocation concealment.
+
+Second, the sequence must be held by a party who is not the enroller and not the investigator. In practice, this means either central randomization through an interactive voice or web response system (IVR/IWR), which reveals the assignment only after the enrollment data are transmitted and logged, or sequentially numbered, sealed, opaque envelopes held by a person who is not part of the trial team at the enrolling site. Central randomization is the more robust mechanism, because the log of assignment requests provides an auditable record of when the assignment was revealed and to whom. Envelopes are prone to tampering—opening and resealing, or selecting between envelopes—and are increasingly regarded as inadequate for trials where the treatment effect claim requires high credibility.
+
+Third, the assignment must not be inferable from prior assignments. This is where blocked randomization creates its characteristic vulnerability. If the block size is known and fixed, an enroller who has observed several assignments within a block can determine the remaining assignments by elimination. The standard mitigation is variable block size—blocks of different sizes, selected at random—so that the pattern of prior assignments does not determine the current assignment even to someone who knows the possible block sizes. The block sizes themselves should not be revealed in the protocol (though they should be specified in the statistical analysis plan, which is not publicly available during the trial). A protocol that specifies "randomization will be performed in blocks of six" provides the information needed to exploit the blocking, and should instead specify "randomization will be performed in blocks of variable size."
+
+---
+
+## Inadequate concealment in common trial designs
+
+The literature on allocation concealment distinguishes between adequate and inadequate mechanisms, and the distinction is not always the one that trial designers expect.
+
+**Alternating assignment**—every other patient to treatment, every other to control—is not randomization and provides no concealment. The next assignment is always known. This is a historical control method that predates randomized trials, still occasionally used in situations where randomization is impractical, but providing none of the protection of true randomization.
+
+**Open allocation lists**—a randomization list posted at the site, or accessible through the site's clinical trial management system—provide a sequence that is correct but not concealed. Any site staff member with system access can determine the upcoming assignments. The sequence is random; the assignment is predictable.
+
+**Sealed envelopes without opacity or sequential numbering**—envelopes that can be held up to light, that are not numbered, or that can be opened and resealed—are inadequate because they provide insufficient protection against tampering. Opaque, sequentially numbered, sealed envelopes are the minimum standard for envelope-based concealment, and even this minimum is subject to manipulation at sites with poor oversight.
+
+**Predictable block sizes without variable blocking**—the documented vulnerability of fixed-block randomization to prediction at the end of blocks—is inadequate concealment even when a sealed central randomization system is used, because an enroller who has tracked prior assignments can predict the current assignment. Variable block sizes close this gap.
+
+The regulatory agencies—FDA and EMA—both require description of the allocation concealment method in the protocol and in the clinical study report, and both assess the adequacy of the described method. A trial whose primary result is positive but whose allocation concealment was inadequate will face scrutiny about whether the treatment effect estimate is inflated by selection bias. The inadequacy cannot be corrected post-hoc, and the scrutiny may result in a requirement for additional trials or in labeling that reflects the uncertainty.
+
+---
+
+## The relationship between blinding and concealment
+
+Allocation concealment is frequently confused with blinding, and the distinction matters for design.
+
+Allocation concealment protects the assignment sequence before randomization—it prevents prior knowledge of the assignment from influencing the enrollment decision. Blinding protects the comparison after randomization—it prevents knowledge of the assigned treatment from influencing the assessment of outcomes, the provision of care, or the dropout behavior of patients and clinicians.
+
+A trial can have adequate allocation concealment and inadequate blinding: the assignment was not known before enrollment, but once enrolled, the patient and clinician both know which treatment was assigned, and this knowledge affects the subsequent course of the trial. An unblinded trial with adequate allocation concealment is valid in the sense that the enrolled population is not selectively biased; but it is vulnerable to assessment bias and care bias after enrollment.
+
+A trial can have inadequate allocation concealment and adequate blinding: the assignment was predictable before enrollment—for example, through open allocation lists—but after enrollment, neither the patient nor the clinician knows which arm the patient is in, because the treatment is administered as identical capsules. The enrolled population is biased; the assessment is not.
+
+In practice, the two mechanisms often fail together: trials that do not use central randomization—and therefore have inadequate concealment—also tend to have inadequate blinding, because the operational systems that support central randomization often also support blinded treatment dispensing. But they are distinct mechanisms protecting against distinct forms of bias, and their design requirements should be specified separately.
+
+---
+
+## Concealment in platform and adaptive trials
+
+Platform trials—multi-arm trials where new treatment arms can be added and closed as evidence accumulates—and adaptive trials—trials where the design parameters are modified based on accumulating data—introduce specific allocation concealment challenges that standard fixed-design trials do not face.
+
+In a platform trial, the allocation ratios between arms may change over time as arms are added or closed. The changing ratios can, if visible to site personnel, reveal information about the current allocation sequence and potentially about the interim results that drove the change. Concealment in platform trials requires that the rationale for allocation ratio changes not be communicated in ways that reveal the interim efficacy data, and that the mechanisms for changing ratios be designed to minimize the inferential information they provide to site personnel.
+
+In adaptive trials with sample size re-estimation, the decision to increase the sample size may itself convey information about the interim trend: a sample size increase signals that the interim effect was below expectations, and a trial that does not increase the sample size signals that the interim effect is on track or better. This inference cannot be fully prevented when the re-estimation decision is visible, but it can be mitigated by pre-specifying the re-estimation rules precisely enough that the decision conveys minimal information beyond what the rules would predict.
+
+These are not reasons to avoid platform or adaptive designs. They are reasons to design the allocation concealment system for those trials with the same care that standard trials require—and with additional attention to the ways in which the adaptive features create new information flows that standard concealment mechanisms do not address.
+
+---
+
+## What this section demands before proceeding
+
+The allocation concealment mechanism must be specified before enrollment begins, with sufficient detail to be audited. The description should identify: who holds the randomization sequence, how assignment requests are made and logged, what information is revealed at the time of assignment and to whom, and what safeguards prevent the sequence from being inferred before the assignment is made.
+
+The block structure of the randomization—whether fixed or variable, and if variable, what range of block sizes is used—must be documented in the SAP (not the protocol) and the variable structure must be confirmed before the first assignment. If central IVR/IWR randomization is used, the system must be validated before enrollment begins to confirm that assignments are not accessible before the enrollment request is submitted.
+
+And the distinction between concealment and blinding must be clear in the design documentation. Both must be specified; neither substitutes for the other. The vulnerability that concealment protects against—selection bias at enrollment—and the vulnerability that blinding protects against—assessment and care bias after enrollment—are different mechanisms requiring different design solutions. Section 5.4 addresses the latter.
+
+---
+
+*References: Schulz and Grimes, "Allocation Concealment in Randomised Trials: Defending Against Deciphering," Lancet 2002; Wood et al., "Empirical Evidence of Bias in Treatment Effect Estimates in Controlled Trials with Different Interventions and Outcomes," BMJ 2008; Higgins et al., Cochrane Handbook for Systematic Reviews of Interventions (2019), Section 8.3; Altman and Schulz, "Statistics Notes: Concealing Treatment Allocation in Randomised Trials," BMJ 2001.*

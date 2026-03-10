@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8.1 What Must Be Pre-specified – Clinical Trial Design Decision Framework</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/c8-02-adaptive-rules.html" rel="next">
+<link href="../chapters/c8-00-overview.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/c8-00-overview.html">Chapter 8: What Must Be Locked, and When?</a></li><li class="breadcrumb-item"><a href="../chapters/c8-01-must-prespecify.html"><span class="chapter-title">8.1 What Must Be Pre-specified</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Clinical Trial Design Decision Framework</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/JqKOU/trial_design" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Clinical Trial Design Decision Framework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c1-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 1: What Are We Trying to Show?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-01-purpose-estimand.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 Purpose and Estimand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-02-endpoint-choice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 Endpoint Choice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-03-intercurrent-events.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.3 Intercurrent Events and Estimand Strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 Closing: What Has Been Decided, and What It Costs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c2-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2: How Will We Measure the Difference?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-01-effect-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Effect Measures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-02-interpretability-efficiency.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Interpretability and Efficiency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-03-ni-margin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 The Non-Inferiority Margin</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Closing: The Measure Is a Commitment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c3-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 3: What Are We Committing To?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-01-effect-size-ownership.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Effect Size Ownership</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-02-variance-dropout.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.2 Variance and Dropout</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-03-event-rate-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.3 Event Rate Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-04-power-as-risk-budget.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.4 Power as Risk Budget</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.5 Closing: The Commitment Behind the Number</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c4-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 4: When Might We Stop Early?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-01-why-sponsors-want-interim.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.1 Why Sponsors Want Interim Analyses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-02-alpha-spending.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.2 Alpha Spending</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-03-operating-characteristics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Operating Characteristics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-04-futility-efficacy-safety.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.4 Futility, Efficacy, and Safety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-05-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.5 Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.6 Closing: The Governed Decision</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c5-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 5: How Do We Protect Against Bias?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-01-randomization-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.1 Randomization Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-02-stratification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.2 Stratification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-03-allocation-concealment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.3 Allocation Concealment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-04-validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.4 Outcome Assessment and Validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-05-open-label.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.5 Open-Label Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.6 Closing: The System That Holds the Comparison Valid</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c6-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 6: What Are We Allowed to Claim?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-01-claims-not-pvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.1 Claims, Not P-values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-02-co-primary-multiple.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Co-Primary and Multiple Primary Endpoints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-03-hierarchical-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Hierarchical Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-04-subgroup-discipline.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Subgroup Discipline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.5 Closing: The Boundary of What Can Be Said</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c7-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 7: What If the Design Itself Adapts?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-01-ssr.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.1 Sample Size Re-estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-02-adaptive-enrichment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.2 Adaptive Enrichment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-03-estimand-shift.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.3 Estimand Shift</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-04-ni-failure-modes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.4 Non-Inferiority Failure Modes in Adaptive Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.5 Closing: The Pre-Specified Adaptation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c8-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 8: What Must Be Locked, and When?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-01-must-prespecify.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">8.1 What Must Be Pre-specified</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-02-adaptive-rules.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.2 Adaptive Rules and Their Lock Requirements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-03-decision-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.3 The Decision Log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-04-design-review-checklist.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.4 Design Review and the Independent Challenge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.5 Closing: The Defensible Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-qa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Design Review Hearing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-scenarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Design Scenarios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-pre-specification-principle-made-operational" id="toc-the-pre-specification-principle-made-operational" class="nav-link active" data-scroll-target="#the-pre-specification-principle-made-operational">The pre-specification principle, made operational</a></li>
+  <li><a href="#the-protocol-what-it-must-contain" id="toc-the-protocol-what-it-must-contain" class="nav-link" data-scroll-target="#the-protocol-what-it-must-contain">The protocol: what it must contain</a></li>
+  <li><a href="#the-sap-what-it-must-contain-and-when-it-must-be-locked" id="toc-the-sap-what-it-must-contain-and-when-it-must-be-locked" class="nav-link" data-scroll-target="#the-sap-what-it-must-contain-and-when-it-must-be-locked">The SAP: what it must contain and when it must be locked</a></li>
+  <li><a href="#the-timing-of-sap-finalization-what-compromises-it" id="toc-the-timing-of-sap-finalization-what-compromises-it" class="nav-link" data-scroll-target="#the-timing-of-sap-finalization-what-compromises-it">The timing of SAP finalization: what compromises it</a></li>
+  <li><a href="#when-the-deadline-is-missed" id="toc-when-the-deadline-is-missed" class="nav-link" data-scroll-target="#when-the-deadline-is-missed">When the deadline is missed</a></li>
+  <li><a href="#what-this-section-demands-before-proceeding" id="toc-what-this-section-demands-before-proceeding" class="nav-link" data-scroll-target="#what-this-section-demands-before-proceeding">What this section demands before proceeding</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/c8-00-overview.html">Chapter 8: What Must Be Locked, and When?</a></li><li class="breadcrumb-item"><a href="../chapters/c8-01-must-prespecify.html"><span class="chapter-title">8.1 What Must Be Pre-specified</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">8.1 What Must Be Pre-specified</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-pre-specification-principle-made-operational" class="level2">
+<h2 class="anchored" data-anchor-id="the-pre-specification-principle-made-operational">The pre-specification principle, made operational</h2>
+<p>The pre-specification principle has appeared throughout this book as a design requirement: specify before the data, not from the data. Every chapter demanded pre-specification of a specific design element—the estimand, the effect measure, the hierarchy, the adaptive rule. Chapter 8 asks what pre-specification means as a documentary condition, not a state of mind.</p>
+<p>The documentary condition has two components: specificity and timing. Specificity means the document contains enough detail that an independent statistician, reading it without access to the data, could implement the pre-specified analysis and arrive at the same result as the analysis team. Timing means the document was finalized before the event that could compromise its independence—before the data that might shape its content were available to the people who wrote it.</p>
+<p>Both components are verifiable. Specificity can be assessed by a reviewer who examines whether the document contains the decisions it claims to contain, or whether it defers decisions to later judgment—using language like “will be determined at analysis” or “to be specified based on observed data.” Timing can be assessed by examining the document’s finalization timestamp, the trial’s enrollment and unblinding timeline, and the data access records of the people who wrote the document.</p>
+<p>When both components are satisfied, pre-specification is established. When either is missing—when the document is vague, or when it was finalized after the data were available—pre-specification is not established, regardless of the sincerity of the intent.</p>
+<hr>
+</section>
+<section id="the-protocol-what-it-must-contain" class="level2">
+<h2 class="anchored" data-anchor-id="the-protocol-what-it-must-contain">The protocol: what it must contain</h2>
+<p>The protocol is the first pre-specification document and the one with the hardest deadline: it must be finalized and registered before the first patient is enrolled. Its content requirements for design integrity are distinct from its regulatory content requirements, and both must be met.</p>
+<p>From a design integrity perspective, the protocol must contain the following elements with enough specificity to be binding.</p>
+<p><strong>The estimand.</strong> The four attributes of the estimand—population, variable, intercurrent event strategy, and population-level summary—must be stated in terms that correspond to the scientific question and that can be operationalized in the statistical analysis. The estimand is not a narrative description of the intended treatment benefit; it is a formal specification of what is being estimated. If the protocol’s estimand section cannot be translated directly into the SAP’s primary analysis without additional decisions, it is not specific enough.</p>
+<p><strong>The primary endpoint definition.</strong> The operational definition of the primary endpoint—the specific criteria by which the outcome is determined for each patient—must be in the protocol. For composite endpoints, the definition of each component must be in the protocol. For patient-reported outcomes, the instrument, the scoring algorithm, and the threshold for response must be in the protocol. A primary endpoint defined as “will be operationalized in the adjudication charter” is not pre-specified in the protocol; it defers a binding decision to a later document.</p>
+<p><strong>The intercurrent event strategy.</strong> The pre-specified strategy for handling the primary intercurrent events—discontinuation of study treatment, initiation of rescue medication, switching to alternative therapy, death before the primary endpoint—must be in the protocol. For each intercurrent event, the strategy (treatment policy, hypothetical, composite, while-on-treatment, principal stratum) must be named and briefly justified.</p>
+<p><strong>The interim analysis plan.</strong> The number of planned interim analyses, the information fractions at which they will be conducted, the category of stopping rule at each (efficacy, futility, safety), and the spending function must be in the protocol. The specific boundaries need not be in the protocol if they will be computed from the spending function in the SAP, but the spending function itself—identified by name and parameters—must be in the protocol.</p>
+<p><strong>The co-primary decision rule.</strong> If two primary endpoints are proposed, the conjunctive or disjunctive decision rule must be in the protocol. “Success will be defined as achievement of significance on both endpoints” or “success will be defined as achievement of significance on either endpoint” must appear in the protocol before enrollment. The protocol may not defer this decision to the SAP.</p>
+<p><strong>The pre-specified subgroup analyses.</strong> The list of pre-specified subgroup analyses—with each subgroup’s defining variable and the confirmatory or exploratory status of the analysis—must be in the protocol. Subgroup analyses added in the SAP but not in the protocol are pre-specified at the SAP level, which is a weaker pre-specification than the protocol level.</p>
+<p><strong>The randomization scheme.</strong> The randomization type, the stratification factors, and the block structure (variable block size, noted without specifying the specific sizes) must be in the protocol. The actual randomization sequence need not be in the protocol; it is maintained by the randomization system.</p>
+<p><strong>The adaptive rule, at the level of type and criteria.</strong> For adaptive designs, the type of adaptation (SSR, enrichment, dose selection) and the general criteria that will trigger it must be in the protocol. The specific numerical thresholds—the conditional power threshold for SSR, the hazard ratio comparison threshold for enrichment—may be in the SAP, but the existence and nature of the adaptation must be disclosed in the protocol.</p>
+<hr>
+</section>
+<section id="the-sap-what-it-must-contain-and-when-it-must-be-locked" class="level2">
+<h2 class="anchored" data-anchor-id="the-sap-what-it-must-contain-and-when-it-must-be-locked">The SAP: what it must contain and when it must be locked</h2>
+<p>The statistical analysis plan is the second pre-specification document. Its deadline is softer than the protocol’s—it need not be finalized before enrollment, because it can be developed and refined as the trial progresses—but it must be finalized before any unblinded data from the trial are accessible to the analysis team or the sponsor.</p>
+<p>“Accessible” means not just formal access to the analysis database, but any channel through which unblinded information could reach the people who write the SAP. A DSMB interim report shared with the sponsor through a governance gap, a summary of interim event rates prepared for operational planning, a conversation in which a DSMB member mentioned the direction of the interim trend to a sponsor employee—any of these constitutes access to unblinded information that could shape the SAP.</p>
+<p>From a design integrity perspective, the SAP must contain the following.</p>
+<p><strong>The complete hierarchical testing order.</strong> Every hypothesis in the hierarchy, in the order it will be tested, with the decision rule for each position—including what happens if the hypothesis at that position fails. The hierarchy is not complete if it specifies the primary and first secondary and defers the rest; it is complete only when every hypothesis the trial will test confirmatorily is named and ordered.</p>
+<p><strong>The primary analysis model.</strong> The specific regression model, the covariates included, the method for handling missing data under each intercurrent event strategy, and the test statistic that will be reported. The model must be specific enough that two statisticians, running the same software on the same data, would produce the same result.</p>
+<p><strong>The sensitivity analyses.</strong> The pre-specified sensitivity analyses for the primary endpoint—the analyses that will be conducted to assess the robustness of the primary result to its assumptions. Each sensitivity analysis must specify the assumption being varied, the direction of the variation, and the method.</p>
+<p><strong>The detailed missing data plan.</strong> The specific imputation method or model-based approach for each category of missing data, the assumptions under each method, and the criteria for when the sensitivity analysis plan for missing data will be triggered.</p>
+<p><strong>The adaptive rule details.</strong> For adaptive designs: the specific numerical thresholds for the SSR (conditional power threshold, sample size bounds), the specific criteria for the enrichment decision (the comparison threshold, the biomarker assay specification), and the combination test method with the pre-specified critical value. These must be in the SAP before the re-estimation time point or the enrichment interim analysis, not before the final analysis.</p>
+<p><strong>The exploratory analysis list.</strong> The list of analyses that are exploratory—not part of the confirmatory hierarchy, not controlled for multiplicity—with explicit labeling of each as exploratory. The exploratory list should be exhaustive in identifying which analyses will be reported, so that the distinction between pre-specified exploratory and post-hoc analysis is clear.</p>
+<hr>
+</section>
+<section id="the-timing-of-sap-finalization-what-compromises-it" class="level2">
+<h2 class="anchored" data-anchor-id="the-timing-of-sap-finalization-what-compromises-it">The timing of SAP finalization: what compromises it</h2>
+<p>The most common source of SAP timing compromise is the blinded data review—the review of the pooled, unblinded data that is sometimes conducted before finalization of the SAP to assess data quality. A blinded review that examines only pooled statistics—overall event rates, overall missing data rates, overall protocol deviation rates—without revealing the treatment arm comparison does not compromise the SAP. A blinded review that reveals the distribution of outcomes in ways that allow the direction of the treatment effect to be inferred does compromise it.</p>
+<p>The boundary between acceptable and compromising information from a blinded review is not always clear, and the SAP finalization process must specify in advance what information will and will not be examined in the blinded review. Typical safe elements: overall sample size, overall missing data rate, overall event rate (pooled), protocol deviation types and rates. Potentially compromising elements: time-to-event distributions that reveal the treatment arm comparison, outcome distributions that allow inference about which arm is performing better, subgroup sizes that have changed in ways suggesting differential dropout.</p>
+<p>When the blinded review is conducted by the analysis team—the same team that will finalize the SAP—the review creates a channel for implicit unblinding even when formal blinding is maintained. The analysis team may not see the treatment arm labels, but if the review reveals that the outcome distribution is concentrated in a specific range, and if the team knows which direction of the primary endpoint would be favorable, the SAP that follows the review may be shaped by this implicit knowledge.</p>
+<p>The cleanest solution is to finalize the SAP before the blinded review. When this is not operationally feasible—because the SAP development requires information about data quality that the blinded review provides—the review and the SAP finalization must be separated in time, with the review conducted by a party who is not part of the SAP development team and who communicates only non-inferential data quality information to the SAP team.</p>
+<hr>
+</section>
+<section id="when-the-deadline-is-missed" class="level2">
+<h2 class="anchored" data-anchor-id="when-the-deadline-is-missed">When the deadline is missed</h2>
+<p>The SAP is sometimes finalized after the database is locked, or after the primary analysis has been run in draft. This is not always disclosed clearly; the SAP document may bear a finalization date that is technically before the final analysis report, without disclosing that the SAP was finalized after interim data were examined or after the primary analysis was run in a blind-broken version.</p>
+<p>When this occurs—when the SAP finalization was not independent of the data—the consequence for the trial’s credibility is specific. The primary analysis is not wrong in the sense that it was incorrectly executed. It may be wrong in the sense that the analysis choices—the model specification, the sensitivity analysis list, the hierarchical order—were shaped by the data rather than by the scientific question. The type I error rate for the primary test is nominally controlled by the pre-specified alpha level, but the actual error rate is inflated by the adaptive choice of analysis method—an inflation that is not reflected in the p-value.</p>
+<p>This is the professional consequence of a missed SAP deadline. Not a finding of misconduct, but a finding of insufficient documentary evidence that the analysis was pre-specified. The trial’s result is credible only to the extent that the analysis choices can be shown to have been made before the data, and when the SAP finalization timestamp does not support that showing, the credibility is weakened.</p>
+<p>The remedy for a missed deadline is not a corrective action after the fact. It is a governance system that prevents the miss—that treats the SAP finalization as a binding event on the project timeline, with the same urgency and the same escalation path as regulatory submission deadlines.</p>
+<hr>
+</section>
+<section id="what-this-section-demands-before-proceeding" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-section-demands-before-proceeding">What this section demands before proceeding</h2>
+<p>Before the adaptive rule lock requirements of Section 8.2 can be addressed, the protocol and SAP content requirements must be mapped to the specific trial being designed.</p>
+<p>For each required element—estimand, endpoint definition, ICE strategy, interim plan, co-primary rule, subgroup list, randomization scheme, adaptive rule at protocol level—the responsible party and the finalization deadline must be identified. For the SAP—the hierarchy, the primary analysis model, the sensitivity analyses, the missing data plan, the adaptive rule details—the finalization deadline relative to the data access timeline must be established, and the blinded review boundary must be specified.</p>
+<p>This mapping is not bureaucratic planning. It is the design team’s recognition that the quality of the trial’s evidence depends as much on the governance of these documents as on the scientific quality of the decisions they contain. A scientifically correct estimand in a protocol that was finalized after three patients were enrolled is a scientifically correct estimand that the regulatory agency cannot verify was not modified after enrollment revealed something about the population. A hierarchical testing order that reflects genuine clinical priorities but was finalized after the SAP development team had seen blinded outcome distributions is a hierarchy that cannot be verified as independent of the data.</p>
+<p>The document and the timestamp together establish the pre-specification. Neither alone is sufficient.</p>
+<hr>
+<p><em>References: ICH E9 Statistical Principles for Clinical Trials (1998); ICH E9(R1) Addendum on Estimands (2019); FDA Guidance for Industry, Adaptive Designs for Clinical Trials (2019); EMA Guideline on the Investigation of Subgroups in Confirmatory Clinical Trials (2019); CONSORT 2010 Statement.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/c8-00-overview.html" class="pagination-link" aria-label="Chapter 8: What Must Be Locked, and When?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chapter 8: What Must Be Locked, and When?</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/c8-02-adaptive-rules.html" class="pagination-link" aria-label="8.2 Adaptive Rules and Their Lock Requirements">
+        <span class="nav-page-text"><span class="chapter-title">8.2 Adaptive Rules and Their Lock Requirements</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 J Kou</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

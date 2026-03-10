@@ -1,0 +1,78 @@
+---
+title: 5.1 Randomization Logic
+---
+
+
+## What randomization guarantees
+
+Randomization is the foundational protection of the randomized controlled trial. Its purpose is specific and often misunderstood: randomization ensures that treatment assignment is probabilistically independent of patient characteristics—measured and unmeasured, known and unknown—at the moment of assignment. This independence is what makes the randomized comparison valid. In its absence, the difference observed between arms may reflect differences in the patients who received each treatment rather than differences produced by the treatment itself.
+
+The guarantee randomization provides is probabilistic, not deterministic. Randomization does not ensure that the treatment and control arms are balanced on any specific characteristic. In a small trial, randomization can produce arms that differ substantially on age, disease severity, or prognostic biomarkers by chance alone. The guarantee is that these imbalances, if they occur, are not systematic—they are attributable to chance, not to a selection mechanism that favors particular patients for particular arms. The probability of any specific pattern of imbalance is known and can be calculated; its occurrence is not evidence that randomization failed.
+
+This distinction matters because it defines what randomization can and cannot protect against. Randomization protects against systematic selection bias: the assignment of sicker, healthier, more compliant, or more motivated patients to one arm based on characteristics that predict the outcome. It does not protect against chance imbalance in small samples, post-randomization imbalance that arises from differential dropout or compliance, or the confounding that enters through unmeasured characteristics after randomization begins.
+
+---
+
+## Simple, blocked, and stratified randomization
+
+The mechanism of randomization—simple, blocked, or stratified—determines how well the protection works in practice and what its vulnerabilities are.
+
+**Simple randomization** assigns each patient independently to treatment or control with fixed probability. It is the purest form of the probabilistic guarantee: each assignment is an independent draw from the allocation distribution, entirely unpredictable from prior assignments. Its limitation is that in small trials, simple randomization can produce large arm imbalances. A trial of 50 patients using simple 1:1 randomization has a non-trivial probability of ending with 30 patients in one arm and 20 in the other. This imbalance reduces statistical efficiency and may raise questions about whether the allocation was truly random.
+
+**Blocked randomization** constrains the allocation within blocks of fixed size to maintain approximate balance at each step. Within each block of size four, for example, exactly two patients are assigned to each arm. The allocation is unpredictable at the patient level but predictable at the block level: if the first three patients in a block of four have all received the same treatment, the fourth must receive the other. This predictability is the vulnerability of blocked randomization: if an enroller knows the block size and can observe prior assignments within the block, they can predict the next assignment. The exploitation of this predictability is the most common mechanism by which allocation concealment fails in trials with unmasked block randomization, and it is addressed in Section 5.3.
+
+**Stratified randomization** combines blocking with stratification: separate randomization lists are maintained for each stratum defined by the stratification factors, and blocked randomization is applied within each stratum. The effect is that the arms are balanced not only overall but within each stratum. The statistical benefit is an efficiency gain in the primary analysis—which, if it reflects the stratification, will have lower residual variance—and protection against chance imbalance in the stratification factors even in small samples. The additional complexity is that the stratification factors must be pre-specified, accurately ascertained at randomization, and consistent with the randomization system's operational implementation. Section 5.2 examines these requirements in detail.
+
+---
+
+## What randomization does not protect against
+
+The most important limitations of randomization are not its internal vulnerabilities—simple vs. blocked vs. stratified—but its boundaries: what it protects and what it leaves unprotected.
+
+**Randomization protects at the moment of assignment.** Once a patient is assigned to an arm, the protection against selection bias is complete for that patient. What happens afterward—whether the patient complies with the assigned treatment, whether they drop out, whether they are assessed at the planned time points, whether they receive additional treatments outside the protocol—is not protected by randomization. If any of these post-randomization events are differentially associated with the treatment assignment—if patients in the treatment arm are more likely to drop out because of side effects, for example—the comparison of outcomes at the primary endpoint may be biased by the differential loss, even though the randomization was perfectly executed.
+
+This is the source of the estimand framework's relevance to bias. The intercurrent event strategy—the decision about how to handle dropouts, rescue medication use, and protocol deviations in the primary analysis—is a decision about what to do with the post-randomization imbalance that randomization could not prevent. Treatment policy strategies embrace the post-randomization imbalance as part of the treatment effect in context. Hypothetical strategies attempt to estimate what the comparison would have been without the post-randomization imbalance. Neither strategy removes the imbalance; they handle it differently in the analysis, with different implications for what the result means.
+
+**Randomization protects against baseline confounding.** It does not protect against confounding that enters after randomization because of the treatment itself. If the treatment causes patients to seek additional care that the control arm does not receive, the additional care is a consequence of the treatment assignment—not a confounder in the classical sense—but it may affect the primary outcome in ways that are not attributable to the treatment directly. Whether this co-intervention effect is part of the treatment effect or a confound depends on the estimand: under a treatment policy strategy, it is part of the effect of being assigned to treatment in context; under a hypothetical strategy, it may be an unwanted component that the analysis attempts to remove.
+
+**Randomization does not protect against measurement bias.** If assessors know which arm each patient is in and adjust their assessments accordingly—rating treated patients' outcomes more favorably, pursuing adverse events more aggressively in the treated arm, or applying outcome criteria differently across arms—the comparison will be biased by the differential assessment, even though the assignment was random. This is the source of the blinding requirement: randomization controls the assignment; blinding controls the assessment.
+
+---
+
+## Covariate-adaptive randomization
+
+Covariate-adaptive randomization—also called minimization—is an alternative to stratified randomization in which each assignment is made to minimize the current imbalance on a set of pre-specified covariates. Rather than maintaining separate randomization lists for each stratum, the algorithm assigns each new patient to the arm that would minimize the current imbalance across all covariates simultaneously.
+
+The advantage of covariate-adaptive randomization is that it can balance on more covariates than stratified randomization can accommodate practically—stratified randomization with more than three or four factors creates too many strata for most trials to populate adequately—while maintaining marginal balance across each factor individually.
+
+The disadvantage is that the statistical analysis must account for the adaptive nature of the assignment. Standard analyses that treat the assignment as if it were simple randomization may produce inflated or deflated test statistics when the assignment was adaptive. The correct analysis for a covariate-adaptive randomization scheme uses a test that conditions on the covariates used in the adaptive algorithm—which is typically an adjusted analysis, not a simple comparison of arm means or proportions.
+
+This creates an administrative requirement: the covariates used in the adaptive algorithm must be pre-specified, documented, and reflected in the primary analysis plan. An adaptive randomization scheme that is not reflected in the primary analysis plan produces a primary result that is either conservative or anti-conservative, depending on the specific design—and in either case, not correctly calibrated to the stated alpha level.
+
+Covariate-adaptive randomization is appropriate when many prognostic factors must be balanced and stratified randomization cannot accommodate them all. It is not appropriate as a convenience substitute for a simpler design that could achieve the necessary balance through fewer stratification factors.
+
+---
+
+## Cluster randomization: when the unit of assignment is not the individual patient
+
+Cluster-randomized trials assign groups of patients—clinics, hospitals, communities, households—rather than individual patients to treatment or control. The cluster assignment is random; the individual assignment is determined by membership in the cluster. This design is appropriate when the treatment is applied at the cluster level—a system-level intervention, a care process change, an environmental modification—or when contamination between individual patients assigned to different arms is unavoidable in the same clinical setting.
+
+Cluster randomization introduces specific vulnerabilities that individual randomization does not. The effective sample size of a cluster-randomized trial is determined not by the number of individuals but by the number of clusters and the intraclass correlation coefficient—the degree to which individuals within the same cluster are more similar to each other than individuals in different clusters. When the intraclass correlation is high, the effective sample size can be substantially smaller than the number of enrolled individuals, and the trial may be severely underpowered if the clustering is not accounted for in the sample size calculation.
+
+Selection bias in cluster-randomized trials operates at the cluster level, not the individual level. If the choice of which clusters are enrolled—and therefore which clusters are randomized to treatment or control—is not independent of the cluster's characteristics, the comparison between arms is confounded at the cluster level. This is the cluster-level analog of individual-level selection bias, and it is addressed by the same mechanism: random allocation of clusters to arms, concealed from the people who decide which clusters participate.
+
+The statistical analysis of cluster-randomized trials must account for the clustering in the primary analysis—typically through mixed-effects models or generalized estimating equations that capture the within-cluster correlation. A standard analysis that treats cluster-randomized data as if it were individually randomized produces a variance estimate that is too small and a test statistic that is anti-conservative: the trial appears more significant than it actually is. This is not a subtle error; it can change the interpretation of the primary result from significant to non-significant.
+
+---
+
+## What this section demands before proceeding
+
+The randomization scheme must be specified before enrollment begins, with the randomization type chosen based on the trial's size, the number of prognostic factors that need to be balanced, and the feasibility of the randomization system. The choice of randomization type should be documented with its rationale and its implications for the primary analysis.
+
+The boundaries of randomization's protection must be acknowledged. Post-randomization imbalance—differential dropout, differential compliance, differential additional treatment—must be addressed through the estimand and the analysis strategy, not assumed away by the randomization. When the estimand and analysis strategy have been settled (in Chapter 1 and Chapter 2), they should be examined for consistency with the expected post-randomization behavior: if differential dropout is expected and the estimand is a treatment policy estimate, the data collection plan must support outcome ascertainment from dropouts.
+
+And the randomization scheme must be matched to the planned analysis. If covariate-adaptive randomization is used, the primary analysis must condition on the covariates. If cluster randomization is used, the primary analysis must account for the clustering. A randomization scheme that is not reflected in the primary analysis produces an analysis whose type I error rate is not controlled at the nominal level—an error that is invisible in the protocol but material in the regulatory review.
+
+---
+
+*References: Schulz and Grimes, "Generation of Allocation Sequences in Randomised Trials: Chance, Not Choice," Lancet 2002; Lachin, "Statistical Properties of Randomization in Clinical Trials," Control Clin Trials 1988; Taves, "Minimization: A New Method of Assigning Patients to Treatment and Control Groups," Clin Pharmacol Ther 1974; Murray, "Design and Analysis of Community Trials," Am J Epidemiol 1998.*

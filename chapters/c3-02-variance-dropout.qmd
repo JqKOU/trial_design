@@ -1,0 +1,92 @@
+---
+title: 3.2 Variance and Dropout
+---
+
+
+## The assumptions that compound quietly
+
+The effect size assumption is the one assumption in the sample size calculation that the clinical team usually notices. It is discussed, challenged, sometimes revised. It is the number whose magnitude the sponsor cares about and whose plausibility the regulator will scrutinize.
+
+The variance and dropout assumptions are different. They are the assumptions that compound quietly—accepted without examination, translated directly from historical estimates or rule-of-thumb conventions into the sample size formula, and then forgotten. They are also the assumptions that are most often wrong in ways that are predictable and preventable.
+
+For continuous outcomes, the critical nuisance parameter is the within-group variance of the primary measure—the variability of the outcome across patients receiving the same treatment. For time-to-event outcomes, the critical nuisance parameters are the baseline event rate in the control arm and the follow-up duration. For binary outcomes, it is the baseline event probability. In all designs, the dropout rate—the proportion of enrolled patients who will not complete the primary endpoint assessment—acts as a multiplier on the required sample size.
+
+Each of these parameters is estimated before the trial. Each estimate can be wrong. And when multiple estimates are simultaneously wrong in the same direction—variance higher than assumed, dropout greater than assumed, control arm event rate lower than assumed—the compounding error can reduce the effective power of the trial from 90% to below 50% without anyone noticing until the interim analysis or the final database lock.
+
+---
+
+## Variance: the number that hides heterogeneity
+
+For continuous outcomes, the variance of the primary endpoint determines how much of the observed difference between arms is signal and how much is noise. A large variance means that individual patient outcomes vary widely, even within a treatment arm, making it harder to detect the difference between arms. A small variance means that patient outcomes cluster tightly around the arm mean, making differences easier to detect.
+
+The variance assumption is typically borrowed from prior studies—the same endpoint, similar populations, comparable treatment contexts. This borrowing is reasonable as far as it goes. Its limitation is that variance is not a stable property of an endpoint; it is a property of an endpoint in a specific patient population at a specific stage of disease with specific measurement conditions. When the current trial's population differs from the prior studies in ways that affect outcome variability—younger or older, more or less heterogeneous in disease severity, measured more or less frequently—the borrowed variance may be wrong.
+
+A more subtle problem is that variance estimates from prior studies reflect the realized variability under those studies' conditions, which may have included informative censoring, differential dropout, or endpoint measurement protocols that differ from the current design. These differences are invisible in the aggregate variance estimate but can substantially affect the variance in the new trial.
+
+The practical consequence is that the variance assumption in the sample size calculation should be accompanied by a range—a plausible lower and upper bound—and the sample size should be evaluated at both extremes. If the power at the upper bound of the variance range is unacceptable, the design is fragile with respect to this assumption, and either the sample size should be increased or a sample size re-estimation should be planned prospectively.
+
+What the variance assumption should not be is the point estimate from the closest available historical study, accepted without examination and translated directly into the formula. Point estimates from historical studies have confidence intervals. Those confidence intervals reflect uncertainty that will be realized, one way or another, in the current trial.
+
+---
+
+## The dropout problem
+
+Dropout—the failure of enrolled patients to complete the primary endpoint assessment—is the assumption in the sample size calculation that is most reliably underestimated and most consequentially wrong.
+
+The mathematics of dropout is straightforward. If 20% of enrolled patients are expected to drop out before the primary endpoint, the effective sample size is 80% of the enrolled sample. To achieve the planned power with a 20% dropout rate, the trial must enroll 25% more patients than the power calculation without dropout adjustment would require. This adjustment is standard and well-understood.
+
+What is less well-understood is that dropout assumptions are routinely optimistic, for the same reasons that effect size assumptions are routinely optimistic—the people making the assumption are the people most committed to the trial's success, and a higher assumed dropout rate means a larger, more expensive, more time-consuming trial.
+
+The available data on dropout rates in clinical trials suggests that actual dropout rates consistently exceed assumed rates, often by substantial margins. In chronic disease trials, where the treatment period is long and the patient burden is high, the discrepancy is particularly marked. A trial that assumes 10% dropout based on the experience of a shorter phase II study in a more motivated patient population may find 25% dropout in the longer, more burdensome phase III context. This is not a random error; it is a predictable consequence of borrowing dropout assumptions from contexts that differ from the current trial in ways that matter.
+
+Three sources of dropout deserve explicit examination at design. **Administrative dropout** is dropout that occurs because the patient moves, loses insurance, or is withdrawn at the site's discretion for reasons unrelated to treatment response. **Dropout due to adverse events** is withdrawal from study treatment because of tolerability problems, which may be related to the treatment and therefore informative about the treatment's effect. **Dropout due to lack of efficacy** is withdrawal because the patient is not improving and seeks alternative treatment, which is highly informative about the treatment's effect under a treatment policy estimand and confounding under a hypothetical estimand.
+
+The distinction among these types of dropout matters for both the sample size calculation and the estimand. Administrative dropout is approximately uninformative; its frequency should be estimated from the trial logistics and patient population, and the sample size should be inflated accordingly. Dropout due to adverse events and lack of efficacy is potentially informative; under a treatment policy estimand, outcome data from these patients after dropout should be collected, which changes both the data collection plan and the effective sample size. If the dropout assumption treats all dropout as uninformative administrative loss, and a substantial portion of actual dropout is informative, the trial is both underpowered and using the wrong analysis strategy—two problems that compound each other.
+
+---
+
+## Estimating control arm event rates
+
+For time-to-event outcomes, the required number of events—not the required number of patients—is the primary driver of sample size. The number of events depends on the total follow-up time accumulated by enrolled patients, which depends on the control arm event rate, the recruitment pace, and the follow-up duration. These three quantities interact, and errors in any one of them affect the trial's power.
+
+The control arm event rate is the most consequential of these three. If the event rate is lower than assumed, events accumulate more slowly, the trial takes longer to reach the target number of events, and—if the trial is terminated at a pre-specified calendar time rather than at a target event count—the trial will be underpowered. If the event rate is higher than assumed, events accumulate faster; the trial may reach the target events sooner, but the faster accumulation may reflect a different patient population than intended, with different prognostic characteristics.
+
+Control arm event rates are estimated from historical data—prior trials, registries, natural history studies. The fundamental challenge is that event rates in historical controls are often not transferable to the current trial because standard-of-care background therapy has improved. A cardiovascular prevention trial designed in 2010 using control arm event rates from 2000-era trials will enroll patients who are receiving more intensive statin therapy, better blood pressure management, and more aggressive lifestyle intervention than the historical controls received. Their event rates will be lower. The trial will take longer to accumulate the target events, will enroll longer than planned, and may find that the anticipated absolute benefit of the new treatment is smaller than assumed because the competing risk reduction from background therapy has compressed the opportunity for the new treatment to demonstrate incremental benefit.
+
+This is not a hypothetical concern. It has been observed repeatedly in cardiovascular outcome trials conducted over the past two decades, where declining control arm event rates have extended trial timelines and reduced the absolute effect sizes observed, even when the relative effects were as expected. The design team must examine the trend in control arm event rates over time in the relevant patient population, not just the point estimate from the most recent available trial.
+
+---
+
+## Interaction between dropout and event rate assumptions
+
+In time-to-event trials, dropout and event rate assumptions interact in a way that is not always appreciated in the sample size calculation.
+
+Informative censoring—dropout that is associated with the likelihood of having an event—reduces the information content of the censored patients and changes the effective hazard ratio the trial is estimating. If patients who are not responding to treatment are more likely to drop out, the observed event rate in the treatment arm will be lower than it would have been if all patients had remained on treatment, because the non-responders who would have had events are no longer being followed. This produces an apparent treatment effect that overestimates the true effect—and it is not corrected by the standard sample size formula, which assumes non-informative censoring.
+
+The sample size calculation for a time-to-event trial that expects substantial informative dropout should include a sensitivity analysis that accounts for the informative censoring mechanism. This is not a common component of standard sample size packages, and it requires explicit modeling assumptions about the relationship between dropout propensity and event risk. But in trials where informative dropout is expected—oncology trials where disease progression leads to treatment switches, chronic disease trials where lack of efficacy leads to withdrawal—the standard calculation may be materially misleading.
+
+---
+
+## The compounding error
+
+The central concern of this section is not any single misspecification of variance, dropout, or event rate. It is the compound effect of multiple simultaneous misspecifications in the same direction.
+
+In a trial where variance is 20% higher than assumed, dropout is 10 percentage points higher than assumed, and the control arm event rate is 15% lower than assumed, the effective power may fall from 90% to below 60%—a catastrophic loss that was not visible in any single assumption but is the product of three independently plausible errors. This kind of compound misspecification is not rare. It is the normal outcome of sample size calculations that borrow assumptions from multiple sources, each reasonable in isolation, without examining their joint behavior.
+
+The guard against compound misspecification is scenario analysis that jointly varies the key assumptions. Not three separate univariate sensitivity analyses—each informative but each showing only the effect of one wrong assumption—but a joint scenario analysis that asks: if variance is at the upper end of the plausible range, dropout is at the upper end, and event rate is at the lower end, what is the power? If the answer to that question is unacceptable, the design is fragile in a way that needs to be addressed—by a larger sample size, by a pre-specified re-estimation rule, or by acknowledging the fragility explicitly and accepting the associated risk.
+
+Joint scenario analysis is more work than univariate sensitivity analysis. It is also the only analysis that is honest about the actual distribution of outcomes the trial design is committing to. A design that looks robust in isolation but collapses under joint pessimism is not a robust design. It is a design that has not been examined carefully enough.
+
+---
+
+## What this section demands before proceeding
+
+Before Section 3.3 addresses event rate uncertainty in detail, the variance and dropout assumptions must be documented with the same care as the effect size assumption.
+
+The variance estimate requires a source, an applicability assessment, a plausible range, and a power evaluation at both ends of the range. The dropout estimate requires a breakdown by dropout type—administrative, adverse event, lack of efficacy—with separate estimates and sources for each type. The control arm nuisance parameter—event rate, baseline probability, or variance, depending on the endpoint type—requires a trend analysis over time in the relevant patient population, not just a point estimate from the nearest available study.
+
+And the joint scenario analysis—varying all three categories of nuisance parameter simultaneously to their pessimistic values—must be conducted and its result documented. If the power at the joint pessimistic scenario is acceptable, the design is robust. If it is not, the design is fragile, and the fragility is a design decision that must be acknowledged and addressed before enrollment begins.
+
+---
+
+*References: Friedman et al., Fundamentals of Clinical Trials, 5th ed. (2015); Lachin, "Introduction to Sample Size Determination and Power Analysis," Control Clin Trials 1981; Proschan, "Two-Stage Sample Size Re-Estimation Based on a Nuisance Parameter," J Biopharm Stat 2005; Hernán, "The Hazard of Hazard Ratios," Epidemiology 2010.*

@@ -1,0 +1,100 @@
+---
+title: 6.4 Subgroup Discipline
+---
+
+
+## The subgroup problem
+
+No result in clinical trial reporting is more systematically misinterpreted than the subgroup analysis. When the primary analysis succeeds, subgroup analyses appear to identify the patients who benefited most—and clinicians adjust their prescribing toward those patients. When the primary analysis fails, subgroup analyses appear to rescue the trial by identifying a population in whom the treatment worked—and the sponsor reframes the program around that population. In both cases, the subgroup finding is typically interpreted with more confidence than the evidence supports.
+
+The mechanism is mathematical and well-understood. When a trial with adequate power for the overall population is subdivided into subgroups, each subgroup is smaller than the overall trial and is therefore underpowered for the subgroup-specific effect. An underpowered analysis has low probability of detecting a real effect—and also a high probability of producing an apparently significant result by chance when tested against the background of all the subgroups that were examined. A trial that tests twenty subgroup hypotheses, each at the nominal 5% alpha level, expects one false positive by chance alone. When the primary analysis succeeds and the team then examines twenty subgroups to identify who benefited most, the subgroup that shows the largest apparent effect is likely the product of chance variation rather than a true differential effect.
+
+This is not a theoretical concern. The empirical literature on subgroup analyses in clinical trials documents a systematic pattern: apparent subgroup effects are often not reproduced in subsequent trials powered for the subgroup hypothesis, are frequently not consistent with biological plausibility, and are asymmetrically reported—positive subgroup findings are more likely to be highlighted than negative ones.
+
+The design response to this pattern is pre-specification, power, and discipline in claim framing.
+
+---
+
+## Confirmatory versus exploratory subgroup analyses
+
+The fundamental distinction in subgroup analysis is between confirmatory and exploratory.
+
+A **confirmatory subgroup analysis** is one for which the trial was specifically designed to support a claim. It is pre-specified before enrollment in the protocol, has adequate power based on a separate sample size calculation for the subgroup, is included in the hierarchical testing plan with appropriate error control, and is supported by a biological rationale that is plausible and documented. A confirmatory subgroup finding—when all of these conditions are met—supports a claim about the treatment's effect in that subgroup with the same logical force as the primary analysis supports the overall claim.
+
+The conditions for a confirmatory subgroup analysis are demanding, and they are demanding for a reason: a confirmatory claim in a subgroup is a claim that the treatment works specifically in those patients, with an error rate that is controlled and stated. If the design conditions are not met—if the analysis was post-hoc, if the power was not calculated for the subgroup, if the error control did not account for the number of subgroups examined—the claim is not confirmatory regardless of how significant the p-value is.
+
+An **exploratory subgroup analysis** is one that does not meet the conditions for a confirmatory claim. It is hypothesis-generating: it identifies patterns in the data that are potentially interesting and warrant further investigation. An exploratory finding may be consistent with a prior biological hypothesis; it may be the basis for a new trial designed to confirm the hypothesis in the subgroup population. What it is not is evidence of a differential treatment effect in the subgroup, at the claimed error rate, to a degree that would support a label claim or change clinical practice without further investigation.
+
+The distinction between confirmatory and exploratory is not about the p-value. An exploratory subgroup finding with a p-value of 0.002 is not more confirmatory than an exploratory subgroup finding with a p-value of 0.02—because the p-value of an exploratory finding is conditioned on the data having been seen and the subgroup having been selected, which invalidates the error rate interpretation of the p-value.
+
+---
+
+## What makes a subgroup analysis confirmatory
+
+The four conditions for a confirmatory subgroup analysis are not all equally weight-bearing, and understanding which ones are most critical clarifies what the design must do.
+
+**Pre-specification** is the minimum necessary condition. An analysis that was not specified before the data were seen cannot be confirmatory, regardless of any other feature. Pre-specification means the subgroup-defining variable, the cut-point defining the subgroup, and the analysis plan are documented in the protocol and the SAP before unblinding. A subgroup analysis that appears in the SAP but not the protocol is less well-established than one that appears in both. An analysis that appears in neither is post-hoc regardless of when it was first discussed internally.
+
+**Biological rationale** is the prior probability element. A subgroup analysis that is pre-specified and biologically motivated—the treatment targets a pathway that is more active in the subgroup, or the subgroup is defined by a biomarker that the treatment mechanism directly engages—has a higher prior probability of being a true differential effect than a subgroup analysis defined by a demographic variable with no mechanistic connection to the treatment. When the biological rationale is strong, a significant subgroup finding is more likely to be real. When the rationale is weak—when the subgroup is a demographic category that was examined because it was available—the significant finding is more likely to be a false positive.
+
+**Adequate power** is the most operationally demanding condition. The subgroup analysis must have been powered to detect the subgroup-specific effect. This requires a separate sample size calculation for the subgroup, based on the expected subgroup-specific effect size and the expected size of the subgroup in the enrolled population. If the subgroup comprises 30% of the enrolled population, and the trial was powered for the overall effect, the subgroup analysis has at most 30% of the planned events or subjects, and its power for the subgroup-specific effect—which may differ from the overall effect—may be inadequate even for a large overall effect.
+
+**Error control** is the multiplicity condition. A confirmatory subgroup analysis must be included in the hierarchical testing plan with alpha allocated to it, or its alpha must be separated from the primary and secondary hierarchy with an explicit Bonferroni or equivalent correction for the number of subgroup hypotheses being tested. A subgroup analysis that is tested at the nominal alpha, in addition to the primary and secondary hierarchy, has consumed alpha that was not allocated to it—inflating the family-wise type I error.
+
+---
+
+## The biomarker subgroup: a special case
+
+The biomarker-defined subgroup—patients who are positive or negative for a specific biomarker—has become the most clinically important and most carefully scrutinized form of subgroup analysis in modern clinical trial design. Companion diagnostics, targeted therapies, and precision medicine strategies all depend on biomarker-defined patient selection, and the claim that a treatment works specifically in biomarker-positive patients requires the same evidentiary standards as any other confirmatory claim.
+
+The specific design challenge for biomarker subgroups is the interaction between the biomarker test performance and the trial's claim. If the biomarker test is imperfect—if some patients classified as biomarker-positive are actually negative, and some biomarker-negative patients are actually positive—the comparison between biomarker-positive and biomarker-negative patients is diluted by the misclassification. A trial that enrolls all patients regardless of biomarker status and then compares outcomes by biomarker status will observe a diluted biomarker effect, because the misclassified patients are in the wrong subgroup.
+
+This dilution can be addressed by prospective biomarker enrichment—enrolling only biomarker-positive patients, or enriching the population toward biomarker-positive patients—rather than relying on retrospective subgroup analysis. Prospective enrichment transforms the biomarker subgroup from an exploratory analysis into the primary population of the trial, and the trial's claims are naturally bounded to the biomarker-positive population. This is the design appropriate for a treatment whose mechanism specifically targets a biomarker-defined pathway and for which there is no clinical rationale for benefit in the biomarker-negative population.
+
+When the biomarker's role is less certain—when there may be benefit in both biomarker-positive and biomarker-negative patients, or when the biomarker's clinical implementation is imperfect—an all-comers design with a pre-specified biomarker subgroup analysis is appropriate. The design must specify the primary analysis population (overall or biomarker-positive), the subgroup analysis for the other population, and the multiplicity control for the joint claim across both populations.
+
+The FDA's guidance on companion diagnostics and enrichment strategies reflects these considerations, and the EMA's guidance on biomarker-defined subpopulations is similarly explicit. A biomarker subgroup claim—one that asserts the treatment works specifically in biomarker-positive patients—requires a companion diagnostic that is validated for the biomarker test, analytical validation of the assay, and clinical validation of the biomarker's predictive value. Meeting these requirements before the trial is designed, not after the subgroup analysis identifies an apparent differential, is the design standard.
+
+---
+
+## Interaction tests and what they cannot show
+
+The standard approach to assessing whether a treatment effect differs between subgroups is the statistical test of interaction: does the effect size in the subgroup differ from the effect size in the complement of the subgroup by more than would be expected by chance? A significant interaction test is taken as evidence of a differential treatment effect. A non-significant interaction test is taken as evidence that the treatment effect is homogeneous across the subgroups.
+
+Both interpretations are problematic, and for the same reason: interaction tests are underpowered. A trial powered to detect the overall treatment effect at 80-90% power is typically powered for an interaction test at only 20-30% power, because the interaction test requires detecting a difference between effect sizes, and the effect sizes in each subgroup are estimated with more uncertainty than the overall effect size. An interaction test that fails to achieve significance does not demonstrate homogeneity; it demonstrates that the trial was not powered to detect heterogeneity.
+
+The consequence is that the absence of a significant interaction does not validate subgroup-specific claims. A treatment that shows an apparently strong effect in men and an apparently weak effect in women is not validated as having a homogeneous effect across sex by a non-significant interaction p-value of 0.12—because the test was not powered to detect the apparent difference. The non-significant interaction is consistent with a true differential as large as the observed apparent difference.
+
+Conversely, a significant interaction—a p-value below 0.05 for the test that the treatment effect differs between subgroups—does not confirm a clinically meaningful differential. The interaction test is subject to multiple testing if many subgroup interactions are tested; a significant interaction from a large number of exploratory interaction tests is expected by chance. And even a pre-specified interaction test that achieves significance may reflect a difference in the nuisance parameters—the baseline event rates or the variance—across subgroups rather than a true differential treatment effect.
+
+The honest framing of subgroup results is therefore one of consistent uncertainty: the observed effects in each subgroup, with their confidence intervals, as descriptive summaries of the data in those groups; the interaction test p-value as a measure of the evidence for heterogeneity, with explicit acknowledgment of the test's low power; and the clinical plausibility of the observed pattern as additional context. A confident claim about differential treatment effects across subgroups requires a trial that was designed to make that claim—with adequate power, pre-specified hypotheses, and controlled error—not a post-hoc analysis of a trial designed for the overall effect.
+
+---
+
+## The forest plot and its misreading
+
+The forest plot—the graphical display of subgroup-specific treatment effects, with confidence intervals, arrayed vertically by subgroup category—has become the standard visual presentation of subgroup results. It is also the source of one of the most systematic misreadings in clinical reporting.
+
+The forest plot presents a visual impression of differential effects. Subgroups whose confidence intervals do not cross the null appear to "show benefit." Subgroups whose confidence intervals cross the null appear to "not show benefit." The visual impression is that the treatment works in some subgroups and not in others, based on the statistical significance of each subgroup's confidence interval.
+
+This impression is produced by the underpowered nature of each subgroup's estimate, not by a genuine differential effect. When the treatment effect is homogeneous across subgroups, the subgroup estimates will vary randomly around the true effect, and some will cross the null by chance—not because those subgroups do not benefit, but because the subgroup samples are small and the estimates are imprecise. The forest plot, by displaying statistical significance visually, creates the impression that the variation reflects genuine differential effects.
+
+The appropriate reading of a forest plot is consistency checking, not significance reading. The question the forest plot should answer is: are the subgroup estimates consistent with the overall treatment effect, or are there subgroups whose effects are implausibly discordant? Implausible discordance—an effect in one direction in a large subgroup and the opposite direction in another large subgroup, for a plausible mechanistic reason—is evidence of genuine heterogeneity. Random variation around the overall estimate, with some confidence intervals crossing the null and others not, is not.
+
+The forest plot should therefore be accompanied by the overall treatment effect and its confidence interval—the reference against which each subgroup estimate is compared—and by the interaction test results, with explicit acknowledgment of the test's power. Without these elements, the forest plot is a visual invitation to misread exploratory results as confirmatory claims.
+
+---
+
+## What this section demands before proceeding
+
+The subgroup analysis plan must be complete before enrollment begins. It must specify which subgroup analyses are confirmatory—meeting all four conditions for a confirmatory claim—and which are exploratory. The confirmatory subgroup analyses must be included in the hierarchical testing plan or assigned separately controlled alpha. The exploratory subgroup analyses must be labeled as hypothesis-generating in the protocol and the SAP, with explicit statements that they do not support confirmatory claims.
+
+The biomarker-defined subgroups, if any, must be connected to a companion diagnostic with pre-specified analytical and clinical validation criteria, and the biomarker's role in the trial's primary population versus subgroup analysis must be specified.
+
+And the forest plot interpretation guidelines must be pre-specified: what the trial will and will not conclude from a visual pattern of subgroup effects, what consistency checking criteria will be applied, and what the threshold for reporting a subgroup finding as hypothesis-generating rather than hypothesis-confirming is.
+
+Subgroup discipline is not skepticism about subgroup analyses. It is precision about what they can and cannot show—and the precision must be established before the data are seen, not constructed from the data that were seen.
+
+---
+
+*References: Rothwell, "Subgroup Analysis in Randomised Controlled Trials: Importance, Indications, and Interpretation," Lancet 2005; Assmann et al., "Subgroup Analysis and Other (Mis)Uses of Baseline Data in Clinical Trials," Lancet 2000; Brookes et al., "Subgroup Analyses in Randomized Trials: Risks of Subgroup-Specific Conclusions," Ann Intern Med 2004; FDA Guidance for Industry, Enrichment Strategies for Clinical Trials (2019).*

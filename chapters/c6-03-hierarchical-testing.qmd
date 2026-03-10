@@ -1,0 +1,88 @@
+---
+title: 6.3 Hierarchical Testing
+---
+
+
+## The problem hierarchical testing solves
+
+A clinical trial that tests only the primary hypothesis exhausts all of its alpha on a single claim. This is coherent but often insufficient: treatments that work on the primary endpoint frequently also work on secondary endpoints, and the evidence of that secondary benefit has clinical and regulatory value. A trial that cannot claim secondary benefits because it spent all its alpha on the primary is a trial that has left evidence on the table.
+
+But a trial that tests ten secondary hypotheses, each at the nominal alpha level, has a family-wise type I error rate far above alpha. If the primary succeeds, and if each of the ten secondary tests is conducted at 5% one-sided, the probability that at least one secondary is a false positive—claimed as significant when the true effect is zero—is high. The accumulated false positives enter the label, the clinical guidelines, and the prescribing behavior of physicians who trust that each claim was supported by evidence controlled at the stated error rate.
+
+Hierarchical testing—the sequential testing procedure that tests hypotheses in a pre-specified order, advancing to the next hypothesis only when the current one has been confirmed—solves this problem by borrowing the structure of the primary test to control the family-wise type I error across the entire hierarchy. When the primary succeeds, the full alpha is available for the first secondary. When the first secondary succeeds, the full alpha is available for the second secondary. At each step, the test is conducted at the full nominal alpha—not at a corrected alpha—because the sequential conditioning controls the error rate without individual corrections.
+
+The cost is the stopping rule: when a hypothesis in the hierarchy fails to achieve significance, all subsequent hypotheses in the hierarchy are treated as exploratory, regardless of their individual p-values. The hierarchy is a one-way gate: once closed, it does not reopen.
+
+---
+
+## Designing the hierarchy
+
+The hierarchy is a sequence of clinical claims, ordered by scientific priority and clinical importance. Designing it requires answering two questions: what is in the hierarchy, and in what order?
+
+What is in the hierarchy depends on what the trial is designed to claim if the primary succeeds. Secondary endpoints that are part of the label claim—that the sponsor intends to assert in the regulatory submission and that require controlled type I error—should be in the hierarchy. Secondary endpoints that are informative but not intended to support label claims can be analyzed without alpha allocation and reported as exploratory. Subgroup analyses that are pre-specified as confirmatory—for which the trial has adequate power and a specific claim is intended—may be included in the hierarchy. Safety endpoints are not typically in the efficacy hierarchy; they are monitored separately under a different statistical framework.
+
+The order of the hierarchy is a clinical decision. The convention is to order hypotheses from the most to the least important—from the perspective of the clinical claim, not the statistical significance. The most important secondary endpoint should be first in the hierarchy because it is the one that, if confirmed after the primary succeeds, constitutes the second most important claim the trial can make. Ordering by expected statistical significance—putting the hypothesis most likely to succeed first, to protect the weaker hypotheses that follow—is a design choice that prioritizes claim efficiency over clinical importance, and it should be made consciously and documented, not adopted by default.
+
+The specific ordering also has implications for what happens when a hypothesis in the middle of the hierarchy fails. If the hierarchy is ordered by clinical importance, a failure in the middle closes off less important claims below—which is the scientifically appropriate consequence. If the hierarchy is ordered by statistical likelihood, a failure in the middle closes off claims that might be clinically more important than the ones above the failed hypothesis—which is a consequence that the design team should examine before finalizing the order.
+
+---
+
+## Fixed sequence testing versus graphical procedures
+
+The simplest hierarchical testing procedure is fixed sequence testing: hypotheses are ordered before the trial begins, and testing proceeds sequentially until a failure occurs. The type I error rate is controlled without any alpha redistribution—when a hypothesis is confirmed, the full alpha is passed to the next hypothesis in the sequence.
+
+Fixed sequence testing is straightforward and transparent, but it is brittle: a failure at any point in the hierarchy closes all subsequent hypotheses, regardless of their clinical importance. If the second hypothesis in the hierarchy is the one with the strongest clinical evidence and the most important label claim, but the first hypothesis—which must be tested first because of the pre-specified order—fails, the second hypothesis is lost.
+
+Graphical procedures—also called graph-based multiple testing procedures or the Bretz-Maurer-Branson framework—address this brittleness by specifying not just the order of testing but the rules for redistributing alpha when a hypothesis is confirmed or when a hierarchy branch fails. In a graphical procedure, the hypotheses are represented as nodes in a directed graph, and the edges of the graph specify how alpha flows between hypotheses when each is confirmed or rejected. When a hypothesis is confirmed, its alpha is redistributed to other hypotheses in the graph according to the pre-specified weights on the edges. The result is a more flexible testing procedure that can continue claiming secondary hypotheses even when some intermediate hypotheses fail, as long as the flow of alpha is pre-specified.
+
+The flexibility of graphical procedures is their advantage and their vulnerability. A graphical procedure that is complex—with many nodes and many conditional alpha flows—can be designed to be highly resilient to failures at specific nodes, continuing to protect important hypotheses even when intermediate ones fail. But the same complexity makes the procedure difficult to verify, to explain to a regulator, and to audit for correct implementation. The design team must be able to show that the graphical procedure controls the family-wise type I error under all possible outcomes—all possible subsets of confirmed and rejected hypotheses—and this demonstration is not always straightforward for complex graphs.
+
+The practical advice is to use graphical procedures when the added flexibility is necessary—when the clinical importance of the hypotheses does not align with the order in which fixed sequence testing would require them to be tested—and to keep the graph as simple as the clinical claims allow. A graphical procedure with two or three nodes and a small number of well-specified edges is defensible and auditable. A graphical procedure with eight nodes and conditional flows that depend on which combination of hypotheses have been confirmed is not.
+
+---
+
+## The fallback and the fallback's failure modes
+
+A common design element in hierarchical testing is the fallback: a lower-level hypothesis that is tested even if a higher-level hypothesis fails, because the lower-level hypothesis does not depend on the higher-level one for its clinical rationale. The fallback is not technically part of the main hierarchy—it is a parallel branch that is activated when the main branch closes.
+
+For example, a trial might have a primary hypothesis about all-cause mortality, a secondary hypothesis about cardiovascular death, and a fallback hypothesis about cardiovascular death and hospitalization—a composite that is expected to be positive even if the mortality endpoint is not significant. The fallback is tested at a separately allocated alpha, independent of the main hierarchy, so that its significance does not depend on the mortality hypothesis having been confirmed.
+
+The fallback is legitimate when the separate alpha allocation is pre-specified and the clinical rationale for the fallback endpoint is independent of the main hierarchy. It is illegitimate when the fallback is designed to guarantee a significant result even if the main hierarchy fails—when the fallback is the easy endpoint that the team expects to cross the threshold regardless of what happens to the primary.
+
+The failure mode of the fallback is that it becomes the de facto primary endpoint—the endpoint that the trial is really powered for and really intended to claim—while the main hierarchy is maintained as a high-aspirational structure that is expected to fail. A trial with this structure is not a trial with a meaningful primary endpoint and a well-considered fallback. It is a trial with a primary endpoint that is not the primary and a fallback that is the real primary, and the design has obscured the actual scientific intent behind the appearance of a rigorous hierarchy.
+
+---
+
+## What counts as pre-specified
+
+The hierarchy is pre-specified only if it was fixed before the data were seen. This requires that the protocol or statistical analysis plan—finalized before unblinding—contains the complete hierarchy: every hypothesis, in the order it will be tested, with the decision rule for each.
+
+Partial pre-specification—specifying the primary and first secondary but leaving the remaining hierarchy to be "finalized in the SAP"—does not constitute pre-specification if the SAP is finalized after interim data are available. The hierarchy must be final before any look at the unblinded outcome data. A hierarchy that was developed based on the observed direction of secondary endpoint results—even if developed in good faith—is a post-hoc hierarchy, and the claims it generates are post-hoc claims.
+
+The distinction between pre-specified and post-hoc claims is the most consequential distinction in claim discipline. A pre-specified claim, confirmed at the stated alpha level, is a claim with a known and controlled type I error rate. A post-hoc claim, regardless of its p-value, is a claim with an unknown error rate—inflated by the unknown number of hypotheses that were considered but not selected, and by the influence of the observed data on the selection of hypotheses. The p-value of a post-hoc claim is a conditional probability, conditioned on the data having been seen, that is not the same as the unconditional type I error rate the nominal alpha implies.
+
+---
+
+## Interaction between the hierarchy and interim analyses
+
+Chapter 4's interim analysis plan and Chapter 6's hierarchical testing plan interact in a way that is not always addressed in the design documentation.
+
+When the primary endpoint crosses the efficacy boundary at an interim analysis and the trial stops early, the secondary endpoints are analyzed at the same data cut. The hierarchical testing framework for the secondary endpoints must be pre-specified for this scenario: which secondary endpoints are tested at the interim if the primary succeeds, in what order, at what information fraction of the secondary endpoint data, and with what alpha adjustment for the fact that the secondary data are also interim.
+
+This interaction is frequently overlooked. The design documents the primary efficacy hierarchy for the final analysis and the primary stopping rule for the interim—but not the secondary hierarchy for the scenario in which the primary succeeds at the interim. When the trial stops early based on the primary, the analysis team must construct the secondary analysis at the interim, and in the absence of pre-specification, the construction will be post-hoc.
+
+The pre-specification requirement for this scenario is: if the trial stops early based on the primary efficacy crossing the boundary, the secondary hypotheses will be tested in the following order at the interim data cut, with the following alpha allocation. This specification must be in the SAP before the first interim analysis, not constructed at the time the stopping decision is made.
+
+---
+
+## What this section demands before proceeding
+
+The hierarchical testing plan must be complete before enrollment begins. Complete means: every hypothesis in the hierarchy is named, the order is specified and justified on clinical grounds, the decision rule for each position in the hierarchy is stated, the alpha allocation across the hierarchy is defined, and the handling of the interim-stops scenario is pre-specified.
+
+If graphical procedures are used, the graph must be documented with its edge weights and its alpha redistribution rules, and the team must be able to demonstrate that the procedure controls the family-wise type I error under all possible outcomes.
+
+The hierarchy is the design's claim structure. What it contains—and what it does not contain—defines what the trial is and is not capable of claiming, regardless of what the data show. Designing the hierarchy is designing the claims. It must be done before enrollment, by the people who understand both the clinical importance of the hypotheses and the statistical consequences of the ordering.
+
+---
+
+*References: Bretz et al., "Graphical Approaches for Multiple Comparison Procedures," Pharm Stat 2009; Maurer and Bretz, "Multiple Testing in Group Sequential Trials," Stat Biopharm Res 2013; Dmitrienko et al., "Key Multiplicity Issues in Clinical Drug Development," Stat Med 2013; FDA Guidance for Industry, Multiple Endpoints in Clinical Trials (2017).*

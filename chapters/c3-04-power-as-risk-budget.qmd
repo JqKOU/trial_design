@@ -1,0 +1,96 @@
+---
+title: 3.4 Power as Risk Budget
+---
+
+
+## What power actually is
+
+Power is defined as the probability of rejecting the null hypothesis when the null hypothesis is false—the probability that the trial will detect a real treatment effect when one exists. In a trial with 80% power at the assumed effect size, there is an 80% probability that the trial will produce a statistically significant result, and a 20% probability that it will not, if the true treatment effect is exactly as assumed.
+
+This definition is correct and familiar. It is also misleading in a specific way: it frames power as a property of the trial, when it is better understood as a choice the design team makes about risk.
+
+The 20% complement of power is the type II error rate—the probability of a false negative, of failing to detect a real treatment effect. That 20% is not a law of nature. It is a design decision. The design team chose 80% power, which means they chose to accept a 20% probability of missing a real effect. They could have chosen 85%, or 90%, or 95%. Each choice has a cost—in sample size, in trial duration, in resources, in the time that passes before patients who might benefit from the treatment can receive it. The choice among these options is not statistical. It is a judgment about risk: how much risk of missing a real benefit is acceptable, and who bears the consequence of that risk?
+
+Reframing power as a risk budget makes the design decision visible. Instead of "we need 80% power," the question becomes: "we are willing to accept a 20% risk of missing a real treatment effect, and we are assigning that risk to the patients who would benefit from early access to this treatment if it is real. Is that allocation acceptable?"
+
+---
+
+## The asymmetry of error consequences
+
+The two error types in hypothesis testing—type I (false positive) and type II (false negative)—have asymmetric consequences in clinical trial design, and the asymmetry is not always reflected in the conventional choices of alpha and power.
+
+A type I error is approving or recommending a treatment that does not work. The consequences are resource misallocation—patients receive a treatment that provides no benefit, paying in cost and burden and opportunity cost—and erosion of evidence quality, if the false positive enters the literature and influences clinical practice. In regulatory terms, a type I error is an unsafe approval, and it is treated as a serious failure. This is why alpha is conventionally set at a stringent 5% (one-sided) or 2.5%: the consequences of falsely claiming efficacy are severe, and the threshold for rejection of the null is correspondingly high.
+
+A type II error is failing to detect or recommend a treatment that works. The consequences are delayed access—patients who would benefit from the treatment do not receive it—and lost investment in a program that was real but failed to demonstrate its reality. In regulatory terms, a type II error is a missed approval. It is treated as unfortunate but not as a failure of the regulatory system.
+
+The conventional asymmetry—alpha of 5% (one-sided), power of 80%—implies that the consequences of a false positive are four times more serious than the consequences of a false negative. For many treatments in many indications, this asymmetry is defensible: a false approval exposes many patients to an ineffective treatment, while a false negative delays access for a definable patient population that can be served by subsequent trials or approved alternatives.
+
+But the asymmetry is not always defensible. For treatments in serious diseases with no effective alternatives, the consequence of a false negative is not merely delay—it is denial of access to a beneficial treatment to a population that has no other option and may not survive long enough for a subsequent trial to be completed and approved. In this context, treating a type II error as four times less serious than a type I error is a value judgment that should be explicit, not embedded in a conventional formula.
+
+The FDA's accelerated approval pathway and the EMA's conditional marketing authorization both reflect, in part, a recognition that in serious conditions with high unmet need, the acceptable type I/type II error asymmetry may be different from the conventional 5%/20% ratio. Designs in these contexts should consider whether the conventional power level reflects the actual consequences of each error type in the specific indication.
+
+---
+
+## Power as a function of effect size: reading the curve
+
+Power is commonly reported as a single number—"the trial has 80% power"—at the assumed effect size. This single number is the least informative representation of the trial's operating characteristics.
+
+The power curve—the relationship between power and the true treatment effect, plotted across a range of possible true effects—is the informative representation. It shows not just what happens if the true effect equals the assumed effect, but what happens if the true effect is smaller, and what happens if it is larger.
+
+A typical power curve for a superiority trial has the following shape: power is near the type I error rate (alpha) when the true effect is zero; power rises monotonically as the true effect increases; power approaches 100% when the true effect is large relative to the assumed effect. The slope of the rise determines how sensitive the trial is to departures from the assumed effect.
+
+For a design decision, the most informative parts of the curve are not the peak (power at the assumed effect, where the trial was designed to be adequate) but the flanks. Specifically:
+
+The power at an effect 20-30% smaller than assumed. This is the region where a plausibly wrong effect size assumption would place the trial. If the power at a 25% downward departure from the assumed effect is below 50%, the trial is highly sensitive to an assumption that may be too optimistic, and the design should be reconsidered.
+
+The power at the minimum clinically important difference. If the power at the minimum meaningful effect is below an acceptable threshold—below 60%, say—the trial risks being inconclusive even when the treatment produces a real and clinically meaningful benefit. This is the specific failure mode that powering for the minimum clinically important difference is designed to prevent.
+
+These two readings of the power curve should be reported alongside the power at the central assumed effect for every sample size report. A design team that has not examined the power curve—that knows only the power at the central assumption—has not understood what the trial is committing to.
+
+---
+
+## The 80% convention and when it is wrong
+
+The 80% power convention has no statistical basis. It is a rule of thumb that has persisted because it represents a plausible balance between the costs of insufficient power and the costs of excessive sample size, given the conventional alpha of 5% (two-sided) or 2.5% (one-sided). In a world where sample sizes are constrained and most clinical trials are in indications where subsequent trials are feasible if the first one fails, 80% is a reasonable operating point.
+
+In several specific contexts, 80% is the wrong choice.
+
+**Confirmatory trials with no alternative path.** When the trial is the definitive evidence base for an indication—when the treatment will be approved or not based on this trial, and no subsequent trial is planned—the cost of a false negative is borne entirely by the patients who would have benefited from the treatment. In this context, the 20% type II error rate is a 20% probability of failing the patient population, and 90% or higher power may be appropriate.
+
+**Trials with high assumed effect sizes.** When the assumed effect size is generous—based on optimistic extrapolation from early trials or biological reasoning—the power at a more conservative effect size may be inadequate even if the power at the central assumption is 80%. In this case, 80% power at the central assumption may correspond to 50% power at a more realistic effect size, and the 80% figure is misleadingly reassuring.
+
+**Trials where the null is not the relevant comparison.** In non-inferiority designs, the relevant comparison is not whether the treatment effect is zero but whether it is within the non-inferiority margin. The power in an NI design is the probability that the trial correctly concludes non-inferiority when the treatment is in fact non-inferior. The conventional 80% applies here as well, but the consequences of a false negative—failing to conclude non-inferiority for a treatment that is genuinely non-inferior—are different from failing to detect a superior treatment effect, and the appropriate power level should be considered in that context.
+
+**Trials in pediatric populations or rare diseases.** When the patient population is small and trial replication is difficult, the conventional 80% power may not be achievable at an acceptable sample size. Regulators and ethics committees have recognized this: the FDA's guidance on trials in rare diseases and the EMA's guidance on pediatric trials both acknowledge that lower power may be acceptable when the patient population is inherently limited. In these contexts, the design team should document the actual power achievable, the rationale for accepting that power, and the implications for evidence strength of the anticipated result.
+
+---
+
+## Allocating the risk budget
+
+The power level is not the only design parameter that allocates the risk of a false negative. Several other design choices affect the probability of detecting a real effect, and they should be understood as part of the same risk budget.
+
+**Alpha allocation.** For a fixed total alpha, a more stringent alpha for the primary test reduces power. Designing a trial with a pre-specified subgroup analysis that claims a share of the alpha—even a small share—reduces the power of the primary test. The primary test's power should be calculated at the adjusted alpha level, not at the unadjusted 5% (two-sided), if alpha sharing is planned. This interaction between alpha allocation (Chapter 6) and power (Chapter 3) is often not computed at design, leading to a primary test that is less powerful than intended.
+
+**Interim analyses.** Pre-specified interim efficacy analyses reduce the power of the final analysis through alpha spending. If the interim analysis uses 1% of the nominal 2.5% one-sided alpha, the final analysis is conducted at the remaining 1.5%—and the power of the final analysis at that adjusted level is lower than the power at the unadjusted level. The power reported in the sample size report should reflect the adjusted levels after interim analysis alpha spending, not the unadjusted level. This is a standard computation, but it is not always performed or reported.
+
+**Stratified analyses.** Stratified analyses—adjusting for pre-specified stratification factors in the primary analysis—typically increase power by reducing unexplained variability. If stratification factors are pre-specified in the randomization but not included in the primary analysis, the power gain from stratification is not captured. The sample size calculation should reflect the analysis that will actually be performed.
+
+**Missing data.** The assumed dropout rate affects the effective sample size. If the dropout assumption is wrong—as it frequently is—the effective sample size is smaller than planned, and the power is lower than calculated. The power reported in the sample size report is conditional on the assumed dropout rate; the power at the realized dropout rate is lower and not reported until the trial is over.
+
+Each of these adjustments reduces the operating power below the headline figure. A trial with 80% power before accounting for interim analyses, alpha sharing, and realistic dropout may have an actual power of 70% or below. This is the risk budget that the design team is actually committing to, and it should be calculated and acknowledged—not obscured by reporting only the most favorable number.
+
+---
+
+## The power report as a design document
+
+The sample size and power report should be treated as a design document, not a technical appendix. It should include:
+
+The assumed effect size, with sources, a plausible range, and the rationale for the chosen operating point. The power at the central assumption, at the lower end of the plausible effect size range, and at the minimum clinically important difference. The nuisance parameter assumptions—variance, dropout, event rate—with their sources and ranges. The power at joint pessimistic assumptions. The power at the adjusted alpha level accounting for interim analyses and alpha sharing. The rationale for the chosen power level—why this power, for this trial, for this patient population.
+
+A power report that contains only "assuming a hazard ratio of 0.75 with 90% power at a one-sided alpha of 0.025, the required number of events is 312" has not done the job. It has produced a number. The design team needs a document that makes the risk budget explicit, assigns accountability for the key assumptions, and shows what happens when the assumptions are wrong.
+
+That document is what a regulator reviewing the design rationale, a DSMB reviewing the monitoring plan, or a clinical team deciding whether to commit resources to the trial needs to see. It is not supplementary to the design. It is the design.
+
+---
+
+*References: Cohen, Statistical Power Analysis for the Behavioral Sciences, 2nd ed. (1988); Lakens et al., "Justify Your Alpha," Nat Hum Behav 2018; Wittes, "Sample Size Calculations for Randomized Controlled Trials," Epidemiol Rev 2002; Altman and Bland, "Statistics Notes: Absence of Evidence Is Not Evidence of Absence," BMJ 1995.*

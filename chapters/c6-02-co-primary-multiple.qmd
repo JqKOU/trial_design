@@ -1,0 +1,82 @@
+---
+title: 6.2 Co-Primary and Multiple Primary Endpoints
+---
+
+
+## When two primary endpoints appear
+
+Two primary endpoints in a trial design are almost never a statistical decision. They are a signal—of unresolved scientific questions, of competing stakeholder interests, or of regulatory requirements that the single most clinically meaningful endpoint cannot satisfy alone.
+
+The unresolved scientific question: the treatment may affect two distinct dimensions of the disease that are both clinically important and not reducible to a single measure. A treatment for heart failure might be expected to reduce mortality and to improve symptoms; neither one captures the full picture of benefit, and demonstrating benefit on only one might leave the treatment's value incomplete for clinical and regulatory purposes. A treatment for a progressive neurodegenerative disease might need to show both a slowdown in disease progression and an improvement in functional ability; one without the other would raise questions about whether the benefit is clinically meaningful.
+
+The competing stakeholder interests: the clinical team wants the most clinically meaningful endpoint; the regulatory agency has established a precedent for a specific endpoint in this indication; the payer wants an economic endpoint; the patient advocacy community wants a patient-reported endpoint. When no single endpoint satisfies all stakeholders, the trial acquires multiple primaries—one for each constituency, each with the implicit expectation that it will succeed.
+
+The regulatory requirement: in some indications, approval requires demonstration of benefit on both a disease-specific endpoint and a clinical outcome endpoint. The trial must show both to make the label claim the sponsor intends. Two primaries are not a design choice but a regulatory condition.
+
+These motivations differ in their scientific legitimacy, and the design of the co-primary structure must reflect the motivation. When two primaries are scientifically necessary—because neither alone captures the full claim—the trial should require both to succeed. When two primaries reflect competing interests, the trial needs a pre-specified decision rule that resolves the competition without allowing post-hoc cherry-picking of the endpoint that happened to cross the threshold.
+
+---
+
+## The conjunctive and disjunctive decision rules
+
+A trial with two primary endpoints must specify, before enrollment, which of two decision rules applies.
+
+Under a **conjunctive rule** ("and"), the trial claims success only if both primary endpoints achieve significance. The trial is designed to show that the treatment works on both dimensions simultaneously. The power calculation must account for the joint probability—not just the probability that each individual endpoint achieves significance, but the probability that both do. If the two endpoints are positively correlated—which they often are when they measure related aspects of the same disease—the joint power is higher than the product of the individual powers. If they are uncorrelated, the joint power is approximately the product. The sample size must be calculated for the joint criterion, not for each endpoint separately.
+
+The conjunctive rule is the more demanding standard. It is appropriate when the scientific claim requires demonstrating both dimensions of benefit simultaneously—when the treatment's value cannot be established without showing it works on both endpoints. Its cost is that the trial fails if either endpoint fails, even if the other endpoint shows a large and clinically meaningful benefit.
+
+Under a **disjunctive rule** ("or"), the trial claims success if either primary endpoint achieves significance. The power calculation is for the probability that at least one endpoint achieves significance, which requires specification of the correlation between endpoints. The type I error calculation must account for the probability of a false positive on either endpoint: if each is tested at alpha, the joint false positive probability exceeds alpha by an amount that depends on the correlation. The standard correction—testing each endpoint at a Bonferroni-adjusted alpha—is overly conservative when the endpoints are positively correlated. Better approaches use the correlation directly to compute the joint test.
+
+The disjunctive rule is the less demanding standard. It is appropriate when demonstrating benefit on either dimension is clinically sufficient—when the treatment would be used if it demonstrates benefit on either endpoint, independently of the other. Its cost is that the type I error is inflated unless explicitly controlled, and its use is sometimes a rationalization for testing two endpoints in the hope that one will cross the threshold.
+
+The regulatory agencies are attentive to which rule is in use and whether it is appropriate for the scientific claim. A conjunctive rule that is later proposed to be relaxed to disjunctive—after the data show that one endpoint succeeded and the other did not—is a post-hoc change to the decision rule, which the agency will reject as a violation of the pre-specification requirement. A disjunctive rule that was pre-specified is defensible; a disjunctive rule that was constructed from a conjunctive plan after unblinding is not.
+
+---
+
+## The type I error challenge
+
+The specific type I error challenge of co-primary endpoints is the joint family-wise error rate. If both endpoints are tested at alpha, the probability of a false positive on at least one is higher than alpha when the decision rule is disjunctive, and lower than alpha when the decision rule is conjunctive.
+
+Under a conjunctive rule, the joint type I error rate is actually controlled at alpha without any correction, because both endpoints must achieve significance—and the probability that both are simultaneously false positives is lower than the probability that either individually is a false positive. The conjunctive rule is therefore liberal in the direction of type II error (lower power for the joint criterion) and conservative in the direction of type I error (lower probability of a joint false positive). No multiplicity correction is required for a conjunctive rule to control the type I error at alpha.
+
+Under a disjunctive rule, the joint type I error rate exceeds alpha, and a correction is required. The Bonferroni correction—testing each endpoint at alpha/2—is the simplest and most conservative correction. More efficient corrections use the correlation between the endpoints: when the correlation is high, the joint false positive probability is close to alpha even without correction, and less correction is needed. The appropriate correction should be derived from the anticipated correlation between the two endpoints and documented in the statistical analysis plan.
+
+The practical challenge is that the correlation between the two endpoints must be estimated before the trial, from prior data, to determine the appropriate correction. If the correlation is overestimated—if the design assumes high correlation but the actual correlation is lower—the correction will be insufficient and the type I error will be inflated. If it is underestimated, the correction will be excessive and the trial will be unnecessarily conservative. The sensitivity of the type I error to the correlation estimate should be examined in the design documentation.
+
+---
+
+## Two primaries as a symptom of unresolved design
+
+When two primary endpoints appear not because the science requires both but because the design process did not resolve which one should be primary, the two-endpoint structure creates problems that are not solved by any decision rule.
+
+The most common symptom of this situation is a trial where one endpoint is clinically preferred but uncertain to achieve significance—because it is a hard clinical endpoint that accumulates slowly—and the other endpoint is more sensitive but less clinically compelling—because it is a surrogate or a composite with a high-frequency component. The trial tests both, hoping that the sensitive endpoint will cross the threshold if the hard endpoint does not. The implicit strategy is: if the hard endpoint succeeds, claim the clinically meaningful result; if it fails but the surrogate succeeds, claim the biological signal.
+
+This strategy is not a co-primary design. It is a hedged design with a post-hoc decision rule: the claim will be framed around whichever endpoint succeeded. A genuinely pre-specified co-primary design specifies the decision rule—conjunctive or disjunctive—before enrollment and applies it regardless of which endpoint succeeds. A hedged design applies different framing to the results depending on what the data show.
+
+The regulatory agencies distinguish between the two. A co-primary design with a pre-specified decision rule, applied faithfully, is a defensible design even if the result is mixed. A hedged design with post-hoc framing is a design that allowed the trial to claim different things depending on the data, which is exactly what the pre-specification requirement is designed to prevent.
+
+The diagnostic question for any proposed co-primary design is: if the trial were to fail on endpoint A but succeed on endpoint B, what would the sponsor do? And: if it were to succeed on endpoint A but fail on endpoint B, what would the sponsor do? If the answer to both questions is "claim success," the design is disjunctive and should be explicitly designed as such. If the answer to the first question is "fail the trial" and the second is "claim success," the design is not co-primary—endpoint A is primary and endpoint B is secondary. Forcing it into a co-primary structure without this clarity is asking for post-hoc rationalization.
+
+---
+
+## Multiple primary endpoints in regulatory context
+
+The regulatory requirements for co-primary endpoint designs have become more specific in recent years, reflecting the agencies' experience with trials that used co-primary structures as vehicles for flexible post-hoc claiming.
+
+The FDA expects co-primary designs to specify the decision rule, the type I error control for the joint test, the power for the joint criterion, and the scientific rationale for why both endpoints are necessary for the claim. A protocol that proposes two primary endpoints without addressing these four elements will receive a deficiency request before the trial begins, not a question after it is over.
+
+The EMA's position is similar, with additional specificity about the minimum clinically important difference for each endpoint and the clinical interpretation of mixed results—when one endpoint succeeds and the other fails. Specifying the clinical interpretation of mixed results in advance is not standard practice in most trials, but it is the logical consequence of a conjunctive or disjunctive decision rule: if the rule is conjunctive and one endpoint fails, the trial has failed; the clinical interpretation of the failing endpoint's result should be stated. If the rule is disjunctive and one endpoint fails, the trial has succeeded; the clinical interpretation of the failing endpoint's result—which was not required for success—should also be stated, so that the claim is honest about what the trial showed on the endpoint that did not contribute to the success criterion.
+
+Pre-specifying the interpretation of mixed results is uncomfortable—it forces the design team to confront scenarios they would prefer not to think about—but it is the minimum required to claim that the co-primary structure was genuinely pre-specified rather than designed to allow post-hoc framing.
+
+---
+
+## What this section demands before proceeding
+
+Before the hierarchical testing framework of Section 6.3 can be designed, the co-primary structure must be resolved. If there are two primary endpoints, the decision rule—conjunctive or disjunctive—must be specified, the type I error control for the joint test must be derived from the anticipated correlation, and the power for the joint criterion must be calculated and reflected in the sample size. The interpretation of mixed results must be pre-specified, including what the trial will claim and what it will not claim if one endpoint succeeds and the other fails.
+
+If the proposed co-primary structure is a symptom of unresolved design—if the two endpoints reflect competing interests rather than a genuine scientific requirement for both—the structure should be resolved before it is formalized. The resolution is a design decision: one endpoint is primary, the other is secondary, and the trial is powered accordingly. This resolution may be uncomfortable. It is less uncomfortable than a regulatory review that asks why the co-primary structure was designed to allow claiming success on either endpoint independently.
+
+---
+
+*References: FDA Guidance for Industry, Multiple Endpoints in Clinical Trials (2017); EMA Guideline on Multiplicity Issues in Clinical Trials (2017); Sozu et al., "Sample Size for Clinical Trials with Co-Primary Composite Endpoints," Stat Med 2010; Dmitrienko and D'Agostino, "Multiplicity Considerations in Clinical Trials," N Engl J Med 2013.*

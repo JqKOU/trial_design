@@ -1,0 +1,96 @@
+---
+title: 3.3 Event Rate Uncertainty
+---
+
+
+## Why event rates deserve a section of their own
+
+Section 3.2 introduced event rate uncertainty as one of several nuisance parameters that compound quietly in the sample size calculation. This section treats it separately, because time-to-event designs are the dominant paradigm in the indications—cardiovascular disease, oncology, infectious disease—where the largest and most consequential trials are run, and because event rate uncertainty in these designs has a distinctive structure that is not captured by the general discussion of nuisance parameters.
+
+In a continuous outcome trial, a wrong variance assumption produces an incorrect sample size. In a time-to-event trial, a wrong event rate assumption produces incorrect sample size and incorrect trial duration simultaneously. These two errors interact. A trial that is too small and too short cannot be rescued by running it longer; a trial that is the right size but based on an overly optimistic event rate will run longer than planned, recruiting beyond the originally projected enrollment completion, consuming resources and delaying the result. The cascade from a single wrong assumption propagates through the entire trial conduct timeline.
+
+The second reason for separate treatment is that event rate assumptions embed multiple independent sub-assumptions, each of which can be wrong independently. The total number of events the trial needs depends on: the baseline event rate in the control arm, the proportion of events attributable to the cause under study versus competing causes, the follow-up duration per patient, the enrollment pace, and the censoring pattern. Getting the baseline rate right but the enrollment pace wrong produces the same kind of under-event problem as getting the event rate wrong. The trial ends up at the planned calendar date with fewer events than planned, facing either an extension or an underpowered primary analysis.
+
+---
+
+## The declining control arm event rate
+
+The most consequential and most predictable form of event rate misspecification is the failure to account for secular trends in the background event rate.
+
+In almost every major indication where randomized controlled trials have been conducted over multiple decades, the event rate in control arm patients has declined over time. In cardiovascular prevention, the event rates observed in control arms of major trials conducted in the 1980s and 1990s were substantially higher than those observed in trials conducted in the 2010s, even in nominally similar patient populations. The reasons are well-understood: better background pharmacotherapy, more intensive management of risk factors, higher rates of revascularization, and improved secondary prevention practices have reduced the absolute risk that placebo-treated or standard-care patients face over a given follow-up period.
+
+For trial design, the consequence is specific: a sample size calculation that uses event rates from trials conducted five or ten years earlier will systematically overestimate the event rate in the current control arm, leading to a trial that is adequately sized on paper but under-powered in practice because events accumulate more slowly than assumed.
+
+This is not a theoretical concern. Several landmark cardiovascular outcome trials conducted in the 2010s—including trials mandated as post-approval commitments following accelerated approvals based on surrogate endpoints—enrolled substantially and unexpectedly lower control arm event rates than the power calculations assumed, leading to longer trial durations, larger enrolled sample sizes than originally planned, and in some cases primary results that were statistically underpowered despite correct recruitment of the target number of patients.
+
+The correction is systematic analysis of secular trends. The design team should identify all available trials in the relevant patient population over a span of at least ten years, plot the control arm event rates over calendar time, and use the trend to project the expected event rate at the time of the current trial. If the trend is clearly downward, the sample size calculation should use a conservative (lower) event rate assumption rather than the most recent observed rate, because the trend is likely to continue during the years the new trial is being conducted.
+
+---
+
+## Competing risks and cause-specific event rates
+
+In many time-to-event trials, the primary endpoint is a specific type of event—cardiovascular death, cancer-specific survival, time to hospitalization—rather than all-cause mortality. When the primary endpoint is a specific event type, competing events—events that prevent the primary endpoint from occurring—affect the event rate in a way that is not always accounted for in the sample size calculation.
+
+If the primary endpoint is cardiovascular death and patients are also at risk of non-cardiovascular death, patients who die from non-cardiovascular causes before experiencing a cardiovascular death are censored from the cardiovascular-specific analysis. In a trial with a high competing risk of non-cardiovascular mortality—for example, a trial in elderly patients with multiple comorbidities—a substantial fraction of enrolled patients will be censored due to competing events before reaching the cardiovascular endpoint. This reduces the effective event rate for the primary endpoint, requiring a longer follow-up or a larger sample to accumulate the target number of primary events.
+
+Competing risk misspecification is most common in elderly populations, in indications where non-primary mortality is high, and in trials that focus on disease-specific rather than all-cause outcomes. The sample size calculation for such trials should include an explicit accounting for the competing risk—using cause-specific hazard models that separate the primary event rate from the competing event rate—rather than treating the primary endpoint as if it were the only event the patient could experience.
+
+When competing risks are ignored, the sample size calculation overestimates the primary event rate (because it implicitly assumes that censored patients would have had the primary event if they had survived longer), leading to a trial that is undersized for the number of primary events it will actually observe.
+
+---
+
+## Enrollment pace and the calendar time problem
+
+A time-to-event trial accumulates events over calendar time as a function of the number of patients enrolled, the follow-up duration per patient, and the underlying event rate. These three quantities interact, and errors in any one of them affect when the trial will have accumulated the target number of events.
+
+The enrollment pace assumption is systematically optimistic in clinical trials. In a 2015 analysis of industry-sponsored trials, actual enrollment rates were on average 30-40% below projected rates. The reasons include slower-than-anticipated site activation, competing trials competing for the same patient population, more restrictive eligibility criteria as applied in practice versus as written in the protocol, and seasonal variation in patient presentation. These are predictable sources of enrollment delay that should be reflected in the design's enrollment assumptions.
+
+The interaction between enrollment pace and event accumulation is important and not always intuitive. In a trial with a target of 500 events and a planned enrollment of 2,000 patients over two years with three additional years of follow-up, an enrollment pace that takes three years instead of two does not simply extend the trial by one year. It changes the follow-up distribution across enrolled patients—later-enrolling patients have shorter follow-up, fewer of them accumulate the long-term follow-up that produces most events in a chronic disease trial, and the event rate per patient-year of observation may be lower because the later-enrolled patients have shorter observation time. The relationship between enrollment delay and event accumulation delay is superlinear, not linear.
+
+Sample size simulation—rather than analytical power formulas—is the appropriate tool for quantifying this interaction. A simulation that models enrollment pace, event accumulation, censoring, and calendar time can produce realistic estimates of when the trial will reach its event target under a range of assumptions, including pessimistic ones. This kind of simulation is more informative than an analytical power calculation and should be the primary tool for event-driven time-to-event trial design.
+
+---
+
+## The information fraction and what it actually means
+
+In event-driven time-to-event trials, the "information fraction"—the proportion of the target events that have been observed at any given interim analysis—is the operational currency of the monitoring plan. An interim analysis at 50% information fraction is an analysis conducted when half the target events have been observed. An alpha-spending function that allocates significance boundaries as a function of information fraction assumes that this fraction is measured correctly.
+
+This assumption fails when the total target information—the planned number of events—is wrong.
+
+If the trial was designed for 500 events based on an event rate assumption that turns out to be too optimistic, and the trial will actually accumulate only 400 events over the planned follow-up period, the 50% information fraction interim analysis occurs when 200 events have been observed—but 200 events represent 50% of 400 (the actual target the trial can achieve), not 50% of 500 (the planned target). The alpha-spending function that was calibrated to the 500-event plan is now being applied to a 400-event reality. The resulting operating characteristics—the probability of stopping early under the null, the probability of stopping early when the effect is real—are not what was planned.
+
+This is not a minor technicality. It means that a trial with a miscalibrated event rate assumption will have interim analysis operating characteristics that differ from what the design team planned and what the regulatory agency approved. The DSMB will make stopping recommendations based on a monitoring plan that no longer corresponds to the trial's actual informational structure.
+
+The guard against this is prospective sample size re-estimation based on the observed event rate, conducted at an interim time point before the interim efficacy analysis, by an independent statistician who does not see the treatment arm-specific data. Section 3.4 discusses the broader context of adaptive sample size adjustments; the event rate-specific application is that the planned number of events should be revisited as the trial accumulates data on the control arm event rate, and adjusted before the primary interim analysis is conducted.
+
+---
+
+## When the event rate assumption proves wrong: the options
+
+When it becomes clear during a trial that the event rate is lower than assumed and the trial will not reach the target events within the planned follow-up period, the design team faces a constrained set of options, none of them costless.
+
+**Extend the follow-up.** If the event rate is lower than assumed but the treatment effect is real and time-stable, extending the follow-up will eventually accumulate the needed events. This option is feasible when the trial infrastructure can be maintained and funding extended, but it delays the primary result, increases total cost, and may strain site and patient participation. It also requires regulatory notification and often a protocol amendment, which introduces additional scrutiny.
+
+**Enroll additional patients.** If follow-up extension alone is insufficient—because the enrollment window is closing and later-enrolling patients will not have adequate follow-up—additional enrollment can add patient-time that accelerates event accumulation. This requires reopening enrollment, which requires regulatory and ethics approvals, and may require sites that have already been closed.
+
+**Accept a reduced target.** The trial may be completed with a target event count that is lower than originally planned, accepting correspondingly lower power. This option is defensible when the observed event rate, while lower than assumed, still provides adequate information to detect a clinically meaningful effect, but it requires acknowledging that the trial was designed for a different operating characteristic than it will actually achieve.
+
+**Expand the primary endpoint.** In some trials, the primary endpoint can be broadened—adding an additional component to a composite, or expanding the follow-up window for event ascertainment—to increase the event count without additional enrollment or extended calendar time. This option requires careful examination for its implications for the estimand: broadening the endpoint changes what the trial is estimating, and the change must be scientifically defensible and pre-specified (or at minimum, transparently post-hoc and not data-driven).
+
+None of these options is attractive, and all of them are more expensive than getting the event rate assumption right at design. The practical lesson is that event rate assumptions deserve more scrutiny at design than they typically receive—specifically, that secular trend analysis, competing risk analysis, and enrollment pace simulation should be standard components of sample size planning for every event-driven time-to-event trial.
+
+---
+
+## What this section demands before proceeding
+
+Before Section 3.4 reframes power as a risk budget, the event rate assumption must have been examined with the following components:
+
+A secular trend analysis of control arm event rates in comparable trials over the past ten or more years, with a projected event rate at the time of the current trial based on the observed trend. A competing risk analysis identifying the major competing events in the patient population, with estimates of their frequency and their effect on the primary event rate. An enrollment pace simulation that models the distribution of follow-up time across enrolled patients under a range of enrollment rate assumptions, and translates that distribution into an expected event accumulation curve over calendar time.
+
+The event accumulation curve should be examined at both the central and pessimistic scenarios. If the pessimistic curve does not reach the target event count within an acceptable calendar time, the trial design is fragile—either the sample size must increase, the follow-up must extend, or the target event count must be reduced, with each option's consequences explicitly acknowledged.
+
+This is the work that prevents the options described in the previous section from becoming necessary. Not all of them—event rate uncertainty cannot be eliminated—but the ones that arise from assumptions that were not examined.
+
+---
+
+*References: Pocock and Stone, "The Primary Outcome Is Positive — Is That Good Enough?" N Engl J Med 2016; Wittes and Lachin, "Monitoring a Clinical Trial with Adaptive Interim Analyses," Stat Med 2001; Lachin and Foulkes, "Evaluation of Sample Size and Power for Analyses of Survival with Allowance for Nonuniform Patient Entry, Losses to Follow-up, Noncompliance, and Stratification," Biometrics 1986; Fine and Gray, "A Proportional Hazards Model for the Subdistribution of a Competing Risk," JASA 1999.*

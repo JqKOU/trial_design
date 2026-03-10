@@ -1,0 +1,78 @@
+---
+title: 6.1 Claims, Not P-values
+---
+
+
+## What a p-value is
+
+A p-value is a probability. Specifically, it is the probability of observing a test statistic at least as extreme as the one observed, under the assumption that the null hypothesis is true. When this probability falls below the pre-specified alpha threshold, the null hypothesis is rejected.
+
+This is a narrow, precisely defined statement. It refers to a specific test, conducted on a specific dataset, under specific assumptions, at a specific alpha level. It says nothing about the size of the treatment effect, its clinical relevance, its generalizability, its durability, or its applicability to patients who were not enrolled. It is a rejection of a null hypothesis. It is not a claim about the treatment.
+
+The conflation of a p-value below 0.05 with a positive trial result—and of a positive trial result with a claim that the treatment works—is one of the most consequential confusions in clinical research. It allows a trial to cross the significance threshold on a test of a surrogate endpoint and claim clinical benefit. It allows a trial to achieve significance on the least important component of a composite endpoint and claim overall clinical efficacy. It allows a trial with a statistically significant result in a subgroup to assert that the treatment works in that subgroup. In each case, the p-value is real; the claim exceeds what the p-value supports.
+
+---
+
+## What a claim requires
+
+A claim—a statement about what the treatment does, for whom, by how much, under what conditions—requires more than a p-value. It requires four elements that must be established before the data are seen.
+
+**Pre-specification.** The claim must correspond to a pre-specified analysis. This means the analysis was defined in the protocol or statistical analysis plan before unblinding, with sufficient detail that a second statistician, reading the plan, would conduct the same analysis and reach the same conclusion. A claim based on an analysis that was not pre-specified is a claim based on a post-hoc observation, and post-hoc observations are hypothesis-generating, not confirmatory.
+
+**Appropriate error control.** The claim must be made at a pre-specified type I error rate that accounts for all the tests conducted to reach it. If the trial tested five hypotheses and claims success based on the second one, the claim is valid only if the error rate for the second test reflects the multiplicity of the five-test procedure. A claim made at the nominal alpha without accounting for multiplicity is a claim made at an inflated type I error rate—a claim that appears more certain than it is.
+
+**Adequate power.** The claim must be supported by a trial that was adequately powered for the specific test generating the claim. A trial powered for the primary hypothesis is not necessarily powered for secondary hypotheses. A trial powered for the overall population is not powered for subgroup analyses. A claim based on a test that was not powered to detect the effect size required for the claim is a claim based on an underpowered test—which may be true but cannot be confirmed with the stated confidence.
+
+**Honest framing.** The claim must not assert more than the evidence shows. A significant effect on a surrogate endpoint should not be framed as demonstrated clinical benefit without establishing the surrogate-outcome relationship. A significant effect in a pre-specified subgroup should not be framed as the primary claim without acknowledging that the trial was powered for the overall population. A secondary endpoint that crossed the threshold only because the primary succeeded under a hierarchical plan should not be framed with the same confidence as the primary.
+
+These four requirements—pre-specification, error control, power, honest framing—are the constitutive elements of a claim. A statistical result that satisfies all four is a claim. A result that satisfies fewer is an observation, a hypothesis, or a finding—all of which are valuable, but none of which is a claim in the sense that a regulatory submission or a clinical practice change requires.
+
+---
+
+## The gap between the result and the claim
+
+The gap between a statistically significant result and a defensible claim is where most overclaiming occurs. The gap has three dimensions.
+
+**The scale gap.** The result is expressed on the statistical scale—a test statistic, a p-value, a confidence interval—and the claim is expressed on the clinical scale—a reduction in mortality, an improvement in function, a decrease in hospitalizations. The translation from one scale to the other is the effect measure, discussed in Chapter 2. The claim must be expressed in the effect measure's units, at the effect size the trial observed, with the uncertainty reflected in the confidence interval. A claim that omits the confidence interval—that reports only the point estimate—is a claim that hides the uncertainty. A confidence interval that is wide enough to include clinically trivial effects is evidence that the trial is underpowered to support a strong claim.
+
+**The population gap.** The result is generated from the enrolled population—defined by the eligibility criteria—and the claim may be intended for a broader or different population. A trial that enrolled patients with moderate-to-severe disease cannot directly claim the effect in mild disease. A trial that enrolled primarily male patients cannot directly claim the effect in female patients. The claim must be bounded by the population in which it was generated, and extrapolations beyond that population require explicit justification, not implicit extension.
+
+**The time gap.** The result is generated at the primary endpoint time point—the duration of follow-up specified in the protocol—and the claim may be intended to extend beyond that time point. A trial with twelve weeks of follow-up cannot directly claim that the effect persists at two years. The durability of the effect is a separate claim that requires separate evidence. When durability data are not available, the claim should be bounded to the duration of the trial.
+
+Each dimension of the gap can be bridged—by a trial that was designed to generate the relevant evidence—or acknowledged—by a claim that is honest about its limits. What it should not be is ignored.
+
+---
+
+## The p-value as a decision tool, not a truth statement
+
+The p-value functions as a decision tool in the regulatory system: a pre-specified threshold, crossed or not crossed, determines whether the trial has met its primary objective. This function is appropriate—the binary decision rule provides clarity and prevents post-hoc adjustment of the decision criterion—but it is not the same as a truth statement about the treatment's efficacy.
+
+A p-value of 0.049 and a p-value of 0.051 are nearly identical in their evidential content. The difference between them—crossing the threshold or not—is consequential for regulatory decisions but should not be consequential for scientific inference. A trial that fails by 0.002 is not a failed trial in the scientific sense; it is a trial whose evidence was insufficient to meet the pre-specified decision criterion. Conversely, a trial that succeeds with a p-value of 0.048 on a test of questionable relevance has met the decision criterion without necessarily supporting the clinical claim.
+
+The regulatory system uses the p-value as a decision tool because it needs a decision rule that is objective, pre-specified, and not subject to post-hoc adjustment. This is the right tool for that purpose. It is not the right tool for evaluating what the trial has contributed to clinical knowledge. For that purpose, the effect size, the confidence interval, the consistency across subgroups, the clinical plausibility of the result, and the relationship between the surrogate and the clinical outcome are all more informative than the p-value alone.
+
+The design implication is that the primary claim—the one that the regulatory decision rests on—should be specified as a decision rule: the trial succeeds if the primary endpoint test achieves significance at the pre-specified alpha level. The scientific claims—what the trial contributes to knowledge about the treatment—should be framed as evidence statements: the trial showed an estimated effect of X with a 95% confidence interval of Y to Z, which is clinically meaningful by the standards established before the trial. These are different statements, and they should be distinguished.
+
+---
+
+## When the primary fails: the secondary claim problem
+
+When the primary endpoint fails to achieve significance, the statistical hierarchy—described in Section 6.3—closes: no secondary endpoint can be claimed as confirmatory, because the gate-keeping test has not been passed. This is the correct consequence of hierarchical testing. It is also the consequence most commonly violated in practice.
+
+The violation takes several forms. The most common is elevating a secondary endpoint to clinical significance based on its numerical result, without acknowledging that the primary hierarchy has closed. A trial that fails on the primary endpoint but shows a statistically significant secondary endpoint can report the secondary result as an observation—but it should not be framed as evidence of efficacy in the same sense that a pre-specified primary endpoint success would be. The secondary result has been tested in the context of a failed primary, and its significance is not protected from the multiple testing that the hierarchical structure was designed to prevent.
+
+A second form of violation is changing the framing of the primary failure. A trial whose primary endpoint failed but whose secondary results suggest a benefit may be presented as a trial that "showed positive trends" or "demonstrated signals of activity" or "achieved significance on multiple exploratory analyses." Each of these framings may be technically accurate. None of them acknowledges that the trial failed on its pre-specified primary objective and that the secondary results are hypothesis-generating rather than confirmatory.
+
+The honest framing of a failed primary is: the trial did not demonstrate the pre-specified primary objective. The secondary results are as follows, and they generate the following hypotheses for future investigation. This framing does not prevent the secondary results from being informative. It does prevent them from being overclaimed.
+
+---
+
+## What this section demands before proceeding
+
+Before the multiplicity structure of Section 6.2 can be designed, the primary claim must be fully specified. This means: the statement the trial will make if the primary hypothesis is confirmed, expressed in terms of the effect measure (from Chapter 2), for the population defined by the estimand (from Chapter 1), at the time point and duration of the trial, with the confidence level established by the alpha and power of the design.
+
+This statement is not a marketing message and not a regulatory summary. It is the scientific claim: what this trial is designed to show, specified in enough detail that after the trial is over, it is unambiguous whether the claim was supported. If the statement cannot be written before enrollment—if it depends on what the data show—it is not a pre-specified claim. It is a post-hoc rationalization waiting to be constructed.
+
+---
+
+*References: Wasserstein and Lazar, "The ASA's Statement on p-Values," Am Stat 2016; Ioannidis, "The Importance of Predefined Rules and Prespecified Statistical Analyses," JAMA 2019; Gelman and Loken, "The Statistical Crisis in Science," Am Sci 2014; ICH E9(R1) Addendum on Estimands (2019).*

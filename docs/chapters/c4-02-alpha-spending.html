@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4.2 Alpha Spending – Clinical Trial Design Decision Framework</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/c4-03-operating-characteristics.html" rel="next">
+<link href="../chapters/c4-01-why-sponsors-want-interim.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/c4-00-overview.html">Chapter 4: When Might We Stop Early?</a></li><li class="breadcrumb-item"><a href="../chapters/c4-02-alpha-spending.html"><span class="chapter-title">4.2 Alpha Spending</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Clinical Trial Design Decision Framework</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/JqKOU/trial_design" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Clinical Trial Design Decision Framework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c1-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 1: What Are We Trying to Show?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-01-purpose-estimand.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 Purpose and Estimand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-02-endpoint-choice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 Endpoint Choice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-03-intercurrent-events.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.3 Intercurrent Events and Estimand Strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 Closing: What Has Been Decided, and What It Costs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c2-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2: How Will We Measure the Difference?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-01-effect-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Effect Measures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-02-interpretability-efficiency.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Interpretability and Efficiency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-03-ni-margin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 The Non-Inferiority Margin</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Closing: The Measure Is a Commitment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c3-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 3: What Are We Committing To?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-01-effect-size-ownership.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Effect Size Ownership</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-02-variance-dropout.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.2 Variance and Dropout</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-03-event-rate-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.3 Event Rate Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-04-power-as-risk-budget.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.4 Power as Risk Budget</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.5 Closing: The Commitment Behind the Number</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c4-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 4: When Might We Stop Early?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-01-why-sponsors-want-interim.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.1 Why Sponsors Want Interim Analyses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-02-alpha-spending.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">4.2 Alpha Spending</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-03-operating-characteristics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Operating Characteristics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-04-futility-efficacy-safety.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.4 Futility, Efficacy, and Safety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-05-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.5 Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.6 Closing: The Governed Decision</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c5-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 5: How Do We Protect Against Bias?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-01-randomization-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.1 Randomization Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-02-stratification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.2 Stratification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-03-allocation-concealment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.3 Allocation Concealment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-04-validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.4 Outcome Assessment and Validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-05-open-label.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.5 Open-Label Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.6 Closing: The System That Holds the Comparison Valid</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c6-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 6: What Are We Allowed to Claim?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-01-claims-not-pvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.1 Claims, Not P-values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-02-co-primary-multiple.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Co-Primary and Multiple Primary Endpoints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-03-hierarchical-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Hierarchical Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-04-subgroup-discipline.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Subgroup Discipline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.5 Closing: The Boundary of What Can Be Said</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c7-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 7: What If the Design Itself Adapts?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-01-ssr.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.1 Sample Size Re-estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-02-adaptive-enrichment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.2 Adaptive Enrichment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-03-estimand-shift.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.3 Estimand Shift</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-04-ni-failure-modes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.4 Non-Inferiority Failure Modes in Adaptive Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.5 Closing: The Pre-Specified Adaptation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c8-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 8: What Must Be Locked, and When?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-01-must-prespecify.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.1 What Must Be Pre-specified</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-02-adaptive-rules.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.2 Adaptive Rules and Their Lock Requirements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-03-decision-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.3 The Decision Log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-04-design-review-checklist.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.4 Design Review and the Independent Challenge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.5 Closing: The Defensible Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-qa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Design Review Hearing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-scenarios.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Design Scenarios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-being-spent" id="toc-what-is-being-spent" class="nav-link active" data-scroll-target="#what-is-being-spent">What is being spent</a></li>
+  <li><a href="#spending-functions-and-what-they-commit-to" id="toc-spending-functions-and-what-they-commit-to" class="nav-link" data-scroll-target="#spending-functions-and-what-they-commit-to">Spending functions and what they commit to</a></li>
+  <li><a href="#one-sided-versus-two-sided-boundaries" id="toc-one-sided-versus-two-sided-boundaries" class="nav-link" data-scroll-target="#one-sided-versus-two-sided-boundaries">One-sided versus two-sided boundaries</a></li>
+  <li><a href="#the-information-fraction-problem" id="toc-the-information-fraction-problem" class="nav-link" data-scroll-target="#the-information-fraction-problem">The information fraction problem</a></li>
+  <li><a href="#what-the-spending-function-does-not-control" id="toc-what-the-spending-function-does-not-control" class="nav-link" data-scroll-target="#what-the-spending-function-does-not-control">What the spending function does not control</a></li>
+  <li><a href="#reporting-the-spending-plan" id="toc-reporting-the-spending-plan" class="nav-link" data-scroll-target="#reporting-the-spending-plan">Reporting the spending plan</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/c4-00-overview.html">Chapter 4: When Might We Stop Early?</a></li><li class="breadcrumb-item"><a href="../chapters/c4-02-alpha-spending.html"><span class="chapter-title">4.2 Alpha Spending</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">4.2 Alpha Spending</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-is-being-spent" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-being-spent">What is being spent</h2>
+<p>The type I error rate—the probability of a false positive—is the trial’s most fundamental statistical commitment. Set at 2.5% one-sided (the standard for regulatory submissions), it means that if the treatment has no effect, there is a 2.5% probability that the trial will produce a statistically significant result anyway. This probability is controlled by requiring that the test statistic exceed a threshold that corresponds to the chosen alpha level.</p>
+<p>When a trial looks at its accumulating data more than once—at an interim analysis and at the final analysis—each look is an opportunity to reject the null hypothesis. If each look is conducted at the unadjusted alpha level of 2.5%, the overall probability of a false positive across all looks is higher than 2.5%. The exact inflation depends on the number of looks and the correlation structure of the sequential test statistics, but for two independent looks each at 2.5%, the probability of a false positive at either look exceeds 4%—a 60% inflation of the nominal type I error.</p>
+<p>Alpha spending is the framework for controlling this inflation. Rather than conducting each look at the full alpha, the total alpha budget of 2.5% is allocated—spent—across the planned looks according to a pre-specified spending function. The spending function determines how much alpha is available at each information fraction: how stringent the stopping boundary is at the first interim, how stringent at the second, and how stringent at the final analysis. The total alpha spent across all looks, integrated over the spending function, equals 2.5%. The family-wise type I error rate is thereby controlled.</p>
+<p>This is the statistical purpose of alpha spending. Its design purpose is different: it forces the design team to commit, before enrollment begins, to exactly how the trial will be analyzed at each interim time point. That commitment is not optional. A trial that performs interim analyses without a pre-specified spending plan has consumed alpha from an unaccounted budget, and the resulting family-wise type I error rate is unknown.</p>
+<hr>
+</section>
+<section id="spending-functions-and-what-they-commit-to" class="level2">
+<h2 class="anchored" data-anchor-id="spending-functions-and-what-they-commit-to">Spending functions and what they commit to</h2>
+<p>The spending function is a mathematical rule that maps the information fraction to the cumulative alpha spent up to that fraction. Three families of spending functions are in common use, and they make different commitments about the shape of the stopping boundaries.</p>
+<p>The <strong>O’Brien-Fleming spending function</strong> spends very little alpha at early information fractions and most of the alpha at or near the final analysis. The resulting boundaries are very stringent early—requiring an extremely large interim effect to stop for efficacy—and approach the unadjusted alpha at the final analysis. The final analysis is conducted at nearly the full nominal alpha level, with minimal penalty for the interim looks.</p>
+<p>The practical implication is that the O’Brien-Fleming plan is conservative about early stopping: only a dramatic interim result—a treatment effect substantially larger than the assumed effect—will trigger an early stop. This conservatism is appropriate when early estimates are expected to be noisy and regression to the mean is a concern, and when the cost of an early stop—the overestimation bias discussed in Section 4.1—is judged to be worse than the cost of continuing. It is less appropriate when the treatment is expected to show an early, large effect and when early stopping carries lower overestimation cost.</p>
+<p>The <strong>Pocock spending function</strong> spends alpha more evenly across information fractions, resulting in boundaries that are the same at each look. The effect is that early stopping is easier—a less extreme interim effect is needed to cross the boundary—but the final analysis is conducted at a more stringent alpha than the nominal level, with a meaningful penalty for the interim looks.</p>
+<p>The practical implication is that Pocock boundaries are more sensitive to early efficacy signals and more protective of enrolled patients from continued randomization if the treatment is clearly working early. They are less appropriate when the scientific question requires a definitive final analysis with minimal alpha penalty, and when the clinical community expects the final result to be the evidentiary standard regardless of interim signals.</p>
+<p>The <strong>flexible spending functions</strong> of Lan and DeMets allow the spending function to be specified in terms of alpha spent as a continuous function of the information fraction, with particular forms that approximate O’Brien-Fleming or Pocock shapes or occupy the space between them. The key advantage of the Lan-DeMets framework is that the number of interim analyses and their exact timing do not need to be specified in advance—only the spending function. If an interim analysis is added or its timing shifts, the boundaries can be recalculated from the spending function without violating the overall alpha control. This flexibility is valuable in practice, where interim analyses are often triggered by DSMB schedules that do not perfectly match the information fractions assumed at design.</p>
+<p>The choice among these functions is not primarily statistical. It is a commitment about the relative weighting of early stopping sensitivity versus final analysis integrity, and it should be made based on the clinical characteristics of the trial—the expected shape and timing of the treatment effect, the cost of overestimation bias, the relative importance of early versus final evidence—not on convention or software defaults.</p>
+<hr>
+</section>
+<section id="one-sided-versus-two-sided-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="one-sided-versus-two-sided-boundaries">One-sided versus two-sided boundaries</h2>
+<p>The alpha-spending framework applies separately to the upper and lower tails of the test statistic distribution. The upper boundary—corresponding to the treatment appearing dramatically more effective than control—triggers stopping for efficacy. The lower boundary—corresponding to the treatment appearing dramatically worse than control—triggers stopping for harm or futility.</p>
+<p>In a superiority trial, the primary test is typically one-sided: the hypothesis is that the treatment is better than control, and the trial is powered to detect improvement, not to exclude harm. The one-sided alpha of 2.5% is spent on the upper boundary. The lower boundary, if it exists, is a separate stopping rule for harm—often symmetric to the upper boundary in its statistical form but carrying different decision authority and different governance implications.</p>
+<p>This asymmetry is important and frequently conflated. An interim result that crosses the upper boundary triggers a recommendation to stop for efficacy, subject to the governance constraints of the DSMB charter. An interim result that crosses the lower boundary triggers a recommendation to stop for harm—a recommendation with different clinical weight and different regulatory implications. The two boundaries are statistically symmetric but clinically different, and the interim analysis plan should treat them as different decision rules with different governance requirements.</p>
+<p>For non-inferiority trials, the boundary structure is further complicated by the structure of the non-inferiority hypothesis. The efficacy test in an NI design is one-sided in the direction of the new treatment being no worse than the comparator by more than the margin. The stopping rules must reflect this structure, not the structure of a superiority test, and the spending function must be calibrated to the NI hypothesis.</p>
+<hr>
+</section>
+<section id="the-information-fraction-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-information-fraction-problem">The information fraction problem</h2>
+<p>The alpha-spending framework is specified in terms of information fractions—the proportion of the total planned information that has been observed at each interim look. For event-driven time-to-event trials, the information fraction is the fraction of the planned number of events observed. For continuous outcome trials, it is typically the fraction of the planned sample size enrolled and assessed.</p>
+<p>The information fraction is the right currency for alpha spending because it reflects the statistical information content of the interim data, not its calendar timing. An interim analysis at 50% information fraction has half the statistical information of the final analysis, regardless of whether that corresponds to 18 months or 36 months of calendar time.</p>
+<p>The problem arises when the planned total information—the target event count or the target sample size—is wrong. If the trial was designed for 500 events and will actually accumulate only 400 due to a lower-than-assumed event rate, an interim analysis at 250 events is at the 50% information fraction of the actual trial but at the 50% information fraction of the planned trial only coincidentally. The spending function was calibrated to the planned 500-event design; applying it at the actual 400-event scale produces boundaries that are not quite right—not catastrophically wrong, but not operating as designed.</p>
+<p>This is the interface between Chapter 3’s event rate uncertainty and Chapter 4’s alpha spending. When the total information target is misspecified, the spending function produces boundaries that are calibrated to a design that does not correspond to the trial being run. The correction requires either updating the spending function as the true total information becomes clearer—which requires pre-specification of the update rule—or accepting that the operating characteristics will deviate from the planned values, and documenting that deviation.</p>
+<p>The practical implication is that interim analysis plans should specify not just the spending function but the rule for recalibrating the boundaries if the total information target changes. This rule must be pre-specified—applied by an independent statistician who does not see the treatment arm results—to prevent the recalibration from being influenced by knowledge of the interim trend.</p>
+<hr>
+</section>
+<section id="what-the-spending-function-does-not-control" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-spending-function-does-not-control">What the spending function does not control</h2>
+<p>Alpha spending controls the family-wise type I error rate across the pre-specified interim analyses and the final analysis. It does not control the type I error rate for additional analyses—sensitivity analyses, subgroup analyses, secondary endpoints, exploratory analyses—that are conducted at the same data cut. It does not prevent information leakage from the interim results to parties who can use that information to influence the trial. And it does not protect against the trial being modified—endpoint changed, eligibility expanded, analysis plan revised—after knowledge of the interim trend is available to the design team.</p>
+<p>These limitations are not defects of the alpha-spending framework. They are the boundary conditions within which the framework operates, and they define the governance requirements that must complement the statistical boundaries. A trial with a well-specified alpha-spending plan but a poorly specified governance structure—one that does not control who sees the interim results, does not prevent unblinded access from influencing protocol modifications, and does not document what was seen at each interim—is not a trial with controlled type I error in the full sense. It has controlled statistical type I error within the specified tests, and uncontrolled error everywhere else.</p>
+<p>The full protection of the type I error rate requires the statistical spending plan and the governance structure to work together. The statistical plan specifies the boundaries. The governance structure ensures that the only decisions made based on interim data are the ones the statistical plan allows.</p>
+<hr>
+</section>
+<section id="reporting-the-spending-plan" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-the-spending-plan">Reporting the spending plan</h2>
+<p>The alpha-spending plan must be reported in the protocol and in the statistical analysis plan before the first interim analysis. The report should specify the spending function by name and parameters, the planned information fractions at which interim analyses will be conducted, the stopping boundaries at each planned interim, the final analysis boundary after alpha spending, and the rule for recalibrating boundaries if the total information target changes.</p>
+<p>A spending plan that specifies only the function name—“we will use an O’Brien-Fleming spending function”—without reporting the resulting boundaries is not complete. The boundaries must be computed and reported, so that the DSMB, the sponsor, and the regulatory agency can verify that the boundaries were applied correctly at each interim analysis. Discrepancies between the pre-specified boundaries and the boundaries applied at the interim analysis are a finding in a regulatory review, regardless of whether the primary result is positive or negative.</p>
+<p>The spending plan is a commitment. It should be treated as one—documented with the same care as the estimand and the sample size justification, reviewed by the same people, and defended with the same rigor if it is questioned. A spending plan adopted because the statistical package defaults to it, without examination of what it commits the trial to, is not a plan. It is a setting.</p>
+<hr>
+<p><em>References: Lan and DeMets, “Discrete Sequential Boundaries for Clinical Trials,” Biometrika 1983; O’Brien and Fleming, “A Multiple Testing Procedure for Clinical Trials,” Biometrics 1979; Pocock, “Group Sequential Methods in the Design and Analysis of Clinical Trials,” Biometrika 1977; Jennison and Turnbull, Group Sequential Methods with Applications to Clinical Trials (2000).</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/c4-01-why-sponsors-want-interim.html" class="pagination-link" aria-label="4.1 Why Sponsors Want Interim Analyses">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">4.1 Why Sponsors Want Interim Analyses</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/c4-03-operating-characteristics.html" class="pagination-link" aria-label="4.3 Operating Characteristics">
+        <span class="nav-page-text"><span class="chapter-title">4.3 Operating Characteristics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 J Kou</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

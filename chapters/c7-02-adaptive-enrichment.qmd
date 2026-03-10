@@ -1,0 +1,94 @@
+---
+title: 7.2 Adaptive Enrichment
+---
+
+
+## What adaptive enrichment does
+
+Adaptive enrichment is the modification of the enrolled population—mid-trial, based on accumulating data—to concentrate enrollment in the patient group that shows the strongest signal of benefit. The most common form enriches toward a biomarker-positive subgroup: if the interim data show a stronger treatment effect in biomarker-positive patients than in the overall population, the trial narrows its eligibility to biomarker-positive patients for the remainder of enrollment.
+
+The rationale is clinical and developmental. When a treatment's mechanism targets a specific biological pathway, biomarker-positive patients who express that pathway are more likely to benefit. If the all-comers design was chosen because the biomarker's predictive value was uncertain at the time of design, and the interim data clarify that the benefit is concentrated in the biomarker-positive subgroup, enriching toward that subgroup is a more efficient and more ethically defensible use of the remaining enrollment. Patients who are unlikely to benefit are not enrolled unnecessarily; patients who are likely to benefit are enrolled at a higher rate.
+
+The cost is complexity—in the estimand, in the analysis, and in the claim structure. Adaptive enrichment does not merely change the trial's efficiency; it changes the trial's scientific question. The trial that was designed to answer the question "does this treatment work in the overall population?" becomes a trial that answers a different question: "does this treatment work in the overall population enrolled before the enrichment, and in the biomarker-positive population enrolled after?" These are not the same question, and the trial's primary result must address both—or must specify, before the enrichment, which population's result will be primary.
+
+---
+
+## The estimand shift at enrichment
+
+Chapter 1 required that the estimand be specified before enrollment begins. Adaptive enrichment appears to violate this requirement: if the enrolled population changes mid-trial, the population attribute of the estimand changes, and the estimand specified at the beginning of the trial no longer describes the trial that was actually run.
+
+This is the central tension of adaptive enrichment, and it is resolved—not eliminated—by designing the estimand for the adapted design prospectively. Before enrollment begins, the trial must specify not just the estimand for the pre-adaptation phase but the estimand or estimands that will apply if the enrichment is triggered. The pre-adaptation estimand covers the overall population. The post-adaptation estimand covers the enriched population. The primary analysis must specify how these two estimands will be combined into a primary result.
+
+Several frameworks exist for this combination. The simplest is to specify the overall population as the primary population and the biomarker-positive population as a secondary estimand—a pre-specified subgroup analysis that is powered by the enrichment. In this framework, the primary test uses all enrolled patients, and the enrichment improves the power of the biomarker-positive subgroup analysis without changing the primary claim. This is interpretively clean but may leave power on the table if the treatment has no effect in the overall population and the enrichment was scientifically correct.
+
+A more ambitious framework—the stratified enrichment design of Simon and Simon, or the related approaches of Rosenblum and van der Laan—specifies the primary analysis as a combination of the overall and enriched populations, weighted by the information fraction in each phase. This framework allows a single primary claim that applies across the pre- and post-adaptation populations, at the cost of an analysis that is more complex and less familiar to regulatory reviewers.
+
+The choice between these frameworks must be made before enrollment begins—before the enrichment decision is made—as part of the pre-specification of the adaptive rule. A framework chosen after the enrichment is triggered, to fit the data that triggered it, is post-hoc.
+
+---
+
+## Pre-specifying the enrichment rule
+
+The enrichment rule is a pre-specified function from interim data to an enrollment decision: continue enrolling all patients, enrich toward a subgroup, or close the all-comers design entirely and enroll only the subgroup.
+
+The rule must specify what data trigger the enrichment—the interim treatment effect estimate in the subgroup, relative to the interim treatment effect in the overall population, relative to a pre-specified threshold—and how those data are handled from a governance perspective. Enrichment decisions based on the biomarker subgroup's interim treatment effect require access to unblinded interim data, and the governance requirements of Chapter 4 apply in full.
+
+The most common governance structure for adaptive enrichment uses an independent DSMB or an independent data monitoring committee (IDMC) that reviews the unblinded interim data and makes the enrichment recommendation. The sponsor receives the enrichment decision—enrich or do not enrich—without seeing the interim biomarker subgroup treatment effect that drove the recommendation. This is the same information firewall that Chapter 4 required for efficacy stopping decisions, applied to the enrichment decision.
+
+The enrichment threshold must be pre-specified as a specific criterion rather than a general statement of intent. A rule that specifies "enrichment will be considered if the biomarker-positive subgroup shows a meaningfully stronger effect" is not a pre-specified rule; it is a statement that the IDMC will exercise judgment—which is a legitimate delegation of authority, but not a pre-specification. A rule that specifies "enrichment will be triggered if the interim hazard ratio in the biomarker-positive subgroup is at least 30% more favorable than the interim hazard ratio in the overall population, and the biomarker-positive conditional power under the null is above 50%" is a pre-specified rule that can be applied mechanically.
+
+The specificity requirement is not pedantry. An enrichment rule that is vague enough to accommodate different decisions depending on the interim data is not a pre-specified rule—it is a rule that will be interpreted to support the decision that the IDMC or the sponsor prefers, post-hoc. The specificity requirement is what makes the rule genuinely adaptive rather than nominally adaptive.
+
+---
+
+## The claim structure after enrichment
+
+An adaptive enrichment design that is triggered—that switches from all-comers to biomarker-positive enrollment—faces a specific challenge at the primary analysis: what population does the primary result describe?
+
+The population at the final analysis is a mixture: some patients who were enrolled before the enrichment and are in the overall population, some who were enrolled after the enrichment and are in the biomarker-positive population. If the primary analysis uses all enrolled patients in the denominator, the result describes a mixture population that does not correspond to any natural clinical population. If the primary analysis uses only the biomarker-positive patients, it excludes patients who were enrolled in the first phase under a different eligibility criterion.
+
+The pre-specified analysis framework must address this explicitly. The most common approaches are:
+
+A **two-stage combination test** that combines the test statistic from the first stage (all-comers) with the test statistic from the second stage (biomarker-positive), using the combination weights pre-specified in the design. The primary result is the combined test, and its operating characteristics—the type I error and power—are established by simulation across the space of possible first- and second-stage outcomes.
+
+A **weighted analysis** that uses all enrolled patients but assigns weights based on the information fraction in each phase and the population in each phase. The weights must be pre-specified before any unblinded data are seen, not derived from the interim data.
+
+A **hierarchical analysis** that tests the overall population first and the biomarker-positive population second, in the hierarchical framework of Chapter 6. This approach is interpretively clean—the claim for the overall population is tested first, and the biomarker-positive claim is secondary—but it is most powerful when the treatment has a real effect in the overall population, and may be underpowered for the biomarker-positive claim if the overall test fails.
+
+None of these approaches is universally superior. Each is appropriate in some design contexts and inappropriate in others, and the choice must be made based on the scientific question—what population the primary claim is intended to address—before enrollment begins.
+
+---
+
+## The biomarker: validated before the enrichment?
+
+Adaptive enrichment based on a biomarker is defensible only if the biomarker can be measured reliably and consistently at the time of randomization, and if the enrichment rule specifies the biomarker measurement that will be used to make the enrichment decision.
+
+If the biomarker assay changes between the first phase and the second phase—because a more sensitive assay becomes available, or because the threshold for positivity is revised—the patients enrolled in the two phases are not biomarker-defined by the same criterion. The enrichment has changed the population in a way that is more complex than the nominal enrichment rule describes, and the primary analysis must address the assay discordance explicitly.
+
+This is not a hypothetical problem. In oncology, biomarker assays are frequently refined during the period of a trial. A trial that begins with a research-use-only assay and transitions to a companion diagnostic may classify some patients differently under the two assays. The pre-specification of the enrichment rule must include the specific assay that will be used to make the enrichment decision—not just the biomarker—and the handling of patients who might be classified differently under the two assays must be pre-specified.
+
+The companion diagnostic validation is therefore not just a regulatory requirement for the commercial product; it is a design requirement for the adaptive enrichment rule. If the biomarker cannot be measured reliably enough to support the enrichment decision—if the assay has high false positive and false negative rates in the relevant patient population—the enrichment rule will be applied to misclassified patients, and the enriched population will not be the biomarker-positive population the design intended to enrich toward.
+
+---
+
+## Adaptive enrichment in non-inferiority designs
+
+Adaptive enrichment in a non-inferiority trial introduces the additional complexity that Chapter 2 identified for NI designs: the constancy assumption requires that the comparator's historical effect transfers to the enrolled population. When the enrolled population changes mid-trial—because of adaptive enrichment—the constancy assumption must be re-evaluated for the post-enrichment population.
+
+If the comparator's historical effect in the biomarker-positive subgroup is different from its effect in the overall population—which it may be, because the biomarker-positive patients have a different disease biology—the NI margin derived from historical data on the overall population may not be the appropriate margin for the biomarker-positive population. A margin that was defensible before the enrichment may not be defensible after, because the population to which the constancy assumption applies has changed.
+
+This interaction between adaptive enrichment and NI margin validity is rarely addressed in the design of adaptive NI trials. The pre-specification requirement must include an explicit evaluation of the constancy assumption for the post-enrichment population, and if the margin is not transferable, either the margin must be recalculated for the subgroup or the enrichment must be reconsidered.
+
+---
+
+## What this section demands before proceeding
+
+Before Section 7.3's discussion of estimand shift, the adaptive enrichment design must be complete. The enrichment rule is fully specified: the criterion for triggering enrichment, the biomarker assay that will be used, the governance structure for the enrichment decision, and the primary analysis framework that combines the pre- and post-adaptation populations.
+
+The estimand for each phase is pre-specified, and the primary claim across phases is stated. The operating characteristics of the adapted design—the type I error for the combined test, the power across the range of true effects in the overall and subgroup populations, the probability of triggering enrichment under various scenarios—are established by simulation.
+
+And the constancy assumption, for NI designs, is evaluated for the post-enrichment population. The margin's transferability to the enriched population is documented before the enrichment rule is pre-specified—not because the margin will certainly differ, but because the question must be asked and answered before the rule is locked.
+
+---
+
+*References: Simon and Simon, "Adaptive Enrichment Designs for Clinical Trials," Stat Biopharm Res 2013; Rosenblum and van der Laan, "Simple, Efficient Estimators of Treatment Effects in Randomized Trials," Int J Biostat 2010; FDA Guidance for Industry, Enrichment Strategies for Clinical Trials (2019); Bhatt and Bhatt, "Adaptive Designs for Clinical Trials," N Engl J Med 2016.*

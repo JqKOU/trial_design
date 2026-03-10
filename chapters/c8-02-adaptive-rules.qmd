@@ -1,0 +1,90 @@
+---
+title: 8.2 Adaptive Rules and Their Lock Requirements
+---
+
+
+## Why adaptive rules require earlier locks
+
+Section 8.1 established that the SAP must be finalized before unblinded data access. For fixed designs, this means the SAP is finalized before the database lock—a deadline that is challenging in practice but clear in principle.
+
+For adaptive designs, the relevant deadline is earlier and more demanding. The adaptive rule must be finalized before the event it governs—before the re-estimation time point, before the enrichment interim analysis, before the dose selection. And the rule must be finalized in the sense that every party who will be involved in implementing the adaptation knows, before the adaptation event, exactly what data they will see, what rule they will apply, and what decision authority they have. Ambiguity in the rule—resolved at the adaptation event by judgment rather than by pre-specified criteria—is post-hoc discretion, not pre-specified adaptation.
+
+This earlier, more demanding lock requirement is the governance consequence of Chapter 7's insistence that the adaptation rule be pre-specified in sufficient detail to be implemented without discretion. If the rule requires discretion, it is not pre-specified. If it is not pre-specified, the type I error control that the adaptive methodology provides—the combination test, the information fraction recalibration, the operating characteristics established by simulation—is not valid. The method controls the type I error for the pre-specified rule. It does not control the type I error for the rule plus undocumented discretion.
+
+---
+
+## The SSR charter: content and lock timing
+
+The SSR charter is the governance document for the sample size re-estimation. Its analog in fixed designs is the statistical analysis plan; its analog in the DSMB framework is the DSMB charter. Like both, it must be finalized before the event it governs—before the re-estimation time point.
+
+The SSR charter must specify the following with operational precision.
+
+**The re-estimation trigger.** The specific information fraction or calendar time at which the pooled data will be collected for the re-estimation. Not "approximately 50% of planned events" but "when the independent statistician receives the data extract dated no earlier than [date criterion] and containing at least [specific number or fraction] of the planned events."
+
+**The data to be used.** For nuisance-parameter SSR: the specific pooled statistics—pooled variance, pooled event rate, pooled dropout rate—that will be calculated from the blinded data. The data extract specification must exclude any information that would allow arm-specific comparisons to be inferred: no subgroup summaries that reflect the randomization, no time-to-event distributions that reveal arm-specific accumulation patterns.
+
+**The re-estimation formula.** The specific formula by which the new sample size is calculated from the interim nuisance parameter estimates. The formula is not an algorithm; it is a specific function with specific parameters, pre-specified before the interim data are collected.
+
+**The bounds.** The minimum and maximum sample size after re-estimation. The minimum prevents the re-estimation from reducing the sample size below the original plan (or below a conservative threshold). The maximum prevents the re-estimation from producing an impractically large trial. Both bounds must be specific numbers, not vague limits like "reasonable" or "operationally feasible."
+
+**The independent statistician.** The specific individual or team who will perform the re-estimation, their data access rights (limited to the blinded pooled statistics specified above), and their communication protocol (they communicate only the new sample size, not the interim nuisance parameter estimates, to the sponsor or the operations team).
+
+**The primary analysis adjustment.** For nuisance-parameter SSR: whether the primary analysis will use the standard test or a combination test, and if the standard test, whether any adjustment is needed for the re-estimation. For effect-size SSR: the combination test method, the combination weights (pre-specified as a function of the information fraction at re-estimation), and the critical value for the combination test.
+
+The SSR charter must be finalized before the re-estimation time point, with the same formal review and approval process as the protocol. A charter that exists in draft at the re-estimation time point, or that is being finalized concurrently with the re-estimation, is not a finalized charter—and the re-estimation conducted under a draft charter is a re-estimation conducted without a pre-specified rule.
+
+---
+
+## The enrichment charter: content and lock timing
+
+The enrichment charter—the governance document for the adaptive enrichment decision—must be finalized before enrollment begins, not before the enrichment interim analysis. This earlier deadline reflects the fact that the enrichment rule determines what data will be collected throughout the trial, not just at the interim. The biomarker assay that defines the enriched population must be validated before the first patient is enrolled; the data collection plan for the biomarker must be in the trial's operations before the first patient's biomarker is assessed.
+
+The enrichment charter must specify the following.
+
+**The biomarker assay.** The specific assay, the specific threshold for positivity, the specific laboratory that will perform the assay, and the handling of ambiguous results (results near the threshold, results that change between initial and confirmatory testing). The assay specification must be the same assay that will be used in the commercial companion diagnostic, or a documented bridging study must establish the comparability between the trial assay and the commercial assay.
+
+**The enrichment interim timing.** The specific information fraction or calendar time at which the interim data will be reviewed for the enrichment decision. The timing must be specified in the enrichment charter; a charter that says "enrichment will be considered when the IDMC deems it appropriate" is not a pre-specified rule.
+
+**The enrichment threshold.** The specific criterion by which the interim biomarker subgroup result is compared to the interim overall result to determine whether enrichment is triggered. The criterion must be expressed as a specific comparison—"the hazard ratio in the biomarker-positive subgroup is at least [specific value] more favorable than the hazard ratio in the overall population, as determined by [specific statistical comparison]"—not as a general statement of intent.
+
+**The primary analysis framework.** The pre-specified framework for combining the pre- and post-enrichment patient populations in the primary analysis: the combination test weights, the combined estimand specification, and the critical value for the combination test. This must be pre-specified before enrollment because it determines what data collection is needed from the pre-enrichment phase.
+
+**The IDMC composition and authority.** The members of the independent data monitoring committee that will review the interim data and make the enrichment recommendation. Their data access rights—they see the unblinded interim biomarker subgroup comparison—and the communication protocol: they communicate the enrichment decision (enrich or do not enrich) to the sponsor without revealing the interim treatment effect estimates that drove the decision.
+
+---
+
+## Protocol amendments during the trial
+
+Not all design changes during a trial are adaptive adaptations. Some are responses to unexpected operational challenges, new safety information, or regulatory requests. Protocol amendments—changes to the protocol during enrollment—have their own governance requirements, distinct from the adaptive rule governance.
+
+A protocol amendment that changes a design feature that was pre-specified requires disclosure to the regulatory agency and justification for the change. The critical question is whether the amendment was driven by operational necessity or by knowledge of the interim data. An amendment that changes the eligibility criteria because an operational barrier was not anticipated at design is different from an amendment that changes the eligibility criteria after an interim data look revealed that enrolled patients were not responding as expected.
+
+The amendment itself does not establish whether it was data-driven. The timing—relative to the interim data access—and the documented rationale establish this. An amendment that occurs immediately after a DSMB interim report has been reviewed by the sponsor, without a documented rationale that is independent of the interim data, will be examined for the possibility that the amendment was driven by knowledge of the interim result. The decision log—discussed in Section 8.3—must record the rationale for every amendment, the timeline of the amendment relative to interim data access, and the basis on which the design team concluded that the amendment was not driven by interim results.
+
+Protocol amendments that are genuinely data-driven—that respond to information generated by the trial itself—are a form of adaptation. If they are pre-specified as possible responses to specific interim findings, they are pre-specified adaptations governed by the adaptive rule framework of this section. If they are not pre-specified—if they are responses to unexpected findings that were not anticipated in the adaptive rule—they are unplanned adaptations, and the regulatory agency will treat them as such: potentially valid, but requiring demonstration that the type I error is still controlled and that the estimand has not shifted in a way that was not acknowledged.
+
+---
+
+## The verification requirement
+
+Pre-specification of the adaptive rule is necessary but not sufficient for the adaptive methodology's type I error control to apply. The rule must also be implemented as specified. Implementation as specified means that the data used were the data specified, the formula applied was the formula specified, the parties involved were the parties specified, and the information that crossed the governance boundary was the information specified.
+
+Verification of implementation requires documentation: the data extract used for the re-estimation, timestamped and content-verified; the calculation log showing the formula applied and the result; the communication record showing what was transmitted to the sponsor; and attestations from the independent statistician and the IDMC members confirming their data access and the independence of their work.
+
+This documentation is not prepared for regulatory inspection as an afterthought. It is prepared concurrently with the adaptation, because the parties involved know at the time of the adaptation what records are required and produce them in real time. A reconstruction of the adaptation documentation from memory, from email records, and from meeting notes is not a verification record. It is evidence that the verification system was not in place.
+
+The verification requirement is the final governance requirement for adaptive designs. Without it, the pre-specified rule and the governance structure are commitments on paper whose implementation cannot be confirmed. With it, the adaptive design's claim to type I error control under the combination test methodology is supported by the evidence that the rule was applied as specified.
+
+---
+
+## What this section demands before proceeding
+
+Before the decision log of Section 8.3 can be designed, the adaptive rule lock requirements must be mapped to the specific trial's adaptive features.
+
+For each adaptive feature—SSR, enrichment, dose selection, other—the governance document (SSR charter, enrichment charter, dose selection charter) must be identified, its content requirements must be specified, and its finalization deadline must be established relative to the trial timeline. The independent statistician or IDMC that will implement each adaptation must be identified before the trial begins, not recruited when the adaptation event approaches.
+
+The verification records for each adaptation must be specified before the adaptation occurs: what documents will be produced, by whom, at what time, and where they will be stored. The verification system is part of the adaptive design's pre-specification, not a post-adaptation administrative task.
+
+---
+
+*References: FDA Guidance for Industry, Adaptive Designs for Clinical Trials of Drugs and Biologics (2019); EMA Reflection Paper on Methodological Issues in Confirmatory Clinical Trials Planned with an Adaptive Design (2007); Wassmer and Brannath, Group Sequential and Confirmatory Adaptive Designs in Clinical Trials (2016); Proschan et al., Statistical Monitoring of Clinical Trials: A Unified Approach (2006).*

@@ -1,0 +1,130 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Clinical Trial Design Decision Framework"
+  subtitle: "From Scientific Question to Defensible Design"
+  author: "J Kou"
+  date: "2026-02-21"
+  reader-mode: true
+  search: true
+  repo-url: "https://github.com/JqKOU/trial_design"
+  repo-actions: [issue]
+
+  page-footer:
+    left: "© 2026 J Kou"
+    right: "Built with Quarto"
+
+  chapters:
+    - index.qmd
+
+    # ── CHAPTER 1: What Are We Trying to Show? ──────────────────────
+    - part: "chapters/c1-00-overview.qmd"
+      chapters:
+        - chapters/c1-01-purpose-estimand.qmd
+        - chapters/c1-02-endpoint-choice.qmd
+        - chapters/c1-03-intercurrent-events.qmd
+        - chapters/c1-04-closing.qmd
+
+    # ── CHAPTER 2: How Will We Measure the Difference? ──────────────
+    - part: "chapters/c2-00-overview.qmd"
+      chapters:
+        - chapters/c2-01-effect-measures.qmd
+        - chapters/c2-02-interpretability-efficiency.qmd
+        - chapters/c2-03-ni-margin.qmd
+        - chapters/c2-04-closing.qmd
+
+    # ── CHAPTER 3: What Are We Committing To? ───────────────────────
+    - part: "chapters/c3-00-overview.qmd"
+      chapters:
+        - chapters/c3-01-effect-size-ownership.qmd
+        - chapters/c3-02-variance-dropout.qmd
+        - chapters/c3-03-event-rate-uncertainty.qmd
+        - chapters/c3-04-power-as-risk-budget.qmd
+        - chapters/c3-05-closing.qmd
+
+    # ── CHAPTER 4: When Might We Stop Early? ────────────────────────
+    - part: "chapters/c4-00-overview.qmd"
+      chapters:
+        - chapters/c4-01-why-sponsors-want-interim.qmd
+        - chapters/c4-02-alpha-spending.qmd
+        - chapters/c4-03-operating-characteristics.qmd
+        - chapters/c4-04-futility-efficacy-safety.qmd
+        - chapters/c4-05-governance.qmd
+        - chapters/c4-06-closing.qmd
+
+    # ── CHAPTER 5: How Do We Protect Against Bias? ──────────────────
+    - part: "chapters/c5-00-overview.qmd"
+      chapters:
+        - chapters/c5-01-randomization-logic.qmd
+        - chapters/c5-02-stratification.qmd
+        - chapters/c5-03-allocation-concealment.qmd
+        - chapters/c5-04-validation.qmd
+        - chapters/c5-05-open-label.qmd
+        - chapters/c5-06-closing.qmd
+
+    # ── CHAPTER 6: What Are We Allowed to Claim? ────────────────────
+    - part: "chapters/c6-00-overview.qmd"
+      chapters:
+        - chapters/c6-01-claims-not-pvalues.qmd
+        - chapters/c6-02-co-primary-multiple.qmd
+        - chapters/c6-03-hierarchical-testing.qmd
+        - chapters/c6-04-subgroup-discipline.qmd
+        - chapters/c6-05-closing.qmd
+
+    # ── CHAPTER 7: What If the Design Itself Adapts? ────────────────
+    - part: "chapters/c7-00-overview.qmd"
+      chapters:
+        - chapters/c7-01-ssr.qmd
+        - chapters/c7-02-adaptive-enrichment.qmd
+        - chapters/c7-03-estimand-shift.qmd
+        - chapters/c7-04-ni-failure-modes.qmd
+        - chapters/c7-05-closing.qmd
+
+    # ── CHAPTER 8: What Must Be Locked, and When? ───────────────────
+    - part: "chapters/c8-00-overview.qmd"
+      chapters:
+        - chapters/c8-01-must-prespecify.qmd
+        - chapters/c8-02-adaptive-rules.qmd
+        - chapters/c8-03-decision-log.qmd
+        - chapters/c8-04-design-review-checklist.qmd
+        - chapters/c8-05-closing.qmd    
+
+    # ── CHAPTER 9: QA───────────────────
+    - part: "Appendix"
+      chapters: 
+         - chapters/appendix-qa.qmd
+         - chapters/appendix-scenarios.qmd
+
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    number-sections: false
+    
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+
+    sidebar-width: 320px
+    align: left
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    code-fold: false
+    highlight-style: github
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    df-print: paged
+    link-external-newwindow: true
+    callout-appearance: minimal
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+  freeze: auto

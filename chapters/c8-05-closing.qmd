@@ -1,0 +1,78 @@
+---
+title: "8.5 Closing: The Defensible Design"
+---
+
+
+## What this chapter asked
+
+Chapter 8 asked one question: what must be locked, and when?
+
+It asked that question in four sections, each addressing a different component of the governance system that makes pre-specification operational.
+
+Section 8.1 established the content and timing requirements for the protocol and the SAP—the two primary pre-specification documents. The protocol is finalized before the first patient is enrolled. The SAP is finalized before unblinded data access. Each document must contain specific elements with sufficient detail to be binding. The absence of either specificity or timing independence from the data is a governance failure that weakens the trial's credibility without necessarily invalidating the primary result.
+
+Section 8.2 addressed the specific lock requirements for adaptive designs—the earlier and more demanding pre-specification requirements that come from the need to govern adaptation events with pre-specified rules, not post-hoc discretion. The SSR charter and the enrichment charter must be finalized before the events they govern, with content requirements that mirror the DSMB charter's operational specificity.
+
+Section 8.3 examined the decision log as the audit trail for the trial's conduct during enrollment. The decision log records every governance decision—amendment, DSMB interaction, regulatory interaction, operational deviation—contemporaneously, by specified parties, within specified time windows. Its completeness and its timing determine whether the trial's conduct can be verified from the outside.
+
+Section 8.4 examined independent review as the structural governance requirement that protects against the optimism and insider blindness of design teams. Staged review—at the estimand stage, the power stage, the interim plan stage, and the document finalization stage—is more valuable than a single terminal review, because it identifies problems before they compound into subsequent design decisions.
+
+---
+
+## The characteristic mistakes of this chapter
+
+Three failures define the governance breakdowns that Chapter 8 is designed to prevent.
+
+**The SAP finalized after the trend was visible.** The protocol was finalized on time. The SAP development began eighteen months before the planned primary analysis, with good intentions. The blinded data review conducted six months before the database lock showed overall event rates that, given the known randomization ratio and the trial's expected event rates, allowed the analysis team to infer the approximate direction of the primary endpoint comparison. The SAP was finalized two weeks after the blinded data review. The hierarchical testing order in the SAP was different from the order that had been discussed at the design stage—one secondary endpoint had moved up in the hierarchy, and it was the secondary endpoint that the blinded data review's implied direction suggested would be most likely to succeed. The finalization timestamp was before the database lock. The regulatory reviewer's question—was the SAP finalized before or after the analysis team had access to inferential information about the treatment arm comparison?—did not have a clean answer.
+
+**The decision log completed retrospectively.** The trial completed enrollment, completed follow-up, and locked the database. At the time of clinical study report preparation, the medical writing team requested the decision log. No decision log had been maintained during the trial. The study manager and the project director spent three weeks reconstructing the trial's major decisions from email archives, DSMB meeting summaries, and regulatory correspondence. The reconstructed log was comprehensive by the standards of memory and available records, but it was a reconstruction—not a contemporaneous record. The regulatory inspection that followed the submission asked for the source documents for each decision log entry. The response—"the entries were reconstructed from available records"—was accurate and damaging.
+
+**The design review that was a formality.** The trial's design was reviewed by a senior statistician from the regulatory affairs group before the SAP was finalized. The review lasted four hours. The reviewer had been briefed by the design team on the trial's rationale and had received the documents three days before the review. The review meeting produced a set of minor comments on the sensitivity analysis specifications and confirmed that the major design elements were satisfactory. The DSMB charter was not reviewed because it had not been finalized in time for the review meeting; it was finalized two weeks later without review. The combination test method for the adaptive SSR was not reviewed because the reviewer's expertise was in fixed designs. The trial proceeded with a combination test specification that had a parameter error—the combination weights were specified for a balanced two-stage design but the SSR rule could produce an unbalanced allocation between the two stages. The error was discovered during the primary analysis. The correction required a post-hoc analytical justification that the regulatory agency accepted but flagged.
+
+Each of these failures has the same origin: the governance requirement was understood as a compliance obligation—something that must be done to satisfy the protocol, the regulatory guidance, or the inspection checklist—rather than as a design requirement whose purpose is to make the evidence credible. When governance is compliance, the minimum is achieved on paper. When governance is design discipline, the minimum is not the target.
+
+---
+
+## What cannot be recovered
+
+A SAP finalized after inferential information from the data was available cannot be verified as independent of the data. The analysis team's sincere belief that the SAP choices were not influenced by the data is not verifiable—not by the team, and not by the regulatory reviewer. The uncertainty is irreducible.
+
+A decision log that was not maintained during the trial cannot be reconstructed with the fidelity of a contemporaneous record. The reconstruction is an approximation of what was decided, colored by the knowledge of what subsequently happened and by the selective availability of the records from which it is reconstructed. The reconstruction may be accurate. It is not verifiable as accurate with the same confidence as a contemporaneous record.
+
+An independent review that did not examine the adaptive rule details—because the reviewer lacked the expertise, or because the charter was not available—cannot be supplemented by a post-hoc review after the adaptive design has been implemented and the data have been analyzed. The post-hoc review is valuable for planning future trials, but it does not establish that the adaptive design was correct before the data were examined.
+
+These irrecoverabilities define the stakes of Chapter 8. The design decisions of Chapters 1 through 7 can sometimes be corrected after the trial begins—with protocol amendments, with DSMB guidance, with regulatory consultation. The governance failures of Chapter 8 cannot. When the SAP was finalized after the data were seen, when the decision log was not maintained, when the independent review did not cover the critical design elements—the evidence basis for the trial's claims is permanently weakened, regardless of how strong the underlying science is.
+
+---
+
+## The four questions, answered
+
+This book began with four questions that it promised to ask about every design decision. The governance framework of Chapter 8 closes by applying those questions to the governance process itself.
+
+**What evidence are we defining?** The design documents—the protocol, the SAP, the charters—define the evidence by specifying what will be measured, in whom, under what conditions, with what analysis. The governance system ensures that this definition was made before the data, not from the data.
+
+**What risk are we committing to?** The governance system commits the trial to the risk of having made wrong decisions before the data were seen—and of not being able to correct those decisions by revising the documents after the data reveal the error. This is the pre-specification premium: the cost of committing before knowing, paid in the form of decisions that cannot be modified once the data are observed.
+
+**How do we prevent failure?** The governance system prevents the specific failure of post-hoc rationalization—the construction of design documents that appear pre-specified but were shaped by the data. Staged review, document lock timing, and the decision log together make post-hoc rationalization more difficult and more detectable.
+
+**What can we finally say?** The trial can say what its pre-specified analysis shows, with the confidence level that the pre-specified alpha controls, for the population defined by the pre-specified estimand, according to the claim structure defined by the pre-specified hierarchy. These bounds on what can be said are not limitations; they are the definition of what the evidence supports. A claim bounded by pre-specification is a claim with a known and controlled error rate. A claim that exceeds pre-specification has an unknown error rate and is, in the full sense of the word, speculation.
+
+---
+
+## The defensible design
+
+A defensible design is not a perfect design. No trial is designed with perfect information; the assumptions about effect size, nuisance parameters, event rates, and patient behavior are all predictions, and predictions are wrong at rates that should be humbling. The defensible design acknowledges the uncertainty in its assumptions, specifies the consequences of those assumptions being wrong, and commits to a governance system that makes the design decisions verifiable before the data reveal whether the decisions were correct.
+
+Defensibility is not primarily about the regulatory agency. It is about the clinical community, the patients who enrolled in the trial and those who were not enrolled, and the scientific record that will outlast any individual trial team or development program. A trial that demonstrates a treatment works—if it is defensible—contributes an increment of knowledge that is reliable, replicable, and interpretable by others without access to the trial team's memory. A trial that demonstrates a treatment works—if it is not defensible—contributes a result that cannot be fully evaluated and that may mislead the clinical community in ways that persist long after the trial team has moved on.
+
+Defensibility is built into the design before the first patient is enrolled. It is maintained through the governance system during the trial. And it is verified through the decision log and the design summary at the end. The book has been about building that defensibility—not as a compliance exercise, but as the condition under which clinical evidence can be trusted.
+
+---
+
+## Chapter 8 risk summary
+
+**The decision this chapter owns:** are the design documents that govern this trial finalized at the right time, by the right parties, with sufficient specificity, and independently reviewed—so that the trial's primary result can be verified as the product of the pre-specified design?
+
+**The most common mistake:** treating the SAP as an analysis document rather than a pre-specification document—finalizing it under the pressure of the submission timeline rather than under the governance requirement of independence from the data. The SAP is not a description of how the analysis was done. It is a commitment to how the analysis will be done, made before the data make it possible to choose the analysis that favors the result.
+
+**The professional-level risk:** a primary result that is statistically significant, clinically plausible, and reproducible in biological terms—but that cannot be fully defended as the product of a pre-specified design because the governance record does not establish that the key documents were finalized before the data were seen. This is not a result that will be rejected. It is a result that will be accepted with reservations—labeled with qualifications, discussed in regulatory review meetings, questioned in subsequent trials that are powered to test the result under tighter governance constraints. The professional risk is not the failure of the program. It is the permanent uncertainty that attaches to a result that could have been unambiguous, if the governance system had been in place.

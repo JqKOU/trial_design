@@ -1,0 +1,155 @@
+{
+  "index.qmd": {
+    "index.html": "09cb4530"
+  },
+  "chapters/c1-00-overview.qmd": {
+    "c1-00-overview.html": "7f64afc9"
+  },
+  "chapters/c1-01-purpose-estimand.qmd": {
+    "c1-01-purpose-estimand.html": "a09066b7"
+  },
+  "chapters/c1-02-endpoint-choice.qmd": {
+    "c1-02-endpoint-choice.html": "8e353ca3"
+  },
+  "chapters/c1-03-intercurrent-events.qmd": {
+    "c1-03-intercurrent-events.html": "d746225e"
+  },
+  "chapters/c1-04-closing.qmd": {
+    "c1-04-closing.html": "027c03bc"
+  },
+  "chapters/c2-00-overview.qmd": {
+    "c2-00-overview.html": "5a815c27"
+  },
+  "chapters/c2-01-effect-measures.qmd": {
+    "c2-01-effect-measures.html": "ad028a9d"
+  },
+  "chapters/c2-02-interpretability-efficiency.qmd": {
+    "c2-02-interpretability-efficiency.html": "8d966659"
+  },
+  "chapters/c2-03-ni-margin.qmd": {
+    "c2-03-ni-margin.html": "40899225"
+  },
+  "chapters/c2-04-closing.qmd": {
+    "c2-04-closing.html": "b870f2d9"
+  },
+  "chapters/c3-00-overview.qmd": {
+    "c3-00-overview.html": "e03496e8"
+  },
+  "chapters/c3-01-effect-size-ownership.qmd": {
+    "c3-01-effect-size-ownership.html": "9b6688f2"
+  },
+  "chapters/c3-02-variance-dropout.qmd": {
+    "c3-02-variance-dropout.html": "61fa3a4b"
+  },
+  "chapters/c3-03-event-rate-uncertainty.qmd": {
+    "c3-03-event-rate-uncertainty.html": "d1e282ea"
+  },
+  "chapters/c3-04-power-as-risk-budget.qmd": {
+    "c3-04-power-as-risk-budget.html": "7c0a7721"
+  },
+  "chapters/c3-05-closing.qmd": {
+    "c3-05-closing.html": "977ab4dd"
+  },
+  "chapters/c4-00-overview.qmd": {
+    "c4-00-overview.html": "2c8d2fd1"
+  },
+  "chapters/c4-01-why-sponsors-want-interim.qmd": {
+    "c4-01-why-sponsors-want-interim.html": "a038e281"
+  },
+  "chapters/c4-02-alpha-spending.qmd": {
+    "c4-02-alpha-spending.html": "934390ec"
+  },
+  "chapters/c4-03-operating-characteristics.qmd": {
+    "c4-03-operating-characteristics.html": "cc04ac13"
+  },
+  "chapters/c4-04-futility-efficacy-safety.qmd": {
+    "c4-04-futility-efficacy-safety.html": "29ed3442"
+  },
+  "chapters/c4-05-governance.qmd": {
+    "c4-05-governance.html": "33e9e068"
+  },
+  "chapters/c4-06-closing.qmd": {
+    "c4-06-closing.html": "08172264"
+  },
+  "chapters/c5-00-overview.qmd": {
+    "c5-00-overview.html": "689d60e8"
+  },
+  "chapters/c5-01-randomization-logic.qmd": {
+    "c5-01-randomization-logic.html": "e25beb4c"
+  },
+  "chapters/c5-02-stratification.qmd": {
+    "c5-02-stratification.html": "07edc3a1"
+  },
+  "chapters/c5-03-allocation-concealment.qmd": {
+    "c5-03-allocation-concealment.html": "5f0297fc"
+  },
+  "chapters/c5-04-validation.qmd": {
+    "c5-04-validation.html": "99e1e9ed"
+  },
+  "chapters/c5-05-open-label.qmd": {
+    "c5-05-open-label.html": "99ff1774"
+  },
+  "chapters/c5-06-closing.qmd": {
+    "c5-06-closing.html": "4fd479f2"
+  },
+  "chapters/c6-00-overview.qmd": {
+    "c6-00-overview.html": "7870f36d"
+  },
+  "chapters/c6-01-claims-not-pvalues.qmd": {
+    "c6-01-claims-not-pvalues.html": "a2521f5d"
+  },
+  "chapters/c6-02-co-primary-multiple.qmd": {
+    "c6-02-co-primary-multiple.html": "a737fcd2"
+  },
+  "chapters/c6-03-hierarchical-testing.qmd": {
+    "c6-03-hierarchical-testing.html": "a07f8e43"
+  },
+  "chapters/c6-04-subgroup-discipline.qmd": {
+    "c6-04-subgroup-discipline.html": "7f5ba24b"
+  },
+  "chapters/c6-05-closing.qmd": {
+    "c6-05-closing.html": "e61a6a38"
+  },
+  "chapters/c7-00-overview.qmd": {
+    "c7-00-overview.html": "51eb6a70"
+  },
+  "chapters/c7-01-ssr.qmd": {
+    "c7-01-ssr.html": "decc9687"
+  },
+  "chapters/c7-02-adaptive-enrichment.qmd": {
+    "c7-02-adaptive-enrichment.html": "c6e84837"
+  },
+  "chapters/c7-03-estimand-shift.qmd": {
+    "c7-03-estimand-shift.html": "fbb95741"
+  },
+  "chapters/c7-04-ni-failure-modes.qmd": {
+    "c7-04-ni-failure-modes.html": "e5e4635e"
+  },
+  "chapters/c7-05-closing.qmd": {
+    "c7-05-closing.html": "6278aff7"
+  },
+  "chapters/c8-00-overview.qmd": {
+    "c8-00-overview.html": "24b441ac"
+  },
+  "chapters/c8-01-must-prespecify.qmd": {
+    "c8-01-must-prespecify.html": "9c6eef3b"
+  },
+  "chapters/c8-02-adaptive-rules.qmd": {
+    "c8-02-adaptive-rules.html": "236e6613"
+  },
+  "chapters/c8-03-decision-log.qmd": {
+    "c8-03-decision-log.html": "e8806bd6"
+  },
+  "chapters/c8-04-design-review-checklist.qmd": {
+    "c8-04-design-review-checklist.html": "0c724cfc"
+  },
+  "chapters/c8-05-closing.qmd": {
+    "c8-05-closing.html": "5cc53b98"
+  },
+  "chapters/appendix-qa.qmd": {
+    "appendix-qa.html": "8077db33"
+  },
+  "chapters/appendix-scenarios.qmd": {
+    "appendix-scenarios.html": "79623de5"
+  }
+}

@@ -1,0 +1,72 @@
+---
+title: "Chapter 6: What Are We Allowed to Claim?"
+---
+
+
+## The question Chapter 5 leaves open
+
+Chapter 5 protected the comparison. It established that the treatment and control arms are comparable at baseline, that the assignment was not predictable before enrollment, that the outcome was assessed without knowledge of the assignment. When all of this works, the primary comparison is valid: the observed difference between arms is attributable to the treatment, not to systematic distortion.
+
+What Chapter 5 did not address is what that valid comparison allows the trial to assert.
+
+A valid comparison and a defensible claim are not the same thing. A primary analysis that crosses the pre-specified significance threshold allows the trial to reject the null hypothesis that the treatment effect is zero. It does not automatically allow the trial to assert that the treatment works in a specific subgroup, that it works on a secondary endpoint that was not the basis for the power calculation, that it is superior to a comparator on a measure that was not the primary, or that its effect in a pre-specified subgroup is large enough to support a distinct label. Each of these additional assertions requires something beyond a valid primary comparison: it requires that the assertion was pre-specified, that the evidence supports it with appropriate error control, and that the framing of the assertion is honest about what the evidence can and cannot show.
+
+This is claim discipline. It is not a statistical concept, though statistics enforces it. It is a scientific and ethical concept: the trial is allowed to claim what the evidence, correctly analyzed within the pre-specified plan, genuinely supports. Not more. The pressure to claim more—to extract every possible positive message from the data, to find the subgroup where the treatment appears most effective, to report the secondary endpoint that crossed the threshold when the primary did not—is real and constant. Claim discipline is the design structure that resists this pressure.
+
+---
+
+## Why this chapter exists
+
+The history of clinical trial reporting is substantially a history of claims that exceeded the evidence. Post-hoc subgroup findings reported as if confirmatory. Secondary endpoints elevated to primary when the primary failed. Composite endpoints disaggregated to highlight the component that moved. Surrogate results extrapolated to clinical benefit without establishing the surrogate-outcome relationship. These practices are not rare exceptions; they are common enough that the regulatory agencies, the clinical literature, and the evidence synthesis community have invested enormous effort in developing reporting standards—CONSORT, STROBE, COMET, SPIRIT—that attempt to make the gap between pre-specified and reported analysis transparent.
+
+The standards help. They do not eliminate the problem, because the problem is not primarily one of disclosure. It is one of design. A trial that does not specify its claims before the data are seen—that does not define, before enrollment, what it is allowed to assert if it succeeds—is a trial that will construct its claims from the observed data, rationalizing each assertion as a pre-specified analysis that was always intended. The reconstruction is usually invisible, because the protocol language is often ambiguous enough to support multiple interpretations.
+
+Claim discipline begins at design, not at analysis. It requires that the claims the trial is capable of making—if it succeeds—are specified before the data are seen, connected to a pre-specified analysis with appropriate error control, and bounded by the power calculation that determined the sample size. A trial that is powered to detect the primary hypothesis is not automatically powered to detect secondary hypotheses, subgroup hypotheses, or multiplicative claims across co-primary endpoints. The design must specify not just what the trial is testing but what it is designed to claim if the tests succeed.
+
+---
+
+## What this chapter covers
+
+**Section 6.1 — Claims, Not P-values** establishes the foundational distinction between a statistical result and a scientific claim. A p-value below 0.05 is not a claim. It is a rejection of the null hypothesis within a specific test, conducted under specific assumptions, at a specific alpha level. The claim—what the trial asserts about the treatment's effect—is a translation of that statistical result into a statement about the treatment's benefit, its size, its durability, its generalizability. That translation requires pre-specification, honest framing, and acknowledgment of its limits. A trial that reports p-values as claims has done the calculation but not the science.
+
+**Section 6.2 — Co-Primary and Multiple Primary Endpoints** examines the specific design challenge of trials that propose more than one primary endpoint. The motivations for multiple primary endpoints are legitimate—when the treatment is expected to affect multiple dimensions of patient outcome, and when demonstrating benefit on each is required for the claim—but the statistical and scientific implications are severe. Whether both endpoints must succeed for the trial to claim success, whether either one is sufficient, and how the type I error is controlled across the joint claim must be specified before enrollment. A trial with two primary endpoints and no pre-specified decision rule for their joint result does not have two primary endpoints. It has two opportunities to claim success with a total type I error rate that is not controlled.
+
+**Section 6.3 — Hierarchical Testing** examines the framework that most trials use to manage multiple claims without inflating the type I error: a pre-specified hierarchy of hypotheses, tested sequentially, in which a hypothesis is tested only if all prior hypotheses in the hierarchy have been confirmed. The hierarchy is a discipline: it limits the claims the trial can make to the ones pre-specified and supported by the evidence, in the order pre-specified, without additional alpha for each test. But the hierarchy must be designed—its order must be chosen before the data are seen, its stopping rule must be pre-specified, and its connection to the clinical narrative must be explicit.
+
+**Section 6.4 — Subgroup Discipline** addresses the most common and most consequential source of overclaiming: subgroup analyses. When the primary analysis succeeds, subgroup analyses identify the patients in whom the treatment appeared most effective. When the primary analysis fails, subgroup analyses identify the patients in whom it appeared effective despite the overall failure. In both cases, the subgroup finding is almost always interpreted more confidently than the evidence supports. The section examines what pre-specified subgroup analyses can and cannot claim, why post-hoc subgroup findings are hypothesis-generating rather than confirmatory, and what design features—including stratification by the subgroup-defining variable and adequate power for the subgroup comparison—are required to support a confirmatory subgroup claim.
+
+---
+
+## The decision structure of this chapter
+
+The four sections of this chapter address a single question—what can this trial claim?—from four different angles, each corresponding to a distinct design decision that must be made before enrollment.
+
+The decision in Section 6.1 is about framing: every statistical result must be connected to a pre-specified claim before the trial begins, and the framing of that claim must be honest about what the evidence supports and what it does not.
+
+The decision in Section 6.2 is about the decision rule for co-primary endpoints: whether success on both is required, whether success on either is sufficient, and how the type I error is controlled across the joint claim.
+
+The decision in Section 6.3 is about the hierarchy: what the trial is allowed to claim if the primary succeeds, in what order, with what stopping rule if a hypothesis in the hierarchy fails.
+
+The decision in Section 6.4 is about subgroup pre-specification: which subgroups are confirmatory, which are exploratory, what power is available for each, and what the claim is if the subgroup analysis succeeds.
+
+These four decisions are not independent. The hierarchy governs the primary, the secondary, and the subgroup claims together. The co-primary decision rule determines whether the hierarchy even begins. The framing of each claim must be consistent with the analysis that generated it. A trial that makes these four decisions coherently—before enrollment, as components of an integrated analysis plan—has claim discipline. A trial that makes them piecemeal, or after the data are seen, does not.
+
+---
+
+## What this chapter is not about
+
+This chapter is not about the statistical methods for controlling multiplicity. The Bonferroni correction, the Holm procedure, the Hochberg method, the Dunnett test—these are tools for implementing a pre-specified multiplicity control plan, not the plan itself. Choosing among these tools is a consequence of the design decisions this chapter addresses, not a substitute for them.
+
+It is also not about the reporting standards for clinical trial results—CONSORT, pre-registration requirements, trial registry disclosures. These standards enforce claim discipline after the trial; this chapter is about building claim discipline into the design before the trial. The reporting standards catch the failures of claim discipline; this chapter is about preventing them.
+
+---
+
+## The connection to what surrounds this chapter
+
+Chapter 6 is the last of the design chapters before the book turns to adaptive design (Chapter 7) and pre-specification requirements (Chapter 8). Its position is consequential.
+
+The claim discipline of Chapter 6 inherits the validity of the primary comparison from Chapter 5. A compromised comparison supports a weakened claim. The stronger the bias protection, the stronger the claim that valid results can support—and the more damaging it is when the claim exceeds what the valid comparison actually shows.
+
+Chapter 6 also sets the stage for Chapter 7, which asks what happens when the design adapts. Adaptive designs—sample size re-estimation, adaptive enrichment, seamless phase II/III designs—all create additional sources of multiplicity and claim complexity that require the same discipline as fixed designs, applied to a more complex situation. The foundation for managing multiplicity in adaptive designs is the claim discipline established for fixed designs in Chapter 6.
+
+The question this chapter must answer, for each claim the trial might make, is: was this claim pre-specified, is the evidence sufficient to support it with the stated confidence, and is the framing honest about what the evidence shows and what it does not? If the answer to any of these three questions is no, the claim should not be made—or should be made with the explicit qualification that it answers a different question than the trial was designed to answer.

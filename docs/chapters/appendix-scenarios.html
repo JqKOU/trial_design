@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Design Scenarios – Clinical Trial Design Decision Framework</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/appendix-qa.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-234501a227967ac462f24af7be37efa8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/appendix-qa.html">Appendix</a></li><li class="breadcrumb-item"><a href="../chapters/appendix-scenarios.html"><span class="chapter-title">Design Scenarios</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Clinical Trial Design Decision Framework</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/JqKOU/trial_design" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Clinical Trial Design Decision Framework</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c1-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 1: What Are We Trying to Show?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-01-purpose-estimand.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.1 Purpose and Estimand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-02-endpoint-choice.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.2 Endpoint Choice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-03-intercurrent-events.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.3 Intercurrent Events and Estimand Strategy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c1-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">1.4 Closing: What Has Been Decided, and What It Costs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c2-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 2: How Will We Measure the Difference?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-01-effect-measures.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.1 Effect Measures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-02-interpretability-efficiency.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.2 Interpretability and Efficiency</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-03-ni-margin.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.3 The Non-Inferiority Margin</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c2-04-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">2.4 Closing: The Measure Is a Commitment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c3-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 3: What Are We Committing To?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-01-effect-size-ownership.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.1 Effect Size Ownership</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-02-variance-dropout.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.2 Variance and Dropout</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-03-event-rate-uncertainty.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.3 Event Rate Uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-04-power-as-risk-budget.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.4 Power as Risk Budget</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c3-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">3.5 Closing: The Commitment Behind the Number</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c4-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 4: When Might We Stop Early?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-01-why-sponsors-want-interim.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.1 Why Sponsors Want Interim Analyses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-02-alpha-spending.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.2 Alpha Spending</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-03-operating-characteristics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.3 Operating Characteristics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-04-futility-efficacy-safety.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.4 Futility, Efficacy, and Safety</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-05-governance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.5 Governance</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c4-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">4.6 Closing: The Governed Decision</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c5-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 5: How Do We Protect Against Bias?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-01-randomization-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.1 Randomization Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-02-stratification.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.2 Stratification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-03-allocation-concealment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.3 Allocation Concealment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-04-validation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.4 Outcome Assessment and Validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-05-open-label.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.5 Open-Label Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c5-06-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">5.6 Closing: The System That Holds the Comparison Valid</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c6-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 6: What Are We Allowed to Claim?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-01-claims-not-pvalues.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.1 Claims, Not P-values</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-02-co-primary-multiple.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.2 Co-Primary and Multiple Primary Endpoints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-03-hierarchical-testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.3 Hierarchical Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-04-subgroup-discipline.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.4 Subgroup Discipline</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c6-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">6.5 Closing: The Boundary of What Can Be Said</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c7-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 7: What If the Design Itself Adapts?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-01-ssr.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.1 Sample Size Re-estimation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-02-adaptive-enrichment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.2 Adaptive Enrichment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-03-estimand-shift.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.3 Estimand Shift</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-04-ni-failure-modes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.4 Non-Inferiority Failure Modes in Adaptive Designs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c7-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">7.5 Closing: The Pre-Specified Adaptation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/c8-00-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chapter 8: What Must Be Locked, and When?</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-01-must-prespecify.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.1 What Must Be Pre-specified</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-02-adaptive-rules.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.2 Adaptive Rules and Their Lock Requirements</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-03-decision-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.3 The Decision Log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-04-design-review-checklist.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.4 Design Review and the Independent Challenge</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/c8-05-closing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">8.5 Closing: The Defensible Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-qa.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Design Review Hearing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/appendix-scenarios.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Design Scenarios</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#where-the-principles-meet-the-room" id="toc-where-the-principles-meet-the-room" class="nav-link active" data-scroll-target="#where-the-principles-meet-the-room">Where the Principles Meet the Room</a></li>
+  <li><a href="#scenario-1-we-want-an-interim-analysis" id="toc-scenario-1-we-want-an-interim-analysis" class="nav-link" data-scroll-target="#scenario-1-we-want-an-interim-analysis">Scenario 1: “We Want an Interim Analysis”</a>
+  <ul class="collapse">
+  <li><a href="#what-is-actually-being-requested" id="toc-what-is-actually-being-requested" class="nav-link" data-scroll-target="#what-is-actually-being-requested">What is actually being requested</a></li>
+  <li><a href="#the-budget-conversation" id="toc-the-budget-conversation" class="nav-link" data-scroll-target="#the-budget-conversation">The budget conversation</a></li>
+  <li><a href="#the-question-the-sponsor-is-not-asking" id="toc-the-question-the-sponsor-is-not-asking" class="nav-link" data-scroll-target="#the-question-the-sponsor-is-not-asking">The question the sponsor is not asking</a></li>
+  </ul></li>
+  <li><a href="#scenario-2-the-stopping-rate-is-too-high" id="toc-scenario-2-the-stopping-rate-is-too-high" class="nav-link" data-scroll-target="#scenario-2-the-stopping-rate-is-too-high">Scenario 2: “The Stopping Rate Is Too High”</a>
+  <ul class="collapse">
+  <li><a href="#three-probabilities-one-phrase" id="toc-three-probabilities-one-phrase" class="nav-link" data-scroll-target="#three-probabilities-one-phrase">Three probabilities, one phrase</a></li>
+  <li><a href="#how-to-have-this-conversation" id="toc-how-to-have-this-conversation" class="nav-link" data-scroll-target="#how-to-have-this-conversation">How to have this conversation</a></li>
+  </ul></li>
+  <li><a href="#scenario-3-continuous-binary-or-time-to-event" id="toc-scenario-3-continuous-binary-or-time-to-event" class="nav-link" data-scroll-target="#scenario-3-continuous-binary-or-time-to-event">Scenario 3: Continuous, Binary, or Time-to-Event?</a>
+  <ul class="collapse">
+  <li><a href="#what-the-statistician-should-not-do" id="toc-what-the-statistician-should-not-do" class="nav-link" data-scroll-target="#what-the-statistician-should-not-do">What the statistician should not do</a></li>
+  <li><a href="#the-three-questions-the-statistician-must-answer" id="toc-the-three-questions-the-statistician-must-answer" class="nav-link" data-scroll-target="#the-three-questions-the-statistician-must-answer">The three questions the statistician must answer</a></li>
+  <li><a href="#the-dropout-complication" id="toc-the-dropout-complication" class="nav-link" data-scroll-target="#the-dropout-complication">The dropout complication</a></li>
+  </ul></li>
+  <li><a href="#scenario-4-we-need-five-co-primary-endpoints" id="toc-scenario-4-we-need-five-co-primary-endpoints" class="nav-link" data-scroll-target="#scenario-4-we-need-five-co-primary-endpoints">Scenario 4: “We Need Five Co-Primary Endpoints”</a>
+  <ul class="collapse">
+  <li><a href="#what-five-co-primary-endpoints-actually-means" id="toc-what-five-co-primary-endpoints-actually-means" class="nav-link" data-scroll-target="#what-five-co-primary-endpoints-actually-means">What five co-primary endpoints actually means</a></li>
+  <li><a href="#the-conversation-that-needs-to-happen" id="toc-the-conversation-that-needs-to-happen" class="nav-link" data-scroll-target="#the-conversation-that-needs-to-happen">The conversation that needs to happen</a></li>
+  <li><a href="#when-the-regulatory-requirement-is-real" id="toc-when-the-regulatory-requirement-is-real" class="nav-link" data-scroll-target="#when-the-regulatory-requirement-is-real">When the regulatory requirement is real</a></li>
+  </ul></li>
+  <li><a href="#scenario-5-dropout-sample-size-problem-or-estimand-problem" id="toc-scenario-5-dropout-sample-size-problem-or-estimand-problem" class="nav-link" data-scroll-target="#scenario-5-dropout-sample-size-problem-or-estimand-problem">Scenario 5: Dropout — Sample Size Problem or Estimand Problem?</a>
+  <ul class="collapse">
+  <li><a href="#the-question-under-the-question" id="toc-the-question-under-the-question" class="nav-link" data-scroll-target="#the-question-under-the-question">The question under the question</a></li>
+  <li><a href="#the-conversation-that-clarifies-this" id="toc-the-conversation-that-clarifies-this" class="nav-link" data-scroll-target="#the-conversation-that-clarifies-this">The conversation that clarifies this</a></li>
+  </ul></li>
+  <li><a href="#scenario-6-the-statisticians-boundary" id="toc-scenario-6-the-statisticians-boundary" class="nav-link" data-scroll-target="#scenario-6-the-statisticians-boundary">Scenario 6: The Statistician’s Boundary</a>
+  <ul class="collapse">
+  <li><a href="#questions-the-statistician-can-answer" id="toc-questions-the-statistician-can-answer" class="nav-link" data-scroll-target="#questions-the-statistician-can-answer">Questions the statistician can answer</a></li>
+  <li><a href="#questions-the-statistician-cannot-answer" id="toc-questions-the-statistician-cannot-answer" class="nav-link" data-scroll-target="#questions-the-statistician-cannot-answer">Questions the statistician cannot answer</a></li>
+  <li><a href="#the-damage-of-crossed-boundaries" id="toc-the-damage-of-crossed-boundaries" class="nav-link" data-scroll-target="#the-damage-of-crossed-boundaries">The damage of crossed boundaries</a></li>
+  <li><a href="#the-damage-of-not-crossing-boundaries-that-should-be-crossed" id="toc-the-damage-of-not-crossing-boundaries-that-should-be-crossed" class="nav-link" data-scroll-target="#the-damage-of-not-crossing-boundaries-that-should-be-crossed">The damage of not crossing boundaries that should be crossed</a></li>
+  </ul></li>
+  <li><a href="#scenario-7-randomization-and-double-programming" id="toc-scenario-7-randomization-and-double-programming" class="nav-link" data-scroll-target="#scenario-7-randomization-and-double-programming">Scenario 7: Randomization and Double Programming</a>
+  <ul class="collapse">
+  <li><a href="#what-double-programming-protects-against" id="toc-what-double-programming-protects-against" class="nav-link" data-scroll-target="#what-double-programming-protects-against">What double programming protects against</a></li>
+  <li><a href="#when-double-programming-is-required" id="toc-when-double-programming-is-required" class="nav-link" data-scroll-target="#when-double-programming-is-required">When double programming is required</a></li>
+  <li><a href="#what-cannot-be-double-programmed" id="toc-what-cannot-be-double-programmed" class="nav-link" data-scroll-target="#what-cannot-be-double-programmed">What cannot be double programmed</a></li>
+  </ul></li>
+  <li><a href="#scenario-8-the-primary-endpoint-failed-but-look-at-this-subgroup" id="toc-scenario-8-the-primary-endpoint-failed-but-look-at-this-subgroup" class="nav-link" data-scroll-target="#scenario-8-the-primary-endpoint-failed-but-look-at-this-subgroup">Scenario 8: “The Primary Endpoint Failed, But Look at This Subgroup”</a>
+  <ul class="collapse">
+  <li><a href="#what-has-just-happened-statistically" id="toc-what-has-just-happened-statistically" class="nav-link" data-scroll-target="#what-has-just-happened-statistically">What has just happened, statistically</a></li>
+  <li><a href="#what-the-finding-does-justify" id="toc-what-the-finding-does-justify" class="nav-link" data-scroll-target="#what-the-finding-does-justify">What the finding does justify</a></li>
+  <li><a href="#the-specific-risk-of-this-conversation" id="toc-the-specific-risk-of-this-conversation" class="nav-link" data-scroll-target="#the-specific-risk-of-this-conversation">The specific risk of this conversation</a></li>
+  </ul></li>
+  <li><a href="#scenario-9-the-ni-margin-discussion" id="toc-scenario-9-the-ni-margin-discussion" class="nav-link" data-scroll-target="#scenario-9-the-ni-margin-discussion">Scenario 9: The NI Margin Discussion</a>
+  <ul class="collapse">
+  <li><a href="#why-the-conversation-stalls" id="toc-why-the-conversation-stalls" class="nav-link" data-scroll-target="#why-the-conversation-stalls">Why the conversation stalls</a></li>
+  <li><a href="#how-to-move-the-conversation-forward" id="toc-how-to-move-the-conversation-forward" class="nav-link" data-scroll-target="#how-to-move-the-conversation-forward">How to move the conversation forward</a></li>
+  <li><a href="#the-constancy-assumption-and-assay-sensitivity" id="toc-the-constancy-assumption-and-assay-sensitivity" class="nav-link" data-scroll-target="#the-constancy-assumption-and-assay-sensitivity">The constancy assumption and assay sensitivity</a></li>
+  </ul></li>
+  <li><a href="#scenario-10-can-we-add-an-endpoint" id="toc-scenario-10-can-we-add-an-endpoint" class="nav-link" data-scroll-target="#scenario-10-can-we-add-an-endpoint">Scenario 10: “Can We Add an Endpoint?”</a>
+  <ul class="collapse">
+  <li><a href="#the-three-sources-and-why-they-matter" id="toc-the-three-sources-and-why-they-matter" class="nav-link" data-scroll-target="#the-three-sources-and-why-they-matter">The three sources and why they matter</a></li>
+  <li><a href="#the-analytical-consequence" id="toc-the-analytical-consequence" class="nav-link" data-scroll-target="#the-analytical-consequence">The analytical consequence</a></li>
+  </ul></li>
+  <li><a href="#scenario-11-the-alpha-allocation-meeting" id="toc-scenario-11-the-alpha-allocation-meeting" class="nav-link" data-scroll-target="#scenario-11-the-alpha-allocation-meeting">Scenario 11: The Alpha Allocation Meeting</a>
+  <ul class="collapse">
+  <li><a href="#what-is-actually-being-decided" id="toc-what-is-actually-being-decided" class="nav-link" data-scroll-target="#what-is-actually-being-decided">What is actually being decided</a></li>
+  <li><a href="#the-efficiency-argument-versus-the-importance-argument" id="toc-the-efficiency-argument-versus-the-importance-argument" class="nav-link" data-scroll-target="#the-efficiency-argument-versus-the-importance-argument">The efficiency argument versus the importance argument</a></li>
+  <li><a href="#when-the-hierarchy-genuinely-cannot-be-ordered" id="toc-when-the-hierarchy-genuinely-cannot-be-ordered" class="nav-link" data-scroll-target="#when-the-hierarchy-genuinely-cannot-be-ordered">When the hierarchy genuinely cannot be ordered</a></li>
+  </ul></li>
+  <li><a href="#scenario-12-we-need-to-show-results-in-all-regions" id="toc-scenario-12-we-need-to-show-results-in-all-regions" class="nav-link" data-scroll-target="#scenario-12-we-need-to-show-results-in-all-regions">Scenario 12: “We Need to Show Results in All Regions”</a>
+  <ul class="collapse">
+  <li><a href="#what-regional-consistency-actually-requires" id="toc-what-regional-consistency-actually-requires" class="nav-link" data-scroll-target="#what-regional-consistency-actually-requires">What regional consistency actually requires</a></li>
+  <li><a href="#the-minimum-regional-sample-size-question" id="toc-the-minimum-regional-sample-size-question" class="nav-link" data-scroll-target="#the-minimum-regional-sample-size-question">The minimum regional sample size question</a></li>
+  <li><a href="#the-heterogeneity-problem" id="toc-the-heterogeneity-problem" class="nav-link" data-scroll-target="#the-heterogeneity-problem">The heterogeneity problem</a></li>
+  </ul></li>
+  <li><a href="#scenario-13-surrogate-endpoints" id="toc-scenario-13-surrogate-endpoints" class="nav-link" data-scroll-target="#scenario-13-surrogate-endpoints">Scenario 13: Surrogate Endpoints</a>
+  <ul class="collapse">
+  <li><a href="#what-the-statistician-can-and-cannot-say" id="toc-what-the-statistician-can-and-cannot-say" class="nav-link" data-scroll-target="#what-the-statistician-can-and-cannot-say">What the statistician can and cannot say</a></li>
+  <li><a href="#the-accelerated-approval-context" id="toc-the-accelerated-approval-context" class="nav-link" data-scroll-target="#the-accelerated-approval-context">The accelerated approval context</a></li>
+  <li><a href="#when-the-surrogate-fails-to-predict" id="toc-when-the-surrogate-fails-to-predict" class="nav-link" data-scroll-target="#when-the-surrogate-fails-to-predict">When the surrogate fails to predict</a></li>
+  </ul></li>
+  <li><a href="#scenario-14-sample-size-in-rare-disease-and-small-populations" id="toc-scenario-14-sample-size-in-rare-disease-and-small-populations" class="nav-link" data-scroll-target="#scenario-14-sample-size-in-rare-disease-and-small-populations">Scenario 14: Sample Size in Rare Disease and Small Populations</a>
+  <ul class="collapse">
+  <li><a href="#what-80-power-means-in-this-context" id="toc-what-80-power-means-in-this-context" class="nav-link" data-scroll-target="#what-80-power-means-in-this-context">What 80% power means in this context</a></li>
+  <li><a href="#the-regulatory-framework-for-rare-disease" id="toc-the-regulatory-framework-for-rare-disease" class="nav-link" data-scroll-target="#the-regulatory-framework-for-rare-disease">The regulatory framework for rare disease</a></li>
+  <li><a href="#the-single-arm-trial-question" id="toc-the-single-arm-trial-question" class="nav-link" data-scroll-target="#the-single-arm-trial-question">The single-arm trial question</a></li>
+  </ul></li>
+  <li><a href="#scenario-15-when-the-statistician-disagrees-with-the-design" id="toc-scenario-15-when-the-statistician-disagrees-with-the-design" class="nav-link" data-scroll-target="#scenario-15-when-the-statistician-disagrees-with-the-design">Scenario 15: When the Statistician Disagrees With the Design</a>
+  <ul class="collapse">
+  <li><a href="#the-professional-obligation" id="toc-the-professional-obligation" class="nav-link" data-scroll-target="#the-professional-obligation">The professional obligation</a></li>
+  <li><a href="#the-escalation-path" id="toc-the-escalation-path" class="nav-link" data-scroll-target="#the-escalation-path">The escalation path</a></li>
+  <li><a href="#what-documenting-disagreement-achieves" id="toc-what-documenting-disagreement-achieves" class="nav-link" data-scroll-target="#what-documenting-disagreement-achieves">What documenting disagreement achieves</a></li>
+  <li><a href="#the-specific-risk-of-not-saying-it" id="toc-the-specific-risk-of-not-saying-it" class="nav-link" data-scroll-target="#the-specific-risk-of-not-saying-it">The specific risk of not saying it</a></li>
+  </ul></li>
+  <li><a href="#on-these-scenarios" id="toc-on-these-scenarios" class="nav-link" data-scroll-target="#on-these-scenarios">On These Scenarios</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/appendix-qa.html">Appendix</a></li><li class="breadcrumb-item"><a href="../chapters/appendix-scenarios.html"><span class="chapter-title">Design Scenarios</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Design Scenarios</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="where-the-principles-meet-the-room" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-principles-meet-the-room">Where the Principles Meet the Room</h2>
+<p>The eight chapters of this book have addressed design decisions in terms of their consequences: who owns them, what happens when they are wrong, and what governance structures make them defensible. This appendix addresses the same decisions from a different angle — the angle of the statistician in the room when the decision is being made.</p>
+<p>Each scenario describes a situation that recurs in clinical trial design. The situation is not hypothetical; it is the kind of meeting, the kind of request, the kind of disagreement that happens before a trial begins. The scenario does not tell you what to say. It maps the request to the design question underneath it — the question that, if answered correctly, makes the design decision defensible regardless of who is in the room or what they want.</p>
+<p>The scenarios are organized by the point in the design process at which they arise. They are not exhaustive. They are representative of the places where the principles of this book are most often tested by practice.</p>
+<hr>
+</section>
+<section id="scenario-1-we-want-an-interim-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-1-we-want-an-interim-analysis">Scenario 1: “We Want an Interim Analysis”</h2>
+<p><em>The request arrives at the first design meeting, usually from the sponsor’s development team or the clinical lead. The justification is often stated simply: “We want to be able to stop early if it works.” Sometimes the word “budget” is in the room. Sometimes it is not, but it is present anyway.</em></p>
+<section id="what-is-actually-being-requested" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-actually-being-requested">What is actually being requested</h3>
+<p>The request for an interim analysis is rarely one request. It is usually three overlapping requests that the requester has not distinguished:</p>
+<p>The first is <strong>efficacy protection</strong>: if the treatment is clearly working, stop enrolling patients to the control arm and accelerate submission. This is the request most often stated.</p>
+<p>The second is <strong>resource protection</strong>: if the treatment is clearly not working, stop spending money on a futile program. This request is present in almost every development context but is sometimes not stated because acknowledging it requires acknowledging the possibility of failure.</p>
+<p>The third is <strong>information access</strong>: someone in the organization wants to know how the trial is going before it is over, for reasons that may be scientific, commercial, or political. This request is the most dangerous to the trial’s integrity and is almost never stated as such.</p>
+<p>Each of these requests leads to a different design. Efficacy protection requires an upper stopping boundary calibrated to the expected effect and the information fraction at which the treatment’s benefit would be large enough to be clinically unambiguous. Resource protection requires a futility boundary calibrated to the conditional power under pessimistic scenarios. Information access — if it is the real request — requires a governance discussion about who sees what, not a stopping boundary discussion.</p>
+<p>The design conversation cannot proceed until the request is separated into its components. The statistician’s first task is not to design the interim analysis. It is to ask, and get a documented answer to: what decision are we trying to make with this interim, and who will make it?</p>
+</section>
+<section id="the-budget-conversation" class="level3">
+<h3 class="anchored" data-anchor-id="the-budget-conversation">The budget conversation</h3>
+<p>When the interim analysis request is budget-driven — when the real question is “can we stop the program before it consumes the full development budget if the treatment is not working” — the design implications are specific.</p>
+<p>A budget-protective interim analysis is a futility analysis. Its statistical logic is conditional power: given what we have seen so far, what is the probability of achieving the primary objective if we continue to the end? If the conditional power is below a pre-specified threshold, stopping is warranted.</p>
+<p>The budget conversation has a design consequence that is not always made explicit: the threshold for stopping must be set before the trial begins, not recalibrated when the interim data reveal a disappointing trend. A conditional power threshold of 20% means the trial will stop if the probability of success, given the interim data, is below 20%. A threshold set at 30% or 40% stops the trial sooner and saves more resources, but stops some trials that would have succeeded with continued enrollment. The threshold is a risk allocation decision — between the patients who might have benefited from a continued trial and the resources that will not be spent if it stops early.</p>
+<p>This decision belongs to the sponsor’s clinical and development leadership, not to the statistician. The statistician’s role is to make the decision visible — to show what the stopping probability is under various true effect scenarios for each candidate threshold — and to ensure that the chosen threshold is documented before the trial begins. Chapter 4 addresses the operating characteristics that make this calculation possible. The budget conversation is the context in which those operating characteristics matter most directly.</p>
+</section>
+<section id="the-question-the-sponsor-is-not-asking" class="level3">
+<h3 class="anchored" data-anchor-id="the-question-the-sponsor-is-not-asking">The question the sponsor is not asking</h3>
+<p>When a sponsor requests an interim analysis, they are usually not asking: what does an interim analysis do to the final result?</p>
+<p>Two consequences are reliably underappreciated. First, stopping early for efficacy produces an overestimate of the treatment effect. The observed effect at early stopping is expected to be larger than the true effect, because trials that stop early have, by definition, observed an interim result above a high threshold, and extreme observations are on average above the true value. The overestimate enters the label. It shapes clinical expectations. Subsequent trials powered on the overestimated effect tend to fail at higher rates.</p>
+<p>Second, every interim efficacy analysis consumes alpha. After the interim, the final analysis is conducted at a more stringent threshold than the nominal alpha. The power reported in the sample size report — which is usually calculated at the nominal alpha — is not the power of the trial as designed. The power of the trial as designed is lower, and the sample size should have been calculated at the adjusted threshold. When this is not done, the trial is less powerful than the team believes it to be.</p>
+<p>Both consequences should be in the room when the interim analysis request is made. They are rarely there unless the statistician puts them there.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-2-the-stopping-rate-is-too-high" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-2-the-stopping-rate-is-too-high">Scenario 2: “The Stopping Rate Is Too High”</h2>
+<p><em>This objection arises most often from the clinical lead or the medical monitor, after the statistician has presented the interim analysis design. The stopping rate — the probability of stopping early — looks alarming. “We’ll stop half the time before we even get to full enrollment. That can’t be right.”</em></p>
+<section id="three-probabilities-one-phrase" class="level3">
+<h3 class="anchored" data-anchor-id="three-probabilities-one-phrase">Three probabilities, one phrase</h3>
+<p>When a clinician says “the stopping rate is too high,” they are almost always referring to one of three distinct probabilities, and they do not know which one. The conversation cannot be resolved until the statistician identifies which probability is causing the concern.</p>
+<p><strong>The probability of stopping under the null.</strong> This is the probability of stopping for efficacy when the treatment has no effect — the false positive contribution from the interim analysis. For a well-designed O’Brien-Fleming boundary, this probability is very small at early information fractions: stopping at 25% information fraction requires a test statistic corresponding to a p-value well below 0.001. If the clinician has been told that the trial might stop at the first interim, and they are imagining a false positive, the actual probability is much smaller than their intuition suggests.</p>
+<p><strong>The probability of stopping under the alternative.</strong> This is the probability of stopping early when the treatment works as assumed — the efficiency gain of the interim analysis. For a compelling treatment effect, this probability can be substantial: a trial designed with 80% power at the final analysis, using an O’Brien-Fleming boundary, might have a 30-40% probability of stopping at the first interim if the treatment effect is exactly as assumed. This is the probability the clinician is most likely objecting to. Their concern: if we stop at 30-40% of planned events, is the result reliable? This concern is legitimate and connects to the overestimation discussion in Scenario 1.</p>
+<p><strong>The probability of stopping under futility.</strong> This is the probability that the futility boundary is crossed when the treatment is not working. For a well-designed futility rule, this probability should be high under the null — the whole point of the futility analysis is to stop efficiently when the treatment is failing. A clinician who objects that “the futility stopping rate is too high” is objecting to the trial’s efficiency, which means they are not willing to accept early evidence of failure. This objection is not statistical. It is a belief that the treatment will work despite an early negative signal, and it should be addressed as a clinical judgment, not a statistical problem.</p>
+</section>
+<section id="how-to-have-this-conversation" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-have-this-conversation">How to have this conversation</h3>
+<p>The most efficient resolution is a table. Not a formula, not a p-value, not a description of the alpha-spending function — a table that shows, for each information fraction at which an interim is planned, the probability of stopping under the null hypothesis, the probability of stopping when the treatment effect is exactly as assumed, and the probability of stopping when the treatment effect is half of what was assumed.</p>
+<p>This table makes all three probabilities visible simultaneously. The clinician can look at the row for the first interim and see: the probability of stopping for a false positive here is 0.3%, the probability of stopping because the treatment works is 28%, and the probability of stopping because the treatment is not working is 55%. These numbers, together, tell the clinician what the interim analysis actually does — not as an abstraction but as a set of probabilities under scenarios they can evaluate clinically.</p>
+<p>When the clinician sees all three probabilities, their objection usually becomes more specific. If they are concerned about the false positive probability, the design is already conservative and the concern dissolves. If they are concerned about the probability of stopping when the treatment works, the conversation turns to the overestimation bias and whether early stopping is worth the tradeoff. If they are concerned about the futility stopping probability, the conversation turns to how much evidence of failure they need before they would accept stopping.</p>
+<p>Each of these is a real design decision. None of them can be resolved by adjusting “the stopping rate” as an undifferentiated quantity.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-3-continuous-binary-or-time-to-event" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-3-continuous-binary-or-time-to-event">Scenario 3: Continuous, Binary, or Time-to-Event?</h2>
+<p><em>The endpoint discussion is usually scheduled early in the design process and rarely resolved in the first meeting. The clinical team comes with a preferred outcome — often the one that has been used in prior trials in the indication, or the one that is most familiar. The statistician has a view about efficiency, regulatory precedent, and what the analysis will require. The conversation needs to produce a decision that is both scientifically defensible and operationally achievable.</em></p>
+<section id="what-the-statistician-should-not-do" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-statistician-should-not-do">What the statistician should not do</h3>
+<p>The statistician should not arrive at this meeting with a recommendation and defend it. The choice of endpoint type is not a statistical decision. It is a clinical decision that has statistical consequences, and the statistician’s role is to make those consequences visible, not to make the choice.</p>
+<p>Arriving with a recommendation — “we should use a time-to-event endpoint because it’s more efficient” — puts the statistician in the position of defending a position rather than facilitating a decision. The clinical team will push back, the conversation will become adversarial, and the decision will be made on the basis of who argued more persuasively rather than on the basis of what the trial is designed to show.</p>
+</section>
+<section id="the-three-questions-the-statistician-must-answer" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-questions-the-statistician-must-answer">The three questions the statistician must answer</h3>
+<p>Before the meeting, the statistician should be able to answer three questions for each candidate endpoint type, and those answers should be the material the meeting uses to make the decision.</p>
+<p><strong>What does this endpoint actually measure, and does it correspond to the estimand?</strong> A continuous endpoint measures the average magnitude of the treatment’s effect. A binary endpoint measures the proportion of patients who cross a clinically meaningful threshold. A time-to-event endpoint measures the speed at which the outcome occurs, under the proportional hazards assumption. These are different quantities, and they answer different scientific questions. The first task is to identify which quantity the estimand specifies — not which endpoint type is most familiar or most efficient.</p>
+<p><strong>What happens to power if the assumptions are wrong?</strong> For continuous endpoints, the critical assumption is the variance. For binary endpoints, the critical assumption is the baseline event rate. For time-to-event endpoints, the critical assumptions are the event rate, the proportional hazards assumption, and the follow-up duration. Each of these assumptions has a characteristic failure mode. The statistician should show the power curve across the plausible range of assumption violations for each candidate endpoint type, so the clinical team can see which endpoint is most fragile to the most plausible errors.</p>
+<p><strong>What does the regulatory agency expect?</strong> In most indications, there is a precedent for the primary endpoint type, and departing from that precedent requires a justification that will be scrutinized. The statistician should know the regulatory precedent and present it as a constraint, not a recommendation. If the clinical team wants to depart from precedent, the departure needs a documented rationale and ideally a pre-submission regulatory interaction.</p>
+</section>
+<section id="the-dropout-complication" class="level3">
+<h3 class="anchored" data-anchor-id="the-dropout-complication">The dropout complication</h3>
+<p>The choice between continuous and binary endpoints has a specific interaction with dropout that is not always addressed in the endpoint discussion.</p>
+<p>For continuous endpoints assessed at a fixed time point, dropout before the assessment time produces missing data. The missing data must be handled according to the intercurrent event strategy — under a treatment policy estimand, outcome data from dropouts should be collected; under a hypothetical estimand, the analysis must model what would have happened if the patient had not dropped out. The handling is complex, and the complexity is carried by the analysis.</p>
+<p>For time-to-event endpoints, dropout produces censoring. Censoring is handled analytically by the survival model, without the complexity of imputation. In indications where dropout is expected to be high and informative — oncology trials where disease progression leads to treatment switches, for example — the time-to-event endpoint’s censoring framework may be more defensible than the continuous endpoint’s missing data framework, not because it is statistically simpler but because the censoring assumptions are more transparent.</p>
+<p>This is not a recommendation for time-to-event endpoints. It is an example of the kind of consequence that should be in the room when the endpoint discussion is happening, and that the statistician is responsible for putting there.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-4-we-need-five-co-primary-endpoints" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-4-we-need-five-co-primary-endpoints">Scenario 4: “We Need Five Co-Primary Endpoints”</h2>
+<p><em>This request arrives in various forms. Sometimes it is stated directly: “All five of these outcomes are important and we want to claim success on all of them.” Sometimes it is stated as a list of “primary” endpoints that turns out to contain five items when the statistician counts them. Sometimes it arrives as a regulatory requirement that the sponsor has interpreted more broadly than the regulation requires.</em></p>
+<section id="what-five-co-primary-endpoints-actually-means" class="level3">
+<h3 class="anchored" data-anchor-id="what-five-co-primary-endpoints-actually-means">What five co-primary endpoints actually means</h3>
+<p>Five co-primary endpoints, each tested at the nominal alpha, produce a family-wise type I error rate that is not 5%. Under the Bonferroni approximation, testing five independent hypotheses each at 5% produces an overall false positive probability of approximately 23%. If the endpoints are positively correlated — which they usually are, because they are measuring related aspects of the same disease — the inflation is smaller but still substantial.</p>
+<p>This is not a statistical objection to the request. It is a description of what the request entails. The sponsor is proposing to run a trial in which the probability of claiming success when nothing works is substantially above the stated type I error. Whether that is acceptable depends on the clinical context and the regulatory framework, but it should be an explicit decision, not an implicit consequence of a design choice that was not examined.</p>
+</section>
+<section id="the-conversation-that-needs-to-happen" class="level3">
+<h3 class="anchored" data-anchor-id="the-conversation-that-needs-to-happen">The conversation that needs to happen</h3>
+<p>The statistician’s role in this conversation is to translate five co-primary endpoints into a decision question that the clinical team can actually answer.</p>
+<p>The decision question is: which of the following are you prepared to accept as the trial’s result?</p>
+<p><strong>Option A:</strong> The trial requires all five endpoints to succeed. This is the conjunctive rule. The family-wise type I error is controlled below the nominal alpha without correction, but the power for the joint result is substantially lower than the power for any individual endpoint. If four endpoints succeed and one fails, the trial has failed.</p>
+<p><strong>Option B:</strong> The trial requires any one of the five endpoints to succeed. This is the disjunctive rule. The family-wise type I error is inflated and requires explicit correction. If the correction is applied, the threshold for each individual endpoint is more stringent than the nominal alpha, and the trial is less sensitive to each individual effect.</p>
+<p><strong>Option C:</strong> One of the five endpoints is actually primary, and the others are secondary. The trial is powered for the primary, the others are in a pre-specified hierarchy, and the label claim is structured around the primary with supportive evidence from the hierarchy.</p>
+<p>When the clinical team is asked to choose among these three options, the five co-primary structure usually resolves quickly. The conjunctive rule is typically unacceptable — the team does not want the trial to fail because one of five endpoints missed significance. The disjunctive rule is typically unacceptable when the correction is explained — the team does not want each individual test to be harder to pass. Option C — one primary, others secondary — is almost always the right structure, and the conversation about which one is truly primary is the conversation that should have happened at the beginning.</p>
+<p>The statistician’s job is not to impose Option C. It is to make Options A and B concrete enough that the team chooses Option C on their own. A clinical team that understands what a conjunctive five-endpoint design actually commits them to, and what a Bonferroni-corrected disjunctive design actually requires, will usually arrive at the correct design decision without being told.</p>
+</section>
+<section id="when-the-regulatory-requirement-is-real" class="level3">
+<h3 class="anchored" data-anchor-id="when-the-regulatory-requirement-is-real">When the regulatory requirement is real</h3>
+<p>Sometimes the request for multiple primary endpoints is driven by a genuine regulatory requirement — an indication where the agency has established that both a functional endpoint and a disease-specific endpoint must demonstrate benefit for approval. In this case, the conjunctive rule is not an option to be evaluated; it is the regulatory condition.</p>
+<p>When the conjunctive rule is required, the power calculation must address the joint criterion, not the individual endpoints. The sample size is powered for the probability that both endpoints achieve significance simultaneously, accounting for the correlation between them. This joint power is typically lower than the power for either individual endpoint, and the sample size required to achieve 80% joint power is larger than the sample size for either individual endpoint alone. The design team needs to understand this before the sample size is presented to the development committee as the trial’s enrollment target.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-5-dropout-sample-size-problem-or-estimand-problem" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-5-dropout-sample-size-problem-or-estimand-problem">Scenario 5: Dropout — Sample Size Problem or Estimand Problem?</h2>
+<p><em>The dropout discussion usually arises in the context of sample size calculation: the statistician proposes inflating the sample size by the expected dropout rate, and someone asks what dropout rate to use. This question, if answered correctly, leads to a much larger discussion. If answered incorrectly — by picking a number and moving on — the discussion will recur at analysis in a more damaging form.</em></p>
+<section id="the-question-under-the-question" class="level3">
+<h3 class="anchored" data-anchor-id="the-question-under-the-question">The question under the question</h3>
+<p>The question “what dropout rate should we use?” is actually two different questions that require different answers.</p>
+<p>The first question is: <strong>what proportion of enrolled patients will not complete the primary endpoint assessment?</strong> This is a logistical prediction about patient behavior — how many patients will withdraw consent, be lost to follow-up, die before the assessment time point, or be administratively censored. This is the dropout rate that inflates the sample size. It is a nuisance parameter, and it should be estimated from prior studies with similar populations, similar trial durations, and similar treatment burdens.</p>
+<p>The second question is: <strong>what will happen to patients who discontinue study treatment before completing the trial?</strong> This is not a logistical question. It is a scientific question about what the trial is measuring. A patient who discontinues treatment because of an adverse event, and then switches to an alternative therapy, has an outcome that is informative about the treatment’s tolerability and its real-world effect. How that outcome is handled in the analysis depends on the estimand — and the estimand must be settled before the dropout rate question can be answered correctly.</p>
+<p>Under a <strong>treatment policy estimand</strong>, the patient’s outcome after discontinuation is part of the primary analysis. The patient is not dropped from the analysis; they are followed and their outcome is included regardless of whether they completed the assigned treatment. In this case, the “dropout” that inflates the sample size is only the patients who are truly lost — who cannot be followed for any reason — not the patients who discontinued treatment. The inflation factor is smaller, but the data collection requirements are larger.</p>
+<p>Under a <strong>hypothetical estimand</strong>, the patient’s outcome after discontinuation is not the quantity of interest. The analysis attempts to estimate what would have happened if the patient had remained on treatment. In this case, the patient’s post-discontinuation data are not used in the primary analysis, and the patient is effectively missing for the purposes of the primary comparison. The dropout rate that inflates the sample size is the discontinuation rate, which is typically higher than the administrative loss-to-follow-up rate.</p>
+<p>The same event — a patient discontinuing treatment — has different implications for the sample size calculation depending on the estimand. If the estimand has not been settled when the dropout rate is being discussed, the sample size will be calculated for the wrong quantity.</p>
+</section>
+<section id="the-conversation-that-clarifies-this" class="level3">
+<h3 class="anchored" data-anchor-id="the-conversation-that-clarifies-this">The conversation that clarifies this</h3>
+<p>The most efficient way to surface the estimand question in the dropout discussion is to ask: if a patient discontinues treatment at week 12 in a 52-week trial, what do we do with them at the primary analysis?</p>
+<p>The answers that reveal a treatment policy estimand: “We follow them and collect their week 52 outcome regardless of what treatment they are on.” “We include their actual week 52 data in the primary analysis.” “We want to know what happens to patients who receive this treatment in the real world, including the ones who stop early.”</p>
+<p>The answers that reveal a hypothetical estimand: “We want to know what would have happened if they had stayed on treatment.” “We exclude or impute their data from the primary analysis.” “We want to estimate the biological effect of the treatment, not the effect of trying to take it.”</p>
+<p>Once the estimand is identified, the dropout rate discussion can proceed correctly. Under treatment policy, the question is how many patients will be unreachable at 52 weeks for any reason — the administrative loss rate, which the statistician can estimate from logistics. Under hypothetical, the question is how many patients will discontinue treatment for any reason before 52 weeks — the discontinuation rate, which the clinical team must estimate from prior disease-area experience.</p>
+<p>Both estimates carry uncertainty. The uncertainty should be examined in the joint pessimistic scenario — as Chapter 3 requires — not resolved by picking a round number and proceeding.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-6-the-statisticians-boundary" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-6-the-statisticians-boundary">Scenario 6: The Statistician’s Boundary</h2>
+<p><em>This scenario is different from the others. It is not about a specific design feature. It is about the range of questions the statistician can and cannot answer — and the damage that occurs when the boundary is crossed in either direction.</em></p>
+<section id="questions-the-statistician-can-answer" class="level3">
+<h3 class="anchored" data-anchor-id="questions-the-statistician-can-answer">Questions the statistician can answer</h3>
+<p>The statistician can answer questions about probability, about operating characteristics, about the consequences of design choices under specified assumptions, and about the consistency between the design’s components.</p>
+<p>What is the probability of stopping early under each scenario? The statistician can answer this, given the interim analysis design and the assumed effect sizes.</p>
+<p>What happens to power if the event rate is lower than assumed? The statistician can answer this, given the power calculation and the plausible range of event rate values.</p>
+<p>Is this hierarchy consistent with controlling the family-wise type I error? The statistician can answer this, given the pre-specified order and the alpha allocation.</p>
+<p>Does the primary analysis model correspond to the estimand? The statistician can answer this, given both the estimand and the analysis plan.</p>
+<p>These are questions with technical answers, and the statistician is responsible for providing them clearly, in terms that the clinical team can use to make decisions.</p>
+</section>
+<section id="questions-the-statistician-cannot-answer" class="level3">
+<h3 class="anchored" data-anchor-id="questions-the-statistician-cannot-answer">Questions the statistician cannot answer</h3>
+<p>The statistician cannot answer questions about what the treatment will do in patients, what magnitude of effect is clinically meaningful, what risk of a false negative is acceptable to the patients who might benefit, or what the right comparator is for the indication.</p>
+<p>What effect size should we assume for the power calculation? The statistician can present the range of plausible values and their sources, and can translate each into a required sample size. But the choice of which value to commit to is a clinical prediction about what the treatment will do, and it belongs to the clinical team.</p>
+<p>Is 80% power acceptable for this trial? The statistician can show what 80% power means — a 20% probability of missing a real treatment effect — and can show how the required sample size changes at 85% or 90%. But the decision about what probability of failure is acceptable is a risk allocation decision that belongs to the sponsor’s clinical and development leadership.</p>
+<p>Is this margin clinically acceptable for a non-inferiority trial? The statistician can calculate M1 from historical data and can show the range of M2 values that the literature discusses. But the judgment about what fraction of the comparator’s effect can be sacrificed without clinical harm is a clinical judgment, not a statistical one.</p>
+</section>
+<section id="the-damage-of-crossed-boundaries" class="level3">
+<h3 class="anchored" data-anchor-id="the-damage-of-crossed-boundaries">The damage of crossed boundaries</h3>
+<p>When the statistician answers questions that belong to the clinical team — when they propose the effect size, set the power level, and determine the NI margin without clinical input — two things happen. First, the decisions are made without the clinical judgment that is required to make them correctly. The effect size assumption reflects what the statistician thinks is reasonable rather than what the clinical team believes the treatment will do, and these are not the same.</p>
+<p>Second, when the trial fails — when the effect size assumption turns out to be optimistic, or when the power level turns out to be insufficient — the accountability is assigned to the statistician rather than to the clinical team. The clinical team did not own the assumption; they accepted it without engagement. The statistician made the prediction. The prediction was wrong. In the debrief, the statistician is the one who cannot defend the number.</p>
+<p>The correct boundary is not the statistician saying less. It is the statistician being more precise about what kind of input is needed from the clinical team, and more insistent on getting it. “I can calculate the sample size once you tell me the effect size you believe the treatment will produce” is not an abdication. It is the correct allocation of responsibility.</p>
+</section>
+<section id="the-damage-of-not-crossing-boundaries-that-should-be-crossed" class="level3">
+<h3 class="anchored" data-anchor-id="the-damage-of-not-crossing-boundaries-that-should-be-crossed">The damage of not crossing boundaries that should be crossed</h3>
+<p>The opposite failure is also real. When the statistician defers on questions that are genuinely statistical — when they say “it depends” or “there are different approaches” in response to questions that have clear technical answers — the design proceeds without the statistical input it needs.</p>
+<p>Does this analysis control the type I error? This has a clear answer. The statistician should give it.</p>
+<p>Is this hierarchy pre-specified in a way that would survive regulatory scrutiny? This has a clear answer. The statistician should give it.</p>
+<p>Is this sample size consistent with the stated power, given the adaptive rule? This has a clear answer. The statistician should give it.</p>
+<p>The statistician’s value to the design team is not in managing uncertainty — it is in reducing the uncertainty that can be reduced, and being precise about the uncertainty that cannot. A statistician who treats every question as having multiple valid answers provides less value than one who distinguishes the questions with technical answers from the questions that require clinical judgment.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-7-randomization-and-double-programming" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-7-randomization-and-double-programming">Scenario 7: Randomization and Double Programming</h2>
+<p><em>The randomization plan discussion is often brief — the statistician proposes a stratified, blocked randomization with central IVR/IWR, the team agrees, and the meeting moves on. The question of whether the randomization plan will be independently programmed — double programmed — is often not raised at all, or is treated as a QC formality rather than a design decision.</em></p>
+<section id="what-double-programming-protects-against" class="level3">
+<h3 class="anchored" data-anchor-id="what-double-programming-protects-against">What double programming protects against</h3>
+<p>The randomization sequence is the foundation of the trial’s validity. A randomization sequence that is incorrectly generated — because of a programming error in the randomization algorithm, an incorrect stratification structure, an error in the block structure, or a system configuration error — produces a trial in which the assignment is not what the protocol specified. The trial may still produce a valid result if the error is non-informative and symmetric, but it may not, and the error may not be discovered until the clinical study report is being prepared and the randomization sequence is audited.</p>
+<p>Independent programming — implementing the randomization algorithm in a second programming environment, by a programmer who did not write the first version, and comparing the two outputs — is the standard protection against programming errors in the randomization sequence. When the two implementations agree, the probability of a systematic error in the generation is low. When they disagree, there is a programming error in one of them, and the error can be identified and corrected before enrollment begins.</p>
+</section>
+<section id="when-double-programming-is-required" class="level3">
+<h3 class="anchored" data-anchor-id="when-double-programming-is-required">When double programming is required</h3>
+<p>Double programming of the randomization is not always required, and treating it as a universal requirement adds cost and time without proportionate benefit in every case. The decision should be based on the complexity of the randomization structure and the consequences of a randomization error.</p>
+<p>Simple randomization — equal allocation, no stratification, no blocking — is generated by a well-understood algorithm with a well-characterized output. The probability of a systematic error that would affect the trial’s validity is low, and the output can be verified by inspection. Double programming adds limited value.</p>
+<p>Stratified, blocked randomization with multiple stratification factors — particularly when the stratification factors interact, or when the allocation ratio differs across strata, or when the block structure is adaptive — is complex enough that programming errors are both more likely and harder to detect by inspection. Double programming is appropriate.</p>
+<p>Covariate-adaptive randomization — minimization or related methods — uses an algorithm that updates with each enrollment and cannot be fully verified by examining a static sequence. Double programming is required, and the verification must be conducted prospectively — by simulating enrollments and confirming that both implementations produce the same assignments — not retrospectively.</p>
+<p>Central IVR/IWR systems that implement the randomization algorithm in a validated system require system validation, not double programming in the statistical sense. The IVR/IWR system’s randomization module is validated as part of the system validation process, which is a different kind of independent verification. A trial that uses a validated IVR/IWR system has not skipped double programming; it has implemented the equivalent protection through a different mechanism.</p>
+</section>
+<section id="what-cannot-be-double-programmed" class="level3">
+<h3 class="anchored" data-anchor-id="what-cannot-be-double-programmed">What cannot be double programmed</h3>
+<p>The randomization sequence can be double programmed. The blinding cannot.</p>
+<p>Blinding is maintained operationally — through identical appearance of treatment and placebo, through sealed treatment packs, through central dispensing systems. It cannot be verified by independent programming because it is not a program; it is an operational practice. The protection against blinding failures is the governance structure described in Chapter 5, not a technical verification step.</p>
+<p>This distinction matters because it defines the boundary of what the randomization verification can assure. A successfully double-programmed randomization confirms that the sequence was generated correctly. It does not confirm that the sequence was concealed correctly, that the treatment packs were correctly labeled, or that the IVR/IWR system correctly assigned the treatment pack to the patient. Those protections require operational validation, not independent programming.</p>
+<p>The design team should understand both what double programming provides and what it does not. A trial whose randomization was correctly generated but whose allocation concealment was compromised is a trial with selection bias, regardless of the randomization’s technical correctness.</p>
+<hr>
+<hr>
+</section>
+</section>
+<section id="scenario-8-the-primary-endpoint-failed-but-look-at-this-subgroup" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-8-the-primary-endpoint-failed-but-look-at-this-subgroup">Scenario 8: “The Primary Endpoint Failed, But Look at This Subgroup”</h2>
+<p><em>This conversation happens after unblinding. The primary analysis did not achieve significance. Someone — often the clinical lead, sometimes the sponsor’s development head — points to a subgroup result: a specific patient population where the treatment effect looks compelling. “Can we build a submission around this?” The pressure in the room is real. The program has been running for years. There is a treatment that may work in some patients. The statistician needs to say something.</em></p>
+<section id="what-has-just-happened-statistically" class="level3">
+<h3 class="anchored" data-anchor-id="what-has-just-happened-statistically">What has just happened, statistically</h3>
+<p>When a primary endpoint fails and a subgroup appears positive, two things are simultaneously true. The subgroup result may reflect a genuine differential treatment effect — the treatment may really work better in this population. And the subgroup result is almost certainly inflated, because it was identified from the data rather than before the data were seen.</p>
+<p>These two things are not contradictory. A result can be both potentially real and statistically unreliable. The question is not whether to believe the subgroup finding. The question is what the finding justifies doing next.</p>
+<p>The statistician’s role is to explain, precisely, why the subgroup finding — however compelling it looks — cannot substitute for the confirmatory evidence the failed primary was designed to provide. The explanation has three components.</p>
+<p>First, the multiple testing problem. When the primary endpoint fails and the team examines subgroups to find a positive result, the number of comparisons being made — across all the subgroups examined, even informally, even in a single meeting — inflates the probability of finding a false positive. A single subgroup result with a p-value of 0.03, identified after examining twenty subgroups in a failed trial, does not have a 3% false positive probability. Its false positive probability is substantially higher, and the nominal p-value does not reflect the search that produced it.</p>
+<p>Second, the regression to the mean problem. Subgroups identified from positive results in one trial tend to show smaller effects in subsequent trials, because the first trial’s observation included both the true effect and the chance variation that pushed the result into significance. The effect in the next trial — powered for the subgroup, with the subgroup pre-specified — is expected to be smaller than what was observed in the subgroup analysis of the failed trial.</p>
+<p>Third, the estimand problem. The failed primary trial was not designed for this subgroup. The eligibility criteria, the stratification, the sample size, and the analysis plan were all designed for the overall population. The subgroup comparison is conducted in a population that was not prospectively enriched, with a sample size that was not calculated for the subgroup effect, and without the stratification that would have been used if the subgroup had been the primary population. The subgroup result is not a failed primary that happened to succeed in a smaller population. It is a different analysis, in a different population, under different conditions.</p>
+</section>
+<section id="what-the-finding-does-justify" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-finding-does-justify">What the finding does justify</h3>
+<p>The subgroup finding from a failed primary trial is hypothesis-generating. This is not a dismissal — hypothesis generation is valuable. It defines the next trial.</p>
+<p>The next trial for this subgroup has a specific design requirement: the subgroup must be the primary population, prospectively defined, with eligibility criteria that operationalize the subgroup definition, with a sample size calculated for the subgroup-specific effect, and with the biomarker or characteristic that defined the subgroup validated as a companion diagnostic or pre-specified selection criterion.</p>
+<p>The statistician can help the team design that trial. What they cannot do is help the team construct a submission based on the subgroup result from the failed trial without acknowledging that the result is exploratory, that the effect is likely overestimated, and that the regulatory agency will evaluate the submission with exactly these concerns.</p>
+</section>
+<section id="the-specific-risk-of-this-conversation" class="level3">
+<h3 class="anchored" data-anchor-id="the-specific-risk-of-this-conversation">The specific risk of this conversation</h3>
+<p>The pressure to claim the subgroup finding as confirmatory is greatest when the finding is clinically plausible — when there is a biological rationale for why the treatment would work better in this population, when the subgroup effect is large, and when the clinical team believes the treatment is genuinely beneficial for these patients.</p>
+<p>Clinical plausibility does not convert a post-hoc finding into a confirmatory result. It increases the prior probability that the finding is real. It does not change the statistical properties of the analysis. A finding that is both post-hoc and biologically plausible is a compelling hypothesis for a confirmatory trial. It is not a confirmatory result from an exploratory analysis.</p>
+<p>The statistician who allows this conflation — who does not clearly distinguish between “this finding is worth pursuing” and “this finding supports a label claim” — has not served the clinical team or the patients who will receive the treatment based on an inflated efficacy estimate. The clinical team can believe the subgroup effect is real and still understand that the evidence does not yet support a claim. These are not contradictory positions.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-9-the-ni-margin-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-9-the-ni-margin-discussion">Scenario 9: The NI Margin Discussion</h2>
+<p><em>The non-inferiority margin discussion is scheduled as a single meeting and almost never resolved in one. It begins with the statistician presenting the historical data on the active comparator’s effect, proceeds to a discussion of what fraction of that effect should be preserved, and stalls when the clinical team realizes they are being asked to specify how much worse the new treatment is allowed to be. Nobody wants to say a number out loud.</em></p>
+<section id="why-the-conversation-stalls" class="level3">
+<h3 class="anchored" data-anchor-id="why-the-conversation-stalls">Why the conversation stalls</h3>
+<p>The NI margin requires two quantities. M1 is the comparator’s estimated effect relative to placebo, derived from historical trials. M2 is the fraction of M1 the new treatment must preserve to be considered clinically acceptable.</p>
+<p>M1 is a statistical estimation problem. The statistician presents the historical evidence, accounts for the uncertainty in the estimate, and proposes a conservative estimate of M1 — typically the lower bound of the confidence interval around the historical estimate, not the point estimate itself. This is technical work and the statistician should lead it.</p>
+<p>M2 is a clinical judgment. It requires answering the question: if the new treatment preserves X% of the comparator’s effect, is it still an acceptable treatment for patients? The answer depends on the treatment’s other properties — its side effect profile, its route of administration, its cost, its convenience — relative to the comparator. If the new treatment is substantially more convenient or substantially less toxic, a lower M2 may be acceptable. If it offers no advantages except the ones being tested, M2 should be close to 1.</p>
+<p>The conversation stalls because M2 requires the clinical team to commit to a clinical judgment in public, in writing, before the trial begins. The judgment will later be scrutinized — by the regulatory agency, by the DSMB, by clinical audiences reading the publication. If the judgment turns out to be too generous — if the new treatment is approved on the basis of a margin that later seems clinically unacceptable — the team members who specified M2 are accountable.</p>
+</section>
+<section id="how-to-move-the-conversation-forward" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-move-the-conversation-forward">How to move the conversation forward</h3>
+<p>The statistician can move the conversation forward by reframing the question. Instead of asking “what fraction of M1 is acceptable,” ask: “What would a clinician recommend for a patient who was told the new treatment might be up to X% less effective than the comparator, but had the following advantages?”</p>
+<p>This reframe makes the clinical judgment concrete. The clinical team is not being asked to specify a statistical parameter. They are being asked to describe the clinical context in which the new treatment is acceptable. That context — the balance of benefit, risk, and practical considerations — is what M2 is supposed to capture, and specifying it in clinical terms is easier than specifying it as a fraction.</p>
+<p>Once the clinical context is specified, the statistician translates it into a numerical M2. The translation should be documented — the clinical description that led to the number — so that the margin can be defended not just as a statistical choice but as a clinical judgment with a traceable rationale.</p>
+</section>
+<section id="the-constancy-assumption-and-assay-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="the-constancy-assumption-and-assay-sensitivity">The constancy assumption and assay sensitivity</h3>
+<p>The margin discussion has two additional components that are often skipped because the meeting has already been long by the time M1 and M2 are resolved.</p>
+<p>The constancy assumption asks whether the comparator’s historical effect — the M1 estimated from past trials — transfers to the current trial. The question is whether the comparator performs as well in the current trial’s population, under current standard of care, with current concomitant medications, as it did in the historical trials. If the answer is no — if the comparator’s effectiveness has diminished because background therapy has improved — then M1 is overestimated and the derived margin is too permissive.</p>
+<p>The assay sensitivity question asks whether the trial, as designed, is capable of detecting a difference between active treatment and inactive treatment if one exists. A trial with poor assay sensitivity will not reliably detect inferiority even when it is present — which means a non-inferiority conclusion from such a trial is not informative.</p>
+<p>Both questions require engagement from the clinical team, not just the statistician. The statistician can present the historical data that bear on the constancy assumption. The clinical team must judge whether the historical context is sufficiently similar to the current context. The statistician can design the trial to maximize assay sensitivity. The clinical team must confirm that the enrolled population and the trial conditions are appropriate for detecting the comparator’s effect.</p>
+<p>If these discussions do not happen before the margin is finalized, the margin will be finalized on an incomplete basis — and the regulatory agency will ask the questions that the design team did not.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-10-can-we-add-an-endpoint" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-10-can-we-add-an-endpoint">Scenario 10: “Can We Add an Endpoint?”</h2>
+<p><em>The request arrives during enrollment. Sometimes it is mid-way through, sometimes near the end, sometimes just before the primary analysis. The rationale is usually one of three: new external evidence has emerged that suggests an additional endpoint is important, a competitor’s trial result has changed the landscape, or — and this is the one the statistician must be alert to — someone has seen something in the accumulating data that makes a particular endpoint look promising.</em></p>
+<section id="the-three-sources-and-why-they-matter" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-sources-and-why-they-matter">The three sources and why they matter</h3>
+<p>The source of the request determines everything about how it should be handled.</p>
+<p><strong>New external evidence</strong> — a published trial in a related indication, a regulatory guidance update, a biomarker discovery in a parallel program — can legitimately motivate adding an endpoint during enrollment, provided the motivation is documented and the timing is consistent with the evidence being genuinely new. A request driven by a paper published last week, documented with the citation, reviewed by the DSMB before implementation, and processed as a formal protocol amendment with regulatory notification is a defensible mid-trial modification. Its implications for the analysis — the endpoint is exploratory, not confirmatory, unless a multiplicity correction is applied — must be clearly stated.</p>
+<p><strong>Competitive intelligence</strong> — a competitor’s trial succeeded on an endpoint this trial is not measuring — is a more complicated trigger. The sponsor’s legitimate interest in understanding whether their treatment has the same properties as the competitor’s creates pressure to add the endpoint. But the timing is informative to a regulatory reviewer: an endpoint added after a competitor’s positive result looks like an attempt to claim the same benefit without the same evidence. The request should be reviewed carefully, the rationale should be documented fully, and the statistical consequences — exploratory status, no multiplicity protection — should be clearly stated.</p>
+<p><strong>Internal data signal</strong> — the most dangerous trigger. When the request to add an endpoint arrives shortly after an interim DSMB review, or when the requester has any plausible channel to information about the trial’s interim trends, the statistician must ask — directly, in writing — whether the request was motivated by knowledge of the accumulating data. This is not an accusation. It is a governance question. If the answer cannot be given with confidence — if the timeline is ambiguous, or if the requester had access to the DSMB’s unblinded report through any channel — the amendment should not be treated as externally motivated.</p>
+<p>An amendment driven by internal data signal is an unplanned adaptation. It is not necessarily invalid — unplanned adaptations can sometimes be accommodated with appropriate analytical corrections — but it cannot be treated as a pre-specified addition, and the new endpoint cannot be claimed as confirmatory without addressing the type I error implications of the data-driven selection.</p>
+</section>
+<section id="the-analytical-consequence" class="level3">
+<h3 class="anchored" data-anchor-id="the-analytical-consequence">The analytical consequence</h3>
+<p>Any endpoint added during enrollment is exploratory unless a specific provision was made for it. This is not a punitive rule. It is the consequence of the pre-specification requirement: the type I error rate for confirmatory claims is controlled by the pre-specified analysis. Endpoints added after the trial begins were not part of the pre-specified analysis and are not protected by its error control.</p>
+<p>The clinical team must understand this before the amendment is filed. An endpoint added to the protocol is not automatically elevated to confirmatory status because it appears in the protocol. Its confirmatory status depends on whether it was in the original pre-specified hierarchy, with alpha allocated to it, before the trial began.</p>
+<p>If the team wants the new endpoint to be confirmatory, the alpha allocation for the entire testing hierarchy must be revised. The revision requires adjusting the planned sample size if the new endpoint is the primary, or adjusting the hierarchical plan if it is secondary. Either adjustment must be made before any unblinded data bearing on the new endpoint are seen. If the adjustment is made after such data are available, the revision is post-hoc and the endpoint remains exploratory regardless of how the protocol is written.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-11-the-alpha-allocation-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-11-the-alpha-allocation-meeting">Scenario 11: The Alpha Allocation Meeting</h2>
+<p><em>The hierarchical testing plan is being finalized. The clinical team has five secondary endpoints they consider important, and they want all of them in the confirmatory hierarchy. The statistician has explained that the hierarchy must be ordered, and that testing stops when a hypothesis fails. The meeting has been going for two hours. Three different people have proposed three different orderings, and each ordering reflects a different view of which endpoint matters most. Nobody wants to say that their preferred endpoint is less important than someone else’s.</em></p>
+<section id="what-is-actually-being-decided" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-actually-being-decided">What is actually being decided</h3>
+<p>The argument about ordering is not really about statistics. The statistician can implement any ordering the team chooses; no ordering is technically wrong. The argument is about which finding the organization will lead with, which subpopulation will be featured in the label, and which clinical hypothesis the team believes in most strongly.</p>
+<p>These are clinical and strategic decisions, and the statistician should name them as such. The ordering of the hierarchy is the organization’s public statement of its clinical priorities, expressed in a form that will be tested by data and scrutinized by regulators. If the team cannot agree on the ordering, it is because they cannot agree on those priorities — and that disagreement is the real problem, not the statistical plan.</p>
+<p>The statistician’s role is to make the decision’s consequences concrete. For each proposed ordering, the statistician shows what happens to each endpoint’s claim under each possible outcome sequence. If Endpoint A is first and fails, Endpoint B is not testable at the controlled error rate regardless of its p-value. If Endpoint B is first and fails, the ordering that followed was irrelevant. The team sees, for each ordering, what they are committing to — which claims they will lose if specific endpoints fail.</p>
+</section>
+<section id="the-efficiency-argument-versus-the-importance-argument" class="level3">
+<h3 class="anchored" data-anchor-id="the-efficiency-argument-versus-the-importance-argument">The efficiency argument versus the importance argument</h3>
+<p>There is a temptation to order the hierarchy by the probability of success — to put the endpoint most likely to achieve significance first, to protect the later endpoints by ensuring the hierarchy stays open as long as possible.</p>
+<p>This approach has a statistical logic but a clinical cost. An ordering based on statistical likelihood rather than clinical importance sends a specific message: the organization is optimizing for the probability of making some claim, rather than testing its most important hypothesis first. A regulatory reviewer who examines the ordering and finds that it corresponds to the ranking of expected p-values rather than the ranking of clinical importance will ask why the most clinically important endpoint is not first.</p>
+<p>The correct ordering is by clinical importance, and the clinical team must specify that ordering explicitly. The statistician can point out if an ordering appears to be driven by statistical convenience rather than clinical priority. But the judgment of what is most clinically important belongs to the clinicians, not to the statistician.</p>
+</section>
+<section id="when-the-hierarchy-genuinely-cannot-be-ordered" class="level3">
+<h3 class="anchored" data-anchor-id="when-the-hierarchy-genuinely-cannot-be-ordered">When the hierarchy genuinely cannot be ordered</h3>
+<p>Sometimes the secondary endpoints are genuinely of equal clinical importance — three different functional assessments in a rehabilitation trial, two different safety endpoints in an oncology trial with a complex risk profile. When clinical importance does not resolve the ordering, the statistician has two options.</p>
+<p>The first is a graphical testing procedure — a procedure that allows alpha to flow between hypotheses in multiple directions, so that a failure in one endpoint does not necessarily close the path to testing others. Graphical procedures require more upfront design work and are more complex to explain to the DSMB and the regulatory agency, but they handle genuine ties in importance without forcing an artificial ordering.</p>
+<p>The second is to reconsider whether all five endpoints should be in the confirmatory hierarchy at all. Three of the five may be genuinely confirmatory; the other two may be supportive evidence that does not need to be in the primary claim structure. Reducing the hierarchy to the endpoints that are truly confirmatory often dissolves the ordering disagreement, because the remaining endpoints have a clearer clinical priority ranking.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-12-we-need-to-show-results-in-all-regions" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-12-we-need-to-show-results-in-all-regions">Scenario 12: “We Need to Show Results in All Regions”</h2>
+<p><em>The trial is global — sites in North America, Europe, East Asia, and sometimes additional regions. At the design stage, or at the analysis planning stage, the request arrives: we need to show that the treatment works in each region separately, because each regional regulatory agency will require evidence in their population. The statistician is asked to power the trial for regional subgroup analyses.</em></p>
+<section id="what-regional-consistency-actually-requires" class="level3">
+<h3 class="anchored" data-anchor-id="what-regional-consistency-actually-requires">What regional consistency actually requires</h3>
+<p>The regulatory agencies in different regions — FDA, EMA, PMDA, NMPA — do not generally require a separate confirmatory analysis in each region. What they require is evidence that the overall trial result is not driven entirely by one region, and that the result in their region is consistent with the overall result in a way that makes it plausible the treatment works in their population.</p>
+<p>This is a consistency requirement, not a confirmatory requirement. The regional subgroup analysis is evaluated as a consistency check: does the treatment effect in this region have the same direction and approximate magnitude as the overall effect? Is the confidence interval for the regional effect consistent with the overall estimate? Is there any evidence of substantial regional heterogeneity that would call the overall result into question for this region’s population?</p>
+<p>The statistician should explain this distinction clearly. Powering the trial for a confirmatory regional subgroup analysis would require a sample size that is a multiple of what the overall primary analysis requires — and would likely make the trial operationally unfeasible. What is required is a sample size that provides reasonable precision for the regional estimates, so that the consistency check can be conducted informatively.</p>
+</section>
+<section id="the-minimum-regional-sample-size-question" class="level3">
+<h3 class="anchored" data-anchor-id="the-minimum-regional-sample-size-question">The minimum regional sample size question</h3>
+<p>The practical question is how many patients per region are needed for the regional estimate to be informative for the consistency check. There is no single answer — it depends on the expected magnitude of the overall treatment effect, the variance of the regional estimate, and the threshold for consistency that the regional regulatory agency uses.</p>
+<p>The PMDA has published specific guidance on what it considers an adequate regional contribution — a framework based on the proportion of the overall sample size contributed by the Japanese population and the consistency of the Japanese subgroup estimate with the overall result. Other regional agencies have less formal frameworks but similar underlying logic.</p>
+<p>The statistician can present the precision of the regional estimate as a function of the regional sample size, under the assumed overall treatment effect. This allows the team to see, concretely, what a regional sample of 100 patients versus 200 patients versus 300 patients provides in terms of the width of the regional confidence interval. The team can then decide whether the regional sample is adequate for the consistency check, informed by the expected requirements of each regional agency.</p>
+</section>
+<section id="the-heterogeneity-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-heterogeneity-problem">The heterogeneity problem</h3>
+<p>When regional results are heterogeneous — when one region shows a strong positive result and another shows no effect — the trial’s primary result becomes difficult to interpret for at least one region. This heterogeneity may reflect genuine biological or practice variation, or it may reflect chance variation in smaller regional samples.</p>
+<p>The statistician should address the heterogeneity question prospectively in the design: what will the trial conclude about regional consistency if the regional estimates differ substantially? The pre-specified consistency criterion — the statistical test or the clinical threshold that will be used to evaluate whether the regional results are consistent enough to support the overall claim — should be in the SAP before unblinding. A consistency criterion constructed after the regional results are seen is a post-hoc criterion, and the regional agency reviewing the submission will treat it as such.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-13-surrogate-endpoints" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-13-surrogate-endpoints">Scenario 13: Surrogate Endpoints</h2>
+<p><em>The discussion usually begins with a practical problem: the clinically meaningful endpoint — overall survival, major cardiovascular events, definitive disease cure — requires a trial too long and too large to be feasible in the current development context. Someone proposes a surrogate: progression-free survival instead of overall survival, a biomarker instead of a clinical event. “The field uses this surrogate. Regulators have accepted it before. Can we build the primary trial around it?”</em></p>
+<section id="what-the-statistician-can-and-cannot-say" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-statistician-can-and-cannot-say">What the statistician can and cannot say</h3>
+<p>The statistician can characterize the empirical relationship between the surrogate and the clinical outcome — the correlation in historical datasets, the proportion of the treatment effect on the clinical outcome that is mediated through the surrogate in meta-analyses, the consistency of the surrogate-outcome relationship across different treatments and populations. This is quantitative work, and the statistician should do it before the meeting, not during it.</p>
+<p>What the statistician cannot say is whether the surrogate is valid for this trial. Surrogate validity is a scientific and regulatory judgment, not a statistical calculation. A surrogate that is highly correlated with the clinical outcome at the patient level may not be a valid surrogate at the trial level — the treatment may affect the surrogate without affecting the clinical outcome through the mechanism the surrogate is supposed to represent. The distinction between patient-level correlation and trial-level validity is technical, but the judgment of whether a specific surrogate is valid for a specific treatment mechanism belongs to the clinical and regulatory domain.</p>
+<p>The statistician’s role is to present the quantitative evidence that bears on the surrogate’s validity and to identify the gaps in that evidence — without filling the gaps with statistical confidence the evidence does not support.</p>
+</section>
+<section id="the-accelerated-approval-context" class="level3">
+<h3 class="anchored" data-anchor-id="the-accelerated-approval-context">The accelerated approval context</h3>
+<p>In the United States, the FDA’s accelerated approval pathway permits approval based on a surrogate endpoint that is “reasonably likely to predict” clinical benefit, conditioned on a post-approval confirmatory trial that demonstrates actual clinical benefit. The EMA’s conditional approval has a similar structure.</p>
+<p>The design implication is specific: the trial built on the surrogate endpoint is not the full evidentiary package. It is the first stage of a two-stage evidentiary development. The surrogate endpoint trial must be designed to support the accelerated approval claim, and the confirmatory trial must be designed — and ideally initiated — before the surrogate endpoint trial is complete.</p>
+<p>The statistician should ensure the team understands both stages of the design. The surrogate endpoint trial’s sample size, endpoint definition, and claim structure are designed for the accelerated approval. The confirmatory trial’s design — which will be scrutinized by the agency after the accelerated approval is granted — should be pre-specified in the accelerated approval submission. A development program that uses a surrogate endpoint for initial approval without a credible confirmatory trial plan is a program that may face post-approval pressure it was not designed to handle.</p>
+</section>
+<section id="when-the-surrogate-fails-to-predict" class="level3">
+<h3 class="anchored" data-anchor-id="when-the-surrogate-fails-to-predict">When the surrogate fails to predict</h3>
+<p>Historical precedent in clinical development includes cases where treatments improved surrogate endpoints substantially and failed to improve — or worsened — clinical outcomes. Antiarrhythmic drugs that reduced ventricular ectopy but increased mortality. Cancer treatments that improved tumor response rates but did not extend survival. These cases are not anomalies; they reflect the mechanism-dependence of surrogate validity.</p>
+<p>The statistician should present these precedents in the surrogate endpoint discussion, not as arguments against using the surrogate but as evidence for why the surrogate-outcome relationship must be examined specifically for the treatment’s mechanism. A surrogate that has predicted benefit for one drug class may not predict benefit for a drug with a different mechanism targeting the same surrogate. The validity of the surrogate must be evaluated for this mechanism, in this population — not assumed from the general literature on the surrogate’s performance across treatments.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-14-sample-size-in-rare-disease-and-small-populations" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-14-sample-size-in-rare-disease-and-small-populations">Scenario 14: Sample Size in Rare Disease and Small Populations</h2>
+<p><em>The indication has 5,000 patients in the United States. A realistic enrollment target for a confirmatory trial is 200 patients, perhaps 300 with global sites. The statistician presents a power calculation showing that at 80% power, the trial can detect a hazard ratio of 0.60 — a 40% reduction in the event rate. The clinical team asks: what if the true effect is 0.70? The answer is that the trial would have 45% power to detect that effect. The room goes quiet.</em></p>
+<section id="what-80-power-means-in-this-context" class="level3">
+<h3 class="anchored" data-anchor-id="what-80-power-means-in-this-context">What 80% power means in this context</h3>
+<p>In a large cardiovascular trial enrolling 10,000 patients, a power of 80% is a design choice that accepts a 20% probability of missing a real treatment effect in exchange for a feasible sample size. The choice is defensible because there may be additional trials, because meta-analyses will eventually incorporate the result, and because the missed effect can be detected in subsequent development.</p>
+<p>In a rare disease trial enrolling 200 patients, the same 80% power has a different meaning. There may be no subsequent trial — the population is too small, the development economics will not support another attempt, and the 200 patients enrolled in this trial may represent a substantial fraction of the identifiable patient population. A trial that fails to detect a real treatment effect in this context does not lead to a second trial. It leads to patients not having access to a treatment that works.</p>
+<p>This asymmetry — the higher cost of a false negative in a rare disease population with no alternative development path — is the argument for accepting a lower power level or for accepting a larger type I error. Both adjustments require documentation and justification, but both are defensible in the context of rare disease development.</p>
+<p>The statistician should present this argument explicitly. Not as a recommendation to lower standards, but as a description of the decision the team is making and the consequences on both sides. The conventional 80% power was calibrated for a development context — multiple trials, large populations, post-market studies — that does not apply to rare disease. The team should make a power decision appropriate to their context, not default to the convention.</p>
+</section>
+<section id="the-regulatory-framework-for-rare-disease" class="level3">
+<h3 class="anchored" data-anchor-id="the-regulatory-framework-for-rare-disease">The regulatory framework for rare disease</h3>
+<p>The FDA’s Rare Pediatric Disease designation, Orphan Drug designation, and Breakthrough Therapy designation — and the EMA’s PRIME designation and orphan medicinal product designation — all reflect the regulatory system’s acknowledgment that rare disease development requires different standards in some respects.</p>
+<p>The key regulatory implication for trial design is that the FDA and EMA are generally willing to engage on trial design questions through the pre-submission process earlier and more extensively for rare disease programs than for large-indication programs. A statistician working on a rare disease trial should recommend that the sponsor use this access — that the trial design, including the power level and the effect size assumption, be discussed with the regulatory agency before enrollment begins, not after the trial is complete.</p>
+<p>A power level of 70% or even 60%, discussed with and accepted by the regulatory agency before enrollment, is a defensible design choice for a rare disease with no alternatives. The same power level, imposed without regulatory discussion and revealed in the clinical study report, will face questions the design team should have anticipated and addressed in advance.</p>
+</section>
+<section id="the-single-arm-trial-question" class="level3">
+<h3 class="anchored" data-anchor-id="the-single-arm-trial-question">The single-arm trial question</h3>
+<p>In the most extreme cases — ultra-rare diseases, conditions where a randomized controlled trial cannot be conducted because the patient population is too small to support a control arm — the question arises of whether a single-arm trial with an external control or a natural history comparison can serve as the evidentiary basis for approval.</p>
+<p>This is not primarily a statistical question. The regulatory standard for approval is controlled evidence of benefit and safety. Departing from the randomized controlled trial design requires a scientific justification for why the controlled design is not feasible and why the proposed alternative provides sufficient evidence to support approval in the absence of a concurrent control.</p>
+<p>The statistician’s contribution to this discussion is characterizing the uncertainty introduced by the absence of randomization — the confounding that cannot be controlled, the secular trend that cannot be accounted for, the selection bias in the natural history comparator — and quantifying its likely magnitude relative to the observed treatment effect. If the observed effect is an order of magnitude larger than the plausible confounding, the single-arm trial may provide adequate evidence despite the design limitations. If the observed effect is of similar magnitude to the plausible confounding, it does not.</p>
+<hr>
+</section>
+</section>
+<section id="scenario-15-when-the-statistician-disagrees-with-the-design" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-15-when-the-statistician-disagrees-with-the-design">Scenario 15: When the Statistician Disagrees With the Design</h2>
+<p><em>The design has been finalized. The protocol is about to be submitted for IRB approval. Enrollment is scheduled to begin in six weeks. And the statistician believes the trial is fundamentally flawed — not flawed in a correctable way, but flawed in a way that means the trial will produce evidence that is either misleading or uninterpretable. The effect size assumption is not just optimistic; it is implausible. The primary endpoint does not correspond to the estimand. The NI margin was set by the sponsor’s commercial team without clinical input and cannot be defended. What does the statistician do?</em></p>
+<section id="the-professional-obligation" class="level3">
+<h3 class="anchored" data-anchor-id="the-professional-obligation">The professional obligation</h3>
+<p>The statistician has a professional obligation that exists independently of their employment relationship with the sponsor. That obligation is to the integrity of the evidence the trial will produce, and through that evidence, to the patients who will ultimately be treated based on what the trial shows.</p>
+<p>This obligation is not abstract. It is specified in the statistical professional codes of conduct — the ASA’s Ethical Guidelines for Statistical Practice, the PSI’s Code of Conduct — which are explicit that statisticians have a responsibility to ensure that their work is used appropriately, to point out when conclusions appear to be unsupported by the data, and to avoid participating in work that misrepresents evidence.</p>
+<p>When the statistician believes the trial is fundamentally flawed, the obligation is to say so — clearly, in writing, with specific identification of the design elements that are problematic and the specific consequences they will produce. The saying must be documented. An oral concern expressed in a meeting and not followed up in writing has not been discharged.</p>
+</section>
+<section id="the-escalation-path" class="level3">
+<h3 class="anchored" data-anchor-id="the-escalation-path">The escalation path</h3>
+<p>The first step is to say it to the person who can change it. The statistician should communicate the concern to the clinical lead, the project statistician’s manager, and the regulatory affairs lead — not simultaneously, but in sequence, beginning with the person closest to the design decision. The communication should be specific: this margin cannot be defended because the constancy assumption fails under current standard of care; this effect size assumption implies a treatment effect that is larger than any effect observed in this drug class; this endpoint does not correspond to the estimand as written.</p>
+<p>If the first step does not produce engagement — if the concern is acknowledged but not addressed — the second step is escalation. In most organizations, this means escalating to the medical director, the head of biostatistics, or the chief medical officer. The escalation should be documented: the concern was raised on this date, to this person, with this specific content, and the response was this.</p>
+<p>If escalation within the organization does not produce engagement, the statistician is in a position where they must decide whether to continue their involvement with the trial. This is a personal decision with professional and economic consequences. The decision is easier to make when the concern has been clearly documented — when the statistician can demonstrate that they raised the issue, that they escalated appropriately, and that the response did not address the substantive concern.</p>
+</section>
+<section id="what-documenting-disagreement-achieves" class="level3">
+<h3 class="anchored" data-anchor-id="what-documenting-disagreement-achieves">What documenting disagreement achieves</h3>
+<p>Documented disagreement serves two purposes.</p>
+<p>The first is organizational accountability. When a trial fails — when the effect size assumption proves to be implausible, when the NI conclusion is challenged because the margin was not defensible, when the primary endpoint result is challenged because it does not correspond to the estimand — the design decisions that produced the failure are examined. A statistician who documented their concern before enrollment has a clear record of having identified the problem. A statistician who did not document the concern is in the same position as everyone else: responsible for the design they contributed to.</p>
+<p>The second is systemic learning. The clinical trial enterprise improves when design failures are understood. Design failures are understood when the concerns raised before the trial began are documented and can be examined after the trial ends. A culture in which statisticians raise concerns but do not document them — because documentation creates friction, because it signals distrust, because the organization does not reward it — is a culture that does not learn from its mistakes.</p>
+</section>
+<section id="the-specific-risk-of-not-saying-it" class="level3">
+<h3 class="anchored" data-anchor-id="the-specific-risk-of-not-saying-it">The specific risk of not saying it</h3>
+<p>The most common failure is not the statistician who disagrees and is overruled. It is the statistician who has reservations but does not raise them — who assumes that someone else has already evaluated the concern, who does not want to delay enrollment, who is not certain enough of their position to put it in writing.</p>
+<p>The reservation that was not raised becomes the design flaw that was not corrected. The trial that proceeds with the unexamined flaw produces the result that cannot be fully defended. The statistician who did not raise the concern is, in the analysis that follows, part of the team that produced the design — not a party who identified the problem and was overruled.</p>
+<p>Saying it clearly, in writing, at the right time, is the professional act. What happens afterward is partly outside the statistician’s control. What the statistician says — and documents — is not.</p>
+<hr>
+</section>
+</section>
+<section id="on-these-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="on-these-scenarios">On These Scenarios</h2>
+<p>These scenarios do not replace the chapters that precede them. They are anchored to those chapters: each scenario is a translation of a design principle into a meeting-room situation where that principle is tested. They do not cover every situation a statistician will encounter in clinical trial design. They cover the situations where the distance between good design and defensible design is most often created — not by technical errors, but by conversations that did not go far enough, decisions that were not owned clearly enough, and concerns that were not raised clearly enough.</p>
+<p>The statistician’s role in each scenario is not to advocate for a position — not to argue for O’Brien-Fleming over Pocock, or for time-to-event over binary endpoints, or for 90% power over 80%. It is to make the decision’s consequences visible before the decision is made, and to ensure that the person who owns the decision has the information they need to make it defensibly. It is also to be the person who asks the question that the design cannot proceed without answering, and who insists on a written answer before enrollment begins.</p>
+<p>That insistence is uncomfortable. It creates friction. It slows meetings. It occasionally makes the statistician unpopular. It also produces the only kind of trial design that can be defended when it matters — when the result is contested, when the regulatory agency asks how the margin was determined, when the DSMB asks what authority they have to stop the trial, when a post-hoc subgroup finding is being positioned as confirmatory evidence.</p>
+<p>A design that withstands scrutiny is not one where the statistician won every argument. It is one where every decision was made by the right person, with the right information, at the right time, and documented in a form that can be verified. The design that withstands scrutiny was built by a team that had the uncomfortable conversations before enrollment. This appendix is about what those conversations look like.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/appendix-qa.html" class="pagination-link" aria-label="Design Review Hearing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Design Review Hearing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 J Kou</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/JqKOU/trial_design/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

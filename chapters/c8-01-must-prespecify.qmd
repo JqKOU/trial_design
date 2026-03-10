@@ -1,0 +1,100 @@
+---
+title: 8.1 What Must Be Pre-specified
+---
+
+
+## The pre-specification principle, made operational
+
+The pre-specification principle has appeared throughout this book as a design requirement: specify before the data, not from the data. Every chapter demanded pre-specification of a specific design element—the estimand, the effect measure, the hierarchy, the adaptive rule. Chapter 8 asks what pre-specification means as a documentary condition, not a state of mind.
+
+The documentary condition has two components: specificity and timing. Specificity means the document contains enough detail that an independent statistician, reading it without access to the data, could implement the pre-specified analysis and arrive at the same result as the analysis team. Timing means the document was finalized before the event that could compromise its independence—before the data that might shape its content were available to the people who wrote it.
+
+Both components are verifiable. Specificity can be assessed by a reviewer who examines whether the document contains the decisions it claims to contain, or whether it defers decisions to later judgment—using language like "will be determined at analysis" or "to be specified based on observed data." Timing can be assessed by examining the document's finalization timestamp, the trial's enrollment and unblinding timeline, and the data access records of the people who wrote the document.
+
+When both components are satisfied, pre-specification is established. When either is missing—when the document is vague, or when it was finalized after the data were available—pre-specification is not established, regardless of the sincerity of the intent.
+
+---
+
+## The protocol: what it must contain
+
+The protocol is the first pre-specification document and the one with the hardest deadline: it must be finalized and registered before the first patient is enrolled. Its content requirements for design integrity are distinct from its regulatory content requirements, and both must be met.
+
+From a design integrity perspective, the protocol must contain the following elements with enough specificity to be binding.
+
+**The estimand.** The four attributes of the estimand—population, variable, intercurrent event strategy, and population-level summary—must be stated in terms that correspond to the scientific question and that can be operationalized in the statistical analysis. The estimand is not a narrative description of the intended treatment benefit; it is a formal specification of what is being estimated. If the protocol's estimand section cannot be translated directly into the SAP's primary analysis without additional decisions, it is not specific enough.
+
+**The primary endpoint definition.** The operational definition of the primary endpoint—the specific criteria by which the outcome is determined for each patient—must be in the protocol. For composite endpoints, the definition of each component must be in the protocol. For patient-reported outcomes, the instrument, the scoring algorithm, and the threshold for response must be in the protocol. A primary endpoint defined as "will be operationalized in the adjudication charter" is not pre-specified in the protocol; it defers a binding decision to a later document.
+
+**The intercurrent event strategy.** The pre-specified strategy for handling the primary intercurrent events—discontinuation of study treatment, initiation of rescue medication, switching to alternative therapy, death before the primary endpoint—must be in the protocol. For each intercurrent event, the strategy (treatment policy, hypothetical, composite, while-on-treatment, principal stratum) must be named and briefly justified.
+
+**The interim analysis plan.** The number of planned interim analyses, the information fractions at which they will be conducted, the category of stopping rule at each (efficacy, futility, safety), and the spending function must be in the protocol. The specific boundaries need not be in the protocol if they will be computed from the spending function in the SAP, but the spending function itself—identified by name and parameters—must be in the protocol.
+
+**The co-primary decision rule.** If two primary endpoints are proposed, the conjunctive or disjunctive decision rule must be in the protocol. "Success will be defined as achievement of significance on both endpoints" or "success will be defined as achievement of significance on either endpoint" must appear in the protocol before enrollment. The protocol may not defer this decision to the SAP.
+
+**The pre-specified subgroup analyses.** The list of pre-specified subgroup analyses—with each subgroup's defining variable and the confirmatory or exploratory status of the analysis—must be in the protocol. Subgroup analyses added in the SAP but not in the protocol are pre-specified at the SAP level, which is a weaker pre-specification than the protocol level.
+
+**The randomization scheme.** The randomization type, the stratification factors, and the block structure (variable block size, noted without specifying the specific sizes) must be in the protocol. The actual randomization sequence need not be in the protocol; it is maintained by the randomization system.
+
+**The adaptive rule, at the level of type and criteria.** For adaptive designs, the type of adaptation (SSR, enrichment, dose selection) and the general criteria that will trigger it must be in the protocol. The specific numerical thresholds—the conditional power threshold for SSR, the hazard ratio comparison threshold for enrichment—may be in the SAP, but the existence and nature of the adaptation must be disclosed in the protocol.
+
+---
+
+## The SAP: what it must contain and when it must be locked
+
+The statistical analysis plan is the second pre-specification document. Its deadline is softer than the protocol's—it need not be finalized before enrollment, because it can be developed and refined as the trial progresses—but it must be finalized before any unblinded data from the trial are accessible to the analysis team or the sponsor.
+
+"Accessible" means not just formal access to the analysis database, but any channel through which unblinded information could reach the people who write the SAP. A DSMB interim report shared with the sponsor through a governance gap, a summary of interim event rates prepared for operational planning, a conversation in which a DSMB member mentioned the direction of the interim trend to a sponsor employee—any of these constitutes access to unblinded information that could shape the SAP.
+
+From a design integrity perspective, the SAP must contain the following.
+
+**The complete hierarchical testing order.** Every hypothesis in the hierarchy, in the order it will be tested, with the decision rule for each position—including what happens if the hypothesis at that position fails. The hierarchy is not complete if it specifies the primary and first secondary and defers the rest; it is complete only when every hypothesis the trial will test confirmatorily is named and ordered.
+
+**The primary analysis model.** The specific regression model, the covariates included, the method for handling missing data under each intercurrent event strategy, and the test statistic that will be reported. The model must be specific enough that two statisticians, running the same software on the same data, would produce the same result.
+
+**The sensitivity analyses.** The pre-specified sensitivity analyses for the primary endpoint—the analyses that will be conducted to assess the robustness of the primary result to its assumptions. Each sensitivity analysis must specify the assumption being varied, the direction of the variation, and the method.
+
+**The detailed missing data plan.** The specific imputation method or model-based approach for each category of missing data, the assumptions under each method, and the criteria for when the sensitivity analysis plan for missing data will be triggered.
+
+**The adaptive rule details.** For adaptive designs: the specific numerical thresholds for the SSR (conditional power threshold, sample size bounds), the specific criteria for the enrichment decision (the comparison threshold, the biomarker assay specification), and the combination test method with the pre-specified critical value. These must be in the SAP before the re-estimation time point or the enrichment interim analysis, not before the final analysis.
+
+**The exploratory analysis list.** The list of analyses that are exploratory—not part of the confirmatory hierarchy, not controlled for multiplicity—with explicit labeling of each as exploratory. The exploratory list should be exhaustive in identifying which analyses will be reported, so that the distinction between pre-specified exploratory and post-hoc analysis is clear.
+
+---
+
+## The timing of SAP finalization: what compromises it
+
+The most common source of SAP timing compromise is the blinded data review—the review of the pooled, unblinded data that is sometimes conducted before finalization of the SAP to assess data quality. A blinded review that examines only pooled statistics—overall event rates, overall missing data rates, overall protocol deviation rates—without revealing the treatment arm comparison does not compromise the SAP. A blinded review that reveals the distribution of outcomes in ways that allow the direction of the treatment effect to be inferred does compromise it.
+
+The boundary between acceptable and compromising information from a blinded review is not always clear, and the SAP finalization process must specify in advance what information will and will not be examined in the blinded review. Typical safe elements: overall sample size, overall missing data rate, overall event rate (pooled), protocol deviation types and rates. Potentially compromising elements: time-to-event distributions that reveal the treatment arm comparison, outcome distributions that allow inference about which arm is performing better, subgroup sizes that have changed in ways suggesting differential dropout.
+
+When the blinded review is conducted by the analysis team—the same team that will finalize the SAP—the review creates a channel for implicit unblinding even when formal blinding is maintained. The analysis team may not see the treatment arm labels, but if the review reveals that the outcome distribution is concentrated in a specific range, and if the team knows which direction of the primary endpoint would be favorable, the SAP that follows the review may be shaped by this implicit knowledge.
+
+The cleanest solution is to finalize the SAP before the blinded review. When this is not operationally feasible—because the SAP development requires information about data quality that the blinded review provides—the review and the SAP finalization must be separated in time, with the review conducted by a party who is not part of the SAP development team and who communicates only non-inferential data quality information to the SAP team.
+
+---
+
+## When the deadline is missed
+
+The SAP is sometimes finalized after the database is locked, or after the primary analysis has been run in draft. This is not always disclosed clearly; the SAP document may bear a finalization date that is technically before the final analysis report, without disclosing that the SAP was finalized after interim data were examined or after the primary analysis was run in a blind-broken version.
+
+When this occurs—when the SAP finalization was not independent of the data—the consequence for the trial's credibility is specific. The primary analysis is not wrong in the sense that it was incorrectly executed. It may be wrong in the sense that the analysis choices—the model specification, the sensitivity analysis list, the hierarchical order—were shaped by the data rather than by the scientific question. The type I error rate for the primary test is nominally controlled by the pre-specified alpha level, but the actual error rate is inflated by the adaptive choice of analysis method—an inflation that is not reflected in the p-value.
+
+This is the professional consequence of a missed SAP deadline. Not a finding of misconduct, but a finding of insufficient documentary evidence that the analysis was pre-specified. The trial's result is credible only to the extent that the analysis choices can be shown to have been made before the data, and when the SAP finalization timestamp does not support that showing, the credibility is weakened.
+
+The remedy for a missed deadline is not a corrective action after the fact. It is a governance system that prevents the miss—that treats the SAP finalization as a binding event on the project timeline, with the same urgency and the same escalation path as regulatory submission deadlines.
+
+---
+
+## What this section demands before proceeding
+
+Before the adaptive rule lock requirements of Section 8.2 can be addressed, the protocol and SAP content requirements must be mapped to the specific trial being designed.
+
+For each required element—estimand, endpoint definition, ICE strategy, interim plan, co-primary rule, subgroup list, randomization scheme, adaptive rule at protocol level—the responsible party and the finalization deadline must be identified. For the SAP—the hierarchy, the primary analysis model, the sensitivity analyses, the missing data plan, the adaptive rule details—the finalization deadline relative to the data access timeline must be established, and the blinded review boundary must be specified.
+
+This mapping is not bureaucratic planning. It is the design team's recognition that the quality of the trial's evidence depends as much on the governance of these documents as on the scientific quality of the decisions they contain. A scientifically correct estimand in a protocol that was finalized after three patients were enrolled is a scientifically correct estimand that the regulatory agency cannot verify was not modified after enrollment revealed something about the population. A hierarchical testing order that reflects genuine clinical priorities but was finalized after the SAP development team had seen blinded outcome distributions is a hierarchy that cannot be verified as independent of the data.
+
+The document and the timestamp together establish the pre-specification. Neither alone is sufficient.
+
+---
+
+*References: ICH E9 Statistical Principles for Clinical Trials (1998); ICH E9(R1) Addendum on Estimands (2019); FDA Guidance for Industry, Adaptive Designs for Clinical Trials (2019); EMA Guideline on the Investigation of Subgroups in Confirmatory Clinical Trials (2019); CONSORT 2010 Statement.*

@@ -1,0 +1,146 @@
+---
+title: Design Review Hearing
+---
+
+## Questions That Must Be Answered Before Enrollment
+
+A clinical trial does not begin when the first subject signs consent.
+It begins when the organization declares that its design can withstand scrutiny.
+
+Before enrollment, the following questions must be answered — not casually, not implicitly, but in a form that could be defended before regulators, investors, and patients.
+
+---
+
+### I. Definition of the Claim
+
+**What precisely is the treatment effect this trial intends to estimate?**
+
+In which population does that effect apply?
+Relative to what comparator?
+Over what time horizon?
+Under what handling of discontinuation, switching, rescue therapy, or death?
+
+If this quantity cannot be stated without referencing the statistical model, it has not yet been defined.
+
+If different members of the design team describe the objective differently, the design is not yet stable.
+
+---
+
+### II. Ownership of Assumptions
+
+**What effect size is being assumed — and who takes responsibility for that assumption?**
+
+What event rate or variance assumption anchors the sample size?
+What happens if those assumptions are materially wrong?
+
+Is dropout being treated as a logistical inconvenience to inflate for, or as a change in the scientific question?
+
+In a non-inferiority trial, who determined the margin?
+On what historical and clinical basis?
+Is assay sensitivity defensible under current practice?
+Does the constancy assumption plausibly hold?
+
+If these answers depend on optimism rather than justification, the risk has not been acknowledged.
+
+---
+
+### III. Allocation of Error and Early Stopping
+
+**Is an interim analysis planned? For what purpose?**
+
+How is the probability of false positive redistributed across analyses?
+What are the operating characteristics under plausible true scenarios?
+
+When someone states that "the stopping rate is too high," which probability are they referring to — stopping under null, stopping under benefit, or stopping under harm?
+
+Who will see interim data?
+Who has authority to recommend stopping?
+Is that authority documented?
+
+If governance is unclear, the design is unstable.
+
+---
+
+### IV. Protection Against Bias
+
+**How does the randomization structure protect against selection bias?**
+
+Is allocation concealment operationally secured?
+
+Does the design rely on balance in ways that cannot be guaranteed?
+
+Has the randomization plan been independently validated to a level commensurate with its risk?
+
+If the trial is open-label, what bias pathways have been anticipated, and how are they mitigated?
+
+If these protections are assumed rather than demonstrated, interpretation will later fracture.
+
+---
+
+### V. Discipline of Claims
+
+**What constitutes trial success?**
+
+Is success defined by a single estimand, or multiple?
+
+If multiple objectives exist, what logical rule governs success?
+
+How is multiplicity controlled across endpoints, timepoints, and subgroups?
+
+Which findings will support labeling claims?
+Which are exploratory?
+
+If a subgroup contradicts the overall result, what principle governs interpretation?
+
+If these boundaries are not defined in advance, interpretation will drift.
+
+---
+
+### VI. Adaptation and Structural Change
+
+**Will any aspect of the design adapt after initiation?**
+
+Could adaptation alter the estimand?
+
+How is type I error preserved under that adaptation?
+
+Does enrichment redefine the population midstream?
+
+If the answer to these questions is deferred until after interim data are seen, adaptation becomes revision rather than design.
+
+---
+
+### VII. Pre-Specification and Accountability
+
+**Which elements of the design are fully locked prior to enrollment?**
+
+Which may adapt under rule-based procedures?
+
+Is there a documented record of design decisions and their justifications?
+
+Could an external reviewer reconstruct the logic of the design without oral explanation?
+
+If not, the design exists in conversation, not in structure.
+
+---
+
+## Final Condition
+
+A trial design is ready for enrollment only when:
+
+The treatment effect is precisely defined.
+
+The assumptions are owned.
+
+The risks are acknowledged.
+
+The governance is explicit.
+
+The claims are bounded.
+
+---
+
+Enrollment converts assumptions into exposure.
+After that point, ambiguity is no longer theoretical.
+
+If these questions cannot be answered clearly and consistently, the trial is not yet ready to begin.

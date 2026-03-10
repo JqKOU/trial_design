@@ -1,0 +1,78 @@
+---
+title: "2.4 Closing: The Measure Is a Commitment"
+---
+
+
+## What this chapter asked
+
+Chapter 2 asked one question: how will we measure the difference?
+
+It asked that question in three registers, each exposing a different layer of the decision.
+
+Section 2.1 asked what each class of effect measure commits a trial to—not just statistically, but scientifically. A hazard ratio commits to a proportionality assumption that the data may not support. An odds ratio commits to a model that clinicians systematically misread as something it is not. A restricted mean survival time commits to a time horizon that must be chosen before the data are seen. A risk difference commits to an absolute claim that may not be transportable across clinical populations. These are not defects; they are properties. Every measure carries commitments. The decision is which commitments are appropriate for this trial, this estimand, this clinical question.
+
+Section 2.2 asked how to navigate the tension between efficiency and interpretability—not by resolving it in the abstract, but by identifying who needs to act on the result and what kind of information that audience requires. A result optimized for regulatory efficiency may be clinically opaque. A result optimized for prescriber interpretability may be statistically underpowered. The choice is a design decision, not an afterthought, and it must be made before the sample size is calculated.
+
+Section 2.3 asked what it takes to define a non-inferiority margin that is defensible—not just numerically reasonable but epistemically earned. The two-step logic of M1 and M2 is not a checklist; it is a chain of reasoning in which each link must hold. If the historical evidence for M1 is weak, the chain breaks. If the clinical judgment behind M2 is unowned, the chain breaks. If the constancy assumption is not credible, the chain breaks. A margin that looks like a number but is not supported by this chain of reasoning is not a non-inferiority margin. It is a wish.
+
+---
+
+## What this chapter decided
+
+By the end of this chapter, four things must be settled.
+
+The primary effect measure is named, connected to the estimand, and its assumptions are stated. Not "we will use a hazard ratio because this is a time-to-event endpoint" but "we will use a hazard ratio because the treatment effect is expected to be proportional throughout the follow-up period, and this expectation is supported by the following clinical reasoning." Or: "we will use the restricted mean survival time difference at thirty-six months because the treatment is expected to produce non-proportional hazards due to its mechanism of action, and the thirty-six-month time horizon corresponds to the duration of clinical relevance defined by the treatment strategy." The choice is documented and owned.
+
+The secondary effect measures for clinical and patient communication are pre-specified. Their relationship to the primary measure is stated. Anticipated discordances—scenarios in which the primary measure is significant but a secondary measure is clinically unimpressive, or vice versa—are acknowledged and explained. Not resolved—they may be genuine findings—but acknowledged, so that the result is not surprised by its own messages.
+
+For non-inferiority trials: the margin is defined in the units of the primary effect measure, the historical evidence for M1 is documented with an assessment of the constancy assumption, the M2 judgment is owned by the clinical team and expressed in clinical terms, and the margin is endorsed—in writing—by the person who will defend it at the regulatory meeting.
+
+Sample size can now be calculated. Not before.
+
+---
+
+## The characteristic mistakes of this chapter
+
+Three failures recur across trial designs in the territory Chapter 2 covers.
+
+**The measure chosen for its familiarity, not its fit.** The hazard ratio because this is oncology. The odds ratio because logistic regression is what the statistician knows. The mean difference because continuous outcomes always use mean differences. Familiarity is not a justification. If the measure's assumptions do not hold for this trial, the result will be valid by the standards of the method and misleading by the standards of the science.
+
+**The margin borrowed without reasoning.** The historical trial used a margin of 1.25 on the hazard ratio scale, so this trial will too. The related indication used a 10% absolute risk difference margin, so this indication will use the same. The margin is a number without a referent—it cannot be derived from the current trial's estimand, cannot be connected to the historical comparator's evidence, and cannot be defended as the product of a clinical judgment about acceptable inferiority. It is precedent masquerading as reasoning.
+
+**The efficiency-interpretability choice deferred to the label negotiation.** The primary measure was chosen for regulatory purposes; the clinical measure for prescriber communication was not pre-specified. At the label negotiation, the sponsor discovers that the result in the primary measure supports a modest label claim, but the absolute effect is either large (a favorable surprise) or small (an uncomfortable one) in ways that were not anticipated. The negotiation occurs at a disadvantage because the clinical communication strategy was not designed—it was improvised from the data.
+
+These failures share an origin: the effect measure decision was treated as a consequence of endpoint type, not as a design choice requiring the same deliberate reasoning as the estimand or the randomization scheme.
+
+---
+
+## What cannot be recovered
+
+Some decisions made badly in Chapter 2 can be addressed at the analysis stage, with cost. Some cannot.
+
+An effect measure whose assumptions are clearly violated—non-proportional hazards when a hazard ratio is the primary measure, evidence of substantial heterogeneity in the treatment effect when a mean difference is the primary measure—can sometimes be supplemented with alternative analyses. The supplement does not become the primary; it provides context for a primary result whose limitations are now documented. This is honest science. It is also a worse position than having chosen the right measure at design.
+
+A non-inferiority margin that was not justified at design cannot be justified after the trial. The reasoning chain—M1 from historical data, constancy assumption evaluated, M2 owned by the clinical team—must exist before the trial begins. After the trial, the reasoning cannot be developed without the suspicion that it is being tailored to the result. The agency knows this. The question "why this margin?" cannot be answered after unblinding without raising questions about whether the answer is being chosen because it supports a favorable interpretation.
+
+The secondary effect measures for clinical communication cannot be claimed as confirmatory evidence if they were not pre-specified as confirmatory. If the absolute risk reduction turns out to be impressive and it was not pre-specified as a secondary endpoint with a clear analysis plan, it is a descriptive statistic. It can be reported. It cannot be claimed.
+
+Chapter 2's errors tend to look like analysis choices. They are design choices that happened to remain invisible until the analysis.
+
+---
+
+## The connection to what follows
+
+Chapter 3 asks what the trial is committing to through its sample size calculation. Every assumption in the sample size—the expected effect size, the expected variance, the expected event rate, the expected dropout rate—is a prediction about what the trial will find. Getting these predictions wrong does not mean the trial fails statistically; it means the trial may be underpowered to detect a real effect, or overpowered and wasteful, or powered for an effect measure that does not align with the primary analysis.
+
+All of this depends on the effect measure settled in this chapter. The variance of a risk difference is different from the variance of a log odds ratio. The number of events required for a hazard ratio analysis differs from the person-time required for an RMST analysis. The effect size assumed for an NI margin-based power calculation is expressed in the units of the primary effect measure—and if the units change between Chapter 2 and Chapter 3, the calculation is incoherent.
+
+Chapter 3 also inherits this chapter's ownership structure. The clinical team that owns the estimand and the effect measure also owns the assumed effect size in the sample size calculation. That assumption is not a statistical parameter; it is a clinical prediction about what the treatment will do, in this population, at this time point, under these trial conditions. If the statistician owns it alone, and it turns out to be wrong, the trial has failed without clear accountability. If the clinical team owns it alongside the statistician, the responsibility is distributed correctly—and the assumption is more likely to reflect genuine clinical expectation rather than the number that makes the sample size convenient.
+
+---
+
+## Chapter 2 risk summary
+
+**The decision this chapter owns:** which effect measure will express the treatment difference, and—for non-inferiority designs—what magnitude of inferiority is acceptable?
+
+**The most common mistake:** treating effect measure selection as a downstream consequence of endpoint type, and borrowing non-inferiority margins from historical trials or related indications without deriving them from first principles for the current trial.
+
+**The professional-level risk:** the non-inferiority margin that cannot be defended. Not because the number is wrong, but because the reasoning behind it was never developed—the M2 judgment was never made explicitly, the constancy assumption was never assessed, and the clinical ownership of "acceptable inferiority" was never established. At the regulatory meeting, the question is asked. The statistician has a number. No one has a reason.
