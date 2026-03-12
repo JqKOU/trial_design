@@ -105,6 +105,10 @@ format:
       dark: darkly
     number-sections: false
     page-layout: full
+    grid:
+      sidebar-width: 350px
+      body-width: 1100px
+      margin-width: 300px
     
   pdf:
     documentclass: scrreprt
