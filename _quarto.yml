@@ -104,6 +104,7 @@ format:
       light: cosmo
       dark: darkly
     number-sections: false
+    page-layout: full
     
   pdf:
     documentclass: scrreprt
